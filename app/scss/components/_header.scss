@@ -1,3 +1,62 @@
 .header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  color: $white;
 
+  &__nav, &__right {
+    max-width: 415px;
+    width: 100%;
+  }
+
+  &__inner {
+    @include flex-between-center-gap(30);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 229, 145, 0.12);
+  }
+
+  &__right {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__list {
+    @include flex-align-center(16);
+  }
+
+  &__link {
+    color: rgba($white, .64);
+    transition: color .4s;
+    font-size: 14px;
+    position: relative;
+
+    &:hover {
+      color: $white;
+
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &:focus {
+      color: $deep-purple;
+
+      &::before {
+        width: 100%;
+        background-color: $deep-purple;
+      }
+    }
+
+    &::before {
+      @include pseudo;
+      width: 0;
+      height: 1px;
+      bottom: -3px;
+      left: 0;
+      background-color: $white;
+      transition: width .4s, background-color .4s;
+    }
+  }
 }

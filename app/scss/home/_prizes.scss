@@ -40,7 +40,8 @@
     padding: 56px 16px 16px 16px;
     overflow: hidden;
     border-radius: 16px 16px 52px 52px;
-    transition: background .4s ease-in-out;
+    box-shadow: 0 0 0 0 #CDDECD;
+    transition: background .4s ease-in-out, box-shadow .4s ease-in-out;
 
     &::before {
       @include pseudo;
@@ -57,6 +58,7 @@
 
     &:hover {
       color: $white;
+      box-shadow: 0 8px 32px 0 #CDDECD;
 
       &::before {
         opacity: 1;

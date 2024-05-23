@@ -18,7 +18,7 @@ export function copyUrlToClipboard(event) {
 }
 
 export function bindShareLinks() {
-  const shareLinks = document.querySelectorAll('.tooltip--footer');
+  const shareLinks = document.querySelectorAll('.tooltip');
   shareLinks.forEach((shareLink) => {
     shareLink.addEventListener('click', copyUrlToClipboard);
   });

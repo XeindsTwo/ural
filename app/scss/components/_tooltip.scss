@@ -1,6 +1,7 @@
 .tooltip {
   @include flex-align-center(8);
   background-color: rgba($deep-purple, .12);
+  color: $white;
   border-radius: 24px;
   padding: 8px 16px;
   font-size: 14px;
@@ -8,8 +9,18 @@
   border: 1px solid transparent;
   transition: background-color .4s, border .4s, color .4s;
 
+  &:hover {
+    background-color: $teal-green50;
+  }
+
+  &:focus {
+    background-color: transparent;
+    border-color: $teal-green;
+  }
+
   &--footer {
     background-color: rgba($midnight-blue, .08);
+    color: inherit;
 
     &:hover {
       background-color: $teal-green;
@@ -43,6 +54,11 @@
     border-radius: 26px;
     background-color: $teal-green50;
     transition: opacity .4s;
+
+    &.header {
+      right: 17px;
+      top: 60px;
+    }
 
     &.footer {
       top: -108px;
