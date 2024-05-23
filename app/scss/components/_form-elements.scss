@@ -9,6 +9,9 @@
   border: 1px solid transparent;
   transition: all .4s;
   color: $deep-forest-green;
+  @media (max-width: 515px) {
+    border-radius: 25px;
+  }
 
   &:hover {
     border-color: rgba($deep-forest-green, .16);

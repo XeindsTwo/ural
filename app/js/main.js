@@ -6,10 +6,7 @@ bindShareLinks();
 
 new Swiper('.prizes__swiper', {
   loop: false,
-  slidesPerView: 4,
-  slidesPerGroup: 2,
   speed: 800,
-  spaceBetween: 16,
   navigation: {
     prevEl: '.prizes__btn--prev',
     nextEl: '.prizes__btn--next'
@@ -17,14 +14,38 @@ new Swiper('.prizes__swiper', {
   keyboard: {
     enabled: true
   },
+  breakpoints: {
+    1260: {
+      slidesPerView: 4,
+      slidesPerGroup: 2,
+      spaceBetween: 16,
+    },
+    992: {
+      spaceBetween: 12
+    },
+    860: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 12
+    },
+    515: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 12
+    },
+    320: {
+      slidesPerView: 'auto',
+      spaceBetween: 12,
+      freeMode: {
+        enabled: true
+      },
+    }
+  }
 });
 
 new Swiper('.jury__swiper', {
   loop: false,
-  slidesPerView: 4,
-  slidesPerGroup: 2,
   speed: 800,
-  spaceBetween: 16,
   navigation: {
     prevEl: '.jury__btn--prev',
     nextEl: '.jury__btn--next'
@@ -32,6 +53,33 @@ new Swiper('.jury__swiper', {
   keyboard: {
     enabled: true
   },
+  breakpoints: {
+    1260: {
+      slidesPerView: 4,
+      slidesPerGroup: 2,
+      spaceBetween: 16,
+    },
+    992: {
+      spaceBetween: 12
+    },
+    860: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 12
+    },
+    515: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 12
+    },
+    320: {
+      slidesPerView: 'auto',
+      spaceBetween: 12,
+      freeMode: {
+        enabled: true
+      },
+    }
+  }
 });
 
 gsap.registerPlugin(ScrollTrigger);

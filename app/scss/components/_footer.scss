@@ -6,16 +6,52 @@
     border-top: 1px solid rgba($charcoal-gray, .12);
     padding: 12px 0;
     font-size: 14px;
+    @media (max-width: 1060px) {
+      flex-wrap: wrap;
+      gap: 10px 20px;
+    }
+    @include r($tablet) {
+      gap: 25px;
+      padding: 17px 0;
+      justify-content: center;
+      flex-direction: column;
+    }
+    @include r($sm) {
+      padding: 17px 0 14px;
+    }
   }
 
   &__nav, &__right {
     max-width: 365px;
     width: 100%;
+    @media (max-width: 1060px) {
+      max-width: max-content;
+    }
+  }
+
+  &__nav {
+    @media (max-width: 1060px) {
+      max-width: 55%;
+    }
+    @include r($tablet) {
+      max-width: max-content;
+    }
   }
 
   &__list {
     padding-left: 8px;
     @include flex-align-center(16);
+    @media (max-width: 1060px) {
+      padding-left: 0;
+    }
+    @include r($sm) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px 23px;
+    }
+    @include r($phone) {
+      max-width: 270px;
+    }
   }
 
   &__link, &__top {
@@ -51,6 +87,12 @@
     }
   }
 
+  &__link {
+    @include r($sm) {
+      font-size: 16px;
+    }
+  }
+
   &__top {
     color: $midnight-blue;
   }
@@ -58,5 +100,17 @@
   &__right {
     @include flex-align-center(16);
     justify-content: flex-end;
+    @include r($tablet) {
+      position: relative;
+    }
+  }
+
+  img {
+    @media (max-width: 1060px) {
+      order: 2;
+    }
+    @include r($tablet) {
+      order: -1;
+    }
   }
 }

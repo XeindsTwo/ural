@@ -1,16 +1,53 @@
 .price {
   border-radius: 56px;
-  padding: 48px;
+  padding: 48px 0;
   background: radial-gradient(96.63% 65.62% at 49.27% 59.17%, #01342B 0%, #02110F 85.8%);
   max-width: 1268px;
   width: 100%;
   margin: 136px auto 0;
+  @include r($desktop) {
+    margin-top: 120px;
+  }
+  @media (max-width: 1100px) {
+    border-radius: 46px;
+  }
+  @include r($lg) {
+    border-radius: 40px;
+  }
+  @media (max-width: 840px) {
+    margin-top: 100px;
+  }
+  @include r($tablet) {
+    border-radius: 34px;
+    padding: 40px 0;
+  }
+  @media (max-width: 680px) {
+    margin-top: 90px;
+  }
+  @include r($phone) {
+    padding: 30px 0;
+  }
 
   &__title {
     max-width: 522px;
     margin: 0 auto 32px;
     text-align: center;
     color: $white;
+    @include r($lg) {
+      max-width: 450px;
+    }
+    @include r($tablet) {
+      max-width: 420px;
+    }
+    @include r($sm) {
+      max-width: 390px;
+    }
+    @include r($phone) {
+      max-width: 370px;
+    }
+    @media (max-width: 410px) {
+      max-width: 310px;
+    }
   }
 
   &__description {
@@ -20,6 +57,9 @@
     letter-spacing: -0.14px;
     margin: 0 auto 56px;
     color: rgba($white, .56);
+    @include r($sm) {
+      margin-bottom: 40px;
+    }
   }
 
   &__cost {
@@ -30,6 +70,17 @@
     margin: 0 auto 24px;
     border-radius: 56px;
     background-color: rgba($deep-purple, .04);
+    @media (max-width: 715px) {
+      border-radius: 46px;
+      padding: 22px 28px;
+    }
+    @include r($phone) {
+      padding: 20px 22px;
+      border-radius: 38px;
+    }
+    @media (max-width: 390px) {
+      padding: 18px 20px;
+    }
   }
 
   &__value {
@@ -41,6 +92,42 @@
     line-height: 78%;
     letter-spacing: -10.48px;
     font-style: italic;
+    @include r($desktop) {
+      font-size: 200px;
+      letter-spacing: -9px;
+    }
+    @include r($lg) {
+      font-size: 186px;
+    }
+    @media (max-width: 715px) {
+      font-size: 174px;
+      letter-spacing: -8px;
+    }
+    @include r($sm) {
+      font-size: 160px;
+    }
+    @media (max-width: 560px) {
+      font-size: 146px;
+    }
+    @media(max-width: 515px) {
+      font-size: 130px;
+    }
+    @include r($phone) {
+      font-size: 124px;
+    }
+    @media (max-width: 430px) {
+      font-size: 114px;
+    }
+    @media (max-width: 390px) {
+      font-size: 108px;
+      letter-spacing: -4px;
+    }
+    @media (max-width: 380px) {
+      font-size: 98px;
+    }
+    @media (max-width: 360px) {
+      font-size: 94px;
+    }
   }
 
   &__currency {
@@ -51,6 +138,28 @@
     font-size: 64px;
     margin-bottom: 10px;
     color: rgba($deep-purple, .5);
+    @include r($desktop) {
+      font-size: 60px;
+    }
+    @media (max-width: 715px) {
+      font-size: 54px;
+    }
+    @include r($sm) {
+      font-size: 50px;
+    }
+    @media (max-width: 515px) {
+      font-size: 44px;
+    }
+    @include r($phone) {
+      font-size: 40px;
+    }
+    @media (max-width: 390px) {
+      font-size: 37px;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 380px) {
+      font-size: 34px;
+    }
   }
 
   &__btn {
@@ -65,6 +174,9 @@
     transition: background-color .4s, color .4s, border .4s, box-shadow .5s;
     position: relative;
     box-shadow: 0 0 24px 0 rgba(25, 247, 207, 0.25);
+    @include r($phone) {
+      font-size: 14px;
+    }
 
     &:hover {
       box-shadow: 0 0 34px 0 rgba(25, 247, 207, 0.4);
@@ -100,11 +212,57 @@
     max-width: 1020px;
     margin: 0 auto;
     color: rgba($white, .4);
+    @include r($lg) {
+      font-size: 18px;
+    }
+    @media (max-width: 930px) {
+      max-width: 520px;
+    }
+    @include r($sm) {
+      font-size: 16px;
+    }
   }
 
   &__logos {
     @include flex-between(20);
     align-items: center;
     padding: 40px 0;
+    @include r($lg) {
+      padding: 35px 0 0;
+    }
+    @media (max-width: 880px) {
+      max-width: 510px;
+      margin: 0 auto;
+      padding-top: 30px;
+      grid-gap: 40px 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @include r($tablet) {
+      grid-gap: 30px;
+    }
+    @media (max-width: 395px) {
+      grid-gap: 40px 30px;
+    }
+
+    li {
+      @media (max-width: 880px) {
+        @include flex-column(0);
+        align-items: center;
+        width: 28%;
+      }
+      @include r($phone) {
+        width: 25%;
+      }
+      @media (max-width: 395px) {
+        width: 30%;
+      }
+
+      &:nth-child(5) {
+        @include r($lg) {
+          display: none;
+        }
+      }
+    }
   }
 }

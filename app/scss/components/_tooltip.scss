@@ -63,6 +63,18 @@
     &.footer {
       top: -108px;
       right: 58px;
+      @media (max-width: 1100px) {
+        right: 50px;
+      }
+      @include r($lg) {
+        right: 45px;
+      }
+      @media (max-width: 870px) {
+        right: 40px;
+      }
+      @include r($tablet) {
+        right: 21px;
+      }
     }
 
     &.active {
