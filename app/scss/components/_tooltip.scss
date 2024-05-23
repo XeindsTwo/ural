@@ -30,4 +30,27 @@
       }
     }
   }
+
+  &__copy {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    font-size: 12px;
+    padding: 3px 8px;
+    max-width: max-content;
+    color: $white;
+    border-radius: 26px;
+    background-color: $teal-green50;
+    transition: opacity .4s;
+
+    &.footer {
+      top: -108px;
+      right: 58px;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
 }

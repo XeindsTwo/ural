@@ -1,3 +1,9 @@
+import {bindScrollToLinks} from './gsap.js';
+import {bindShareLinks} from './copy.js';
+
+bindScrollToLinks();
+bindShareLinks();
+
 new Swiper('.prizes__swiper', {
   loop: false,
   slidesPerView: 4,
@@ -26,4 +32,30 @@ new Swiper('.jury__swiper', {
   keyboard: {
     enabled: true
   },
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+  trigger: ".price",
+  start: "top center",
+  once: true,
+  onEnter: () => {
+    gsap.to(".price", {
+      maxWidth: "100%",
+      duration: 1.3,
+      onComplete: () => {
+        ScrollTrigger.update();
+      }
+    });
+  },
+  onLeave: () => {
+    gsap.to(".price", {
+      maxWidth: "100%",
+      duration: 0.1,
+      onComplete: () => {
+        ScrollTrigger.update();
+      }
+    });
+  }
 });

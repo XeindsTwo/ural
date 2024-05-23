@@ -73,6 +73,32 @@
       .prizes__value {
         opacity: 1;
       }
+
+      .prizes__link {
+        background-color: $deep-purple;
+
+        &::before {
+          opacity: 1;
+        }
+
+        &:hover {
+          background-color: $white;
+
+          &::before {
+            opacity: 0;
+          }
+        }
+
+        &:focus {
+          background-color: transparent;
+          border-color: $teal-green;
+          color: $white;
+
+          &::before {
+            opacity: 0;
+          }
+        }
+      }
     }
   }
 
@@ -133,6 +159,7 @@
   }
 
   &__link {
+    position: relative;
     padding: 24px;
     width: 100%;
     display: flex;
@@ -143,14 +170,26 @@
     color: $deep-forest-green;
     transition: background-color .4s, color .4s, border .4s;
 
-    &:hover {
-      border-color: $teal-green;
+    &::before {
+      @include pseudo;
+      @include topLeft50;
+      width: 104%;
+      height: 113%;
+      background-color: rgba($deep-purple, .15);
+      border: 1px solid $teal-green;
+      border-radius: 64px;
+      opacity: 0;
+      transition: background-color .4s, opacity .4s;
     }
 
     &:focus {
       background-color: $teal-green;
       border-color: $teal-green;
       color: $white;
+
+      &::before {
+        opacity: 0;
+      }
     }
   }
 

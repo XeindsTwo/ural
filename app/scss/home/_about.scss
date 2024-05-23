@@ -1,0 +1,56 @@
+.about {
+  &__top {
+    @include flex-column(32);
+    align-items: center;
+    margin: 0 auto 80px;
+    max-width: 880px;
+    text-align: center;
+  }
+
+  &__title {
+    max-width: 750px;
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+  }
+
+  &__list {
+    padding: 0 32px;
+    @include flex-between-center-gap(12);
+
+    img {
+      @include objectCoverBg;
+      user-select: none;
+    }
+  }
+
+  &__bar-artist, &__bar-level {
+    position: relative;
+    color: $deep-purple;
+
+    &::before {
+      @include pseudo;
+      top: 0;
+      left: -3px;
+      width: 109%;
+      height: 28px;
+      z-index: -1;
+      border-radius: 8px;
+      background-color: $olive-green;
+      transform: rotate(-1.4deg);
+    }
+  }
+
+  &__bar-level {
+    color: inherit;
+
+    &::before {
+      width: 111%;
+      background-color: $deep-purple;
+      transform: rotate(1.4deg);
+    }
+  }
+}

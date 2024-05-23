@@ -1,9 +1,10 @@
 .price {
-  &__inner {
-    border-radius: 56px;
-    padding: 48px;
-    background: radial-gradient(96.63% 65.62% at 49.27% 59.17%, #01342B 0%, #02110F 85.8%);
-  }
+  border-radius: 56px;
+  padding: 48px;
+  background: radial-gradient(96.63% 65.62% at 49.27% 59.17%, #01342B 0%, #02110F 85.8%);
+  max-width: 1268px;
+  width: 100%;
+  margin: 136px auto 0;
 
   &__title {
     max-width: 522px;
