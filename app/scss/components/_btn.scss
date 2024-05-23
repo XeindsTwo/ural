@@ -1,0 +1,14 @@
+.btn {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  max-width: max-content;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 32px;
+  padding: 12px 24px;
+  transition: background-color .4s, border .4s, color .4s;
+}

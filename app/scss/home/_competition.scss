@@ -1,0 +1,78 @@
+.competition {
+  min-height: 100vh;
+
+  &__title {
+    max-width: 690px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__img {
+    @include objectCoverBg;
+    margin-bottom: 192px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  &__item {
+    @include flex-column(30);
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-height: 415px;
+    padding: 24px 16px 16px 16px;
+    border-radius: 16px 16px 52px 52px;
+    background-color: $light-gray;
+  }
+
+  &__name {
+    font-family: $garamond;
+    font-size: 40px;
+    letter-spacing: -1.2px;
+    line-height: .8;
+    font-weight: 700;
+    color: $deep-forest-green;
+
+    span {
+      font-style: italic;
+      font-weight: 400;
+    }
+  }
+
+  &__step {
+    color: $teal-green;
+  }
+
+  &__btn {
+    padding: 24px;
+    width: 100%;
+    border-radius: 60px;
+    background-color: $white;
+    border: 1px solid transparent;
+    color: $deep-forest-green;
+    transition: background-color .4s, color .4s, border .4s;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $teal-green;
+    }
+
+    &:focus {
+      background-color: $teal-green;
+      border-color: $teal-green;
+      color: $white;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,62 @@
+.footer {
+  margin-top: 76px;
+
+  &__inner {
+    @include flex-between-center-gap(30);
+    border-top: 1px solid rgba($charcoal-gray, .12);
+    padding: 12px 0;
+    font-size: 14px;
+  }
+
+  &__nav, &__right {
+    max-width: 365px;
+    width: 100%;
+  }
+
+  &__list {
+    padding-left: 8px;
+    @include flex-align-center(16);
+  }
+
+  &__link, &__top {
+    color: rgba($midnight-blue, .5);
+    transition: color .4s;
+    position: relative;
+
+    &:hover {
+      color: $midnight-blue;
+
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &:focus {
+      color: $teal-green;
+
+      &::before {
+        width: 100%;
+        background-color: $teal-green;
+      }
+    }
+
+    &::before {
+      @include pseudo;
+      width: 0;
+      height: 1px;
+      bottom: -3px;
+      left: 0;
+      background-color: $midnight-blue;
+      transition: width .4s, background-color .4s;
+    }
+  }
+
+  &__top {
+    color: $midnight-blue;
+  }
+
+  &__right {
+    @include flex-align-center(16);
+    justify-content: flex-end;
+  }
+}

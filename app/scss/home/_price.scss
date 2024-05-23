@@ -1,0 +1,109 @@
+.price {
+  &__inner {
+    border-radius: 56px;
+    padding: 48px;
+    background: radial-gradient(96.63% 65.62% at 49.27% 59.17%, #01342B 0%, #02110F 85.8%);
+  }
+
+  &__title {
+    max-width: 522px;
+    margin: 0 auto 32px;
+    text-align: center;
+    color: $white;
+  }
+
+  &__description {
+    font-size: 14px;
+    max-width: 570px;
+    text-align: center;
+    letter-spacing: -0.14px;
+    margin: 0 auto 56px;
+    color: rgba($white, .56);
+  }
+
+  &__cost {
+    @include flex-align-center(14);
+    align-items: flex-end;
+    padding: 24px 32px;
+    max-width: max-content;
+    margin: 0 auto 24px;
+    border-radius: 56px;
+    background-color: rgba($deep-purple, .04);
+  }
+
+  &__value {
+    font-family: $garamond;
+    color: $deep-purple;
+    font-size: 208px;
+    font-weight: 400;
+    display: flex;
+    line-height: 78%;
+    letter-spacing: -10.48px;
+    font-style: italic;
+  }
+
+  &__currency {
+    font-family: $garamond;
+    line-height: 78%;
+    display: flex;
+    letter-spacing: -1.92px;
+    font-size: 64px;
+    margin-bottom: 10px;
+    color: rgba($deep-purple, .5);
+  }
+
+  &__btn {
+    display: flex;
+    max-width: max-content;
+    margin: 0 auto 60px;
+    padding: 24px 40px;
+    color: $deep-forest-green;
+    background-color: $deep-purple;
+    border-radius: 72px;
+    border: 1px solid transparent;
+    transition: background-color .4s, color .4s, border .4s, box-shadow .5s;
+    position: relative;
+    box-shadow: 0 0 24px 0 rgba(25, 247, 207, 0.25);
+
+    &:hover {
+      box-shadow: 0 0 34px 0 rgba(25, 247, 207, 0.4);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0 rgba(25, 247, 207, 0.55);
+      background-color: transparent;
+      color: $white;
+      border-color: $deep-purple;
+
+      &::before {
+        opacity: 0;
+      }
+    }
+
+    &::before {
+      @include pseudo;
+      @include topLeft50;
+      width: 105%;
+      height: 114%;
+      background-color: rgba($deep-purple, .15);
+      border: 1px solid $teal-green;
+      border-radius: 64px;
+      transition: background-color .4s, opacity .4s;
+    }
+  }
+
+  &__info {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    max-width: 1020px;
+    margin: 0 auto;
+    color: rgba($white, .4);
+  }
+
+  &__logos {
+    @include flex-between(20);
+    align-items: center;
+    padding: 40px 0;
+  }
+}

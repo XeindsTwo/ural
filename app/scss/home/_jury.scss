@@ -1,0 +1,66 @@
+.jury {
+  &__top {
+    @include flex-between(30);
+    align-items: center;
+    margin-bottom: 64px;
+  }
+
+  &__navigation {
+    @include flex-align-center(8);
+  }
+
+  &__btn {
+    @include flex-center;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    background-color: $white;
+    transition: all .4s;
+
+    &.swiper-button-disabled {
+      opacity: .4;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    &:hover {
+      background-color: $light-gray;
+    }
+
+    &:focus {
+      background-color: $deep-purple;
+    }
+  }
+
+  &__item {
+    @include flex-column(0);
+    text-align: center;
+    align-items: center;
+    background-color: $light-gray;
+    padding: 56px 16px 80px 16px;
+    border-radius: 16px 16px 52px 52px;
+  }
+
+  &__avatar {
+    margin-bottom: 72px;
+    user-select: none;
+  }
+
+  &__name {
+    font-family: $garamond;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 80%;
+    letter-spacing: -1.2px;
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    color: rgba($midnight-blue, .4);
+    letter-spacing: -0.16px;
+  }
+
+  .swiper {
+    overflow: visible !important;
+  }
+}

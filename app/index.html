@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="html" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Описание сайта">
+  <meta http-equiv="content-type" content="public, max-age=3600">
+  <meta name="theme-color" content="#fff"/>
+  <title>Вокальный конкурс на Урале</title>
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body class="body">
+
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <div class="header__logo">
+        <img class="logo" src="images/logo.svg" width="64" height="24" alt="логотип">
+      </div>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__link active desktop" id="a1" href="#home">Main</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link desktop" id="a2" href="#about">What is Duck?</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link desktop" id="a3" href="#roadmap">Roadmap</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link desktop" id="a4" href="#duckonomics">Duckonomics</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link desktop" id="a5" href="#explore-apps">Apps and Services</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link desktop" id="a6" href="#community">Community</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__right">
+        <a class="header__btn btn gray" href="https://dedust.io/swap/ton/duck" target="_blank">
+          Buy token
+        </a>
+      </div>
+      <button class="menu-btn menu-btn--header" type="button">
+        <span class="menu-btn__line"></span>
+        <span class="sr-only">Interact with the menu</span>
+      </button>
+    </div>
+  </div>
+  <div class="header__mobile">
+    <nav class="header__nav mobile">
+      <ul class="header__list">
+        <li class="header__item">
+          <a class="header__link active mobile" id="a1" href="#home">Main</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link mobile" id="a2" href="#about">What is Duck?</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link mobile" id="a3" href="#roadmap">Roadmap</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link mobile" id="a4" href="#duckonomics">Duckonomics</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link mobile" id="a5" href="#explore-apps">Apps and Services</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link mobile" id="a6" href="#community">Community</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="home section start" id="home">
+  <div class="container">
+
+  </div>
+</section>
+  <section class="prizes indent">
+  <div class="container">
+    <div class="prizes__top">
+      <h2 class="title-section">
+        Призы конкурса
+      </h2>
+      <div class="prizes__navigation">
+        <button class="prizes__btn prizes__btn--prev" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 5.70711C16.5976 5.31658 16.5976 4.68342 16.2071 4.29289C15.8166 3.90237 15.1834 3.90237 14.7929 4.29289L7.79289 11.2929C7.40237 11.6834 7.40237 12.3166 7.79289 12.7071L14.7929 19.7071C15.1834 20.0976 15.8166 20.0976 16.2071 19.7071C16.5976 19.3166 16.5976 18.6834 16.2071 18.2929L9.91421 12L16.2071 5.70711Z" fill="#00241F"/>
+          </svg>
+        </button>
+        <button class="prizes__btn prizes__btn--next" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.20711 4.29289C8.81658 3.90237 8.18342 3.90237 7.79289 4.29289C7.40237 4.68342 7.40237 5.31658 7.79289 5.70711L14.0858 12L7.79289 18.2929C7.40237 18.6834 7.40237 19.3166 7.79289 19.7071C8.18342 20.0976 8.81658 20.0976 9.20711 19.7071L16.2071 12.7071C16.5976 12.3166 16.5976 11.6834 16.2071 11.2929L9.20711 4.29289Z" fill="#00241F"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="prizes__swiper swiper">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide">
+          <div class="prizes__item">
+            <div class="prizes__avatar">
+              <img class="prizes__img" src="images/prizes/1.png" width="192" height="192" alt="Съёмка видеоклипа">
+            </div>
+            <div class="prizes__content">
+              <h3 class="prizes__name">Первый <span>приз</span></h3>
+              <p class="prizes__value">Съёмка <span>видеоклипа</span></p>
+              <a class="prizes__link" href="#participation">Принять участие</a>
+            </div>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="prizes__item">
+            <div class="prizes__avatar">
+              <img class="prizes__img" src="images/prizes/2.png" width="192" height="192" alt="Съёмка видеоклипа">
+            </div>
+            <div class="prizes__content">
+              <h3 class="prizes__name">Второй <span>приз</span></h3>
+              <p class="prizes__value">Съёмка <span>видеоклипа</span></p>
+              <a class="prizes__link" href="#participation">Принять участие</a>
+            </div>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="prizes__item">
+            <div class="prizes__avatar">
+              <img class="prizes__img" src="images/prizes/3.png" width="192" height="192" alt="Съёмка видеоклипа">
+            </div>
+            <div class="prizes__content">
+              <h3 class="prizes__name">Третий <span>приз</span></h3>
+              <p class="prizes__value">Съёмка <span>видеоклипа</span></p>
+              <a class="prizes__link" href="#participation">Принять участие</a>
+            </div>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="prizes__item">
+            <div class="prizes__avatar">
+              <img class="prizes__img" src="images/prizes/4.png" width="192" height="192" alt="Съёмка видеоклипа">
+            </div>
+            <div class="prizes__content">
+              <h3 class="prizes__name">Четвёртый <span>приз</span></h3>
+              <p class="prizes__value">Съёмка <span>видеоклипа</span></p>
+              <a class="prizes__link" href="#participation">Принять участие</a>
+            </div>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="prizes__item">
+            <div class="prizes__avatar">
+              <img class="prizes__img" src="images/prizes/1.png" width="192" height="192" alt="Съёмка видеоклипа">
+            </div>
+            <div class="prizes__content">
+              <h3 class="prizes__name">Пятый <span>приз</span></h3>
+              <p class="prizes__value">Съёмка <span>видеоклипа</span></p>
+              <a class="prizes__link" href="#participation">Принять участие</a>
+            </div>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="prizes__item">
+            <div class="prizes__avatar">
+              <img class="prizes__img" src="images/prizes/2.png" width="192" height="192" alt="Съёмка видеоклипа">
+            </div>
+            <div class="prizes__content">
+              <h3 class="prizes__name">Шестой <span>приз</span></h3>
+              <p class="prizes__value">Съёмка <span>видеоклипа</span></p>
+              <a class="prizes__link" href="#participation">Принять участие</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+  <section class="competition indent">
+  <div class="container">
+    <h2 class="competition__title title-section">
+      Продюсерский центр <span>Северный мир</span> <br> карьерный рост и успех
+    </h2>
+    <img class="competition__img" src="images/map.svg" alt="карта Российской Федерации">
+    <div class="competition__bottom">
+      <div class="competition__content">
+        <ul class="competition__list">
+          <li class="competition__item">
+            <h3 class="competition__name">
+              Проведение отборочных онлайн <span>конкурсов во всех регионах Российской Федерации.</span>
+            </h3>
+            <span class="competition__step">(Первый этап)</span>
+            <a class="competition__btn" href="#participation">Принять участие</a>
+          </li>
+          <li class="competition__item">
+            <h3 class="competition__name">
+              Отбор лучших конкурсантов в <br> <span>финал, который состоится в Москве.</span>
+            </h3>
+            <span class="competition__step">(Второй этап)</span>
+            <a class="competition__btn" href="#participation">Принять участие</a>
+          </li>
+          <li class="competition__item">
+            <h3 class="competition__name">
+              Финальный столичный концерт, <br> <span>где будут <br> лучшие из лучших!</span>
+            </h3>
+            <span class="competition__step">(Третий этап)</span>
+            <a class="competition__btn" href="#participation">Принять участие</a>
+          </li>
+        </ul>
+        <p class="competition__text">
+          В этом году мы запускаем новый масштабный проект. <br>
+          Всероссийские многоэтапные состязания артистов с беспрецедентным призовым фондом <br>
+          и перспективами для всех участников, победителей и лауреатов.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="jury indent">
+  <div class="container">
+    <div class="jury__top">
+      <h2 class="title-section">
+        Жюри <span>конкурса</span>
+      </h2>
+      <div class="jury__navigation">
+        <button class="jury__btn jury__btn--prev" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 5.70711C16.5976 5.31658 16.5976 4.68342 16.2071 4.29289C15.8166 3.90237 15.1834 3.90237 14.7929 4.29289L7.79289 11.2929C7.40237 11.6834 7.40237 12.3166 7.79289 12.7071L14.7929 19.7071C15.1834 20.0976 15.8166 20.0976 16.2071 19.7071C16.5976 19.3166 16.5976 18.6834 16.2071 18.2929L9.91421 12L16.2071 5.70711Z" fill="#00241F"/>
+          </svg>
+        </button>
+        <button class="jury__btn jury__btn--next" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.20711 4.29289C8.81658 3.90237 8.18342 3.90237 7.79289 4.29289C7.40237 4.68342 7.40237 5.31658 7.79289 5.70711L14.0858 12L7.79289 18.2929C7.40237 18.6834 7.40237 19.3166 7.79289 19.7071C8.18342 20.0976 8.81658 20.0976 9.20711 19.7071L16.2071 12.7071C16.5976 12.3166 16.5976 11.6834 16.2071 11.2929L9.20711 4.29289Z" fill="#00241F"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="jury__swiper swiper">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide">
+          <div class="jury__item">
+            <img class="jury__avatar" src="images/jury/1.png" width="192" height="192" alt="Константин Констатинов">
+            <h3 class="jury__name">Константин Констатинов</h3>
+            <p class="jury__description">
+              Описание об участнике жюри
+            </p>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="jury__item">
+            <img class="jury__avatar" src="images/jury/1.png" width="192" height="192" alt="Константин Констатинов">
+            <h3 class="jury__name">Константин Констатинов</h3>
+            <p class="jury__description">
+              Описание об участнике жюри
+            </p>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="jury__item">
+            <img class="jury__avatar" src="images/jury/1.png" width="192" height="192" alt="Константин Констатинов">
+            <h3 class="jury__name">Константин Констатинов</h3>
+            <p class="jury__description">
+              Описание об участнике жюри
+            </p>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="jury__item">
+            <img class="jury__avatar" src="images/jury/1.png" width="192" height="192" alt="Константин Констатинов">
+            <h3 class="jury__name">Константин Констатинов</h3>
+            <p class="jury__description">
+              Описание об участнике жюри
+            </p>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="jury__item">
+            <img class="jury__avatar" src="images/jury/1.png" width="192" height="192" alt="Константин Констатинов">
+            <h3 class="jury__name">Константин Констатинов</h3>
+            <p class="jury__description">
+              Описание об участнике жюри
+            </p>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="jury__item">
+            <img class="jury__avatar" src="images/jury/1.png" width="192" height="192" alt="Константин Констатинов">
+            <h3 class="jury__name">Константин Констатинов</h3>
+            <p class="jury__description">
+              Описание об участнике жюри
+            </p>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="jury__item">
+            <img class="jury__avatar" src="images/jury/1.png" width="192" height="192" alt="Константин Констатинов">
+            <h3 class="jury__name">Константин Констатинов</h3>
+            <p class="jury__description">
+              Описание об участнике жюри
+            </p>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="jury__item">
+            <img class="jury__avatar" src="images/jury/1.png" width="192" height="192" alt="Константин Констатинов">
+            <h3 class="jury__name">Константин Констатинов</h3>
+            <p class="jury__description">
+              Описание об участнике жюри
+            </p>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="jury__item">
+            <img class="jury__avatar" src="images/jury/1.png" width="192" height="192" alt="Константин Констатинов">
+            <h3 class="jury__name">Константин Констатинов</h3>
+            <p class="jury__description">
+              Описание об участнике жюри
+            </p>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="jury__item">
+            <img class="jury__avatar" src="images/jury/1.png" width="192" height="192" alt="Константин Констатинов">
+            <h3 class="jury__name">Константин Констатинов</h3>
+            <p class="jury__description">
+              Описание об участнике жюри
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+  <section class="price indent" id="price">
+  <div class="container">
+    <div class="price__inner">
+      <h2 class="price__title title-section">Стоимость участия в конкурсе</h2>
+      <p class="price__description">
+        Конкурсы Продюсерского центра «Northern World» отличаются призовым фондом без аналогов, прозрачным выбором
+        победителей, награждением ценными призами участников всех этапов и высоким уровнем организации.
+      </p>
+      <div class="price__cost">
+        <span class="price__value">1500</span>
+        <span class="price__currency">Рублей</span>
+      </div>
+      <a class="price__btn" href="">Принять участие</a>
+      <p class="price__info">
+        Центр предлагает перспективное сотрудничество и поддержку карьерного продвижения участников.
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <ul class="price__logos">
+      <li>
+        <img src="images/logos/1.svg" alt="логотип">
+      </li>
+      <li>
+        <img src="images/logos/2.svg" alt="логотип">
+      </li>
+      <li>
+        <img src="images/logos/3.svg" alt="логотип">
+      </li>
+      <li>
+        <img src="images/logos/4.svg" alt="логотип">
+      </li>
+      <li>
+        <img src="images/logos/5.svg" alt="логотип">
+      </li>
+      <li>
+        <img src="images/logos/6.svg" alt="логотип">
+      </li>
+      <li>
+        <img src="images/logos/7.svg" alt="логотип">
+      </li>
+      <li>
+        <img src="images/logos/8.svg" alt="логотип">
+      </li>
+    </ul>
+  </div>
+</section>
+  <section class="participation indent" id="participation">
+  <div class="container">
+    <h2 class="participation__title title-section">
+      Принять <span>участие</span> <br> в конкурсе
+    </h2>
+    <form class="participation__form" action="">
+      <div class="participation__block">
+        <span class="participation__label">Заполните контактные данные</span>
+        <div class="participation__fields">
+          <label>
+            <input class="input" type="text" name="phone" id="phone" placeholder="Свой номер телефона">
+          </label>
+          <label>
+            <input class="input" type="text" name="messenger" id="messenger" placeholder="Менеджер Whatsapp / Tg">
+          </label>
+        </div>
+      </div>
+      <div class="participation__block">
+        <span class="participation__label">Заполните свои личные данные</span>
+        <div class="participation__fields">
+          <label>
+            <input class="input" type="text" name="fullName" id="fullName" placeholder="ФИО">
+          </label>
+          <label>
+            <input class="input" type="text" name="age" id="age" placeholder="Возраст">
+          </label>
+          <label class="participation__fields long">
+            <input class="input" type="text" name="address" id="address" placeholder="Место проживания">
+          </label>
+        </div>
+      </div>
+      <div class="participation__block">
+        <span class="participation__label">Педагог <span>(при наличии)</span></span>
+        <span class="error">Пожалуйста, заполните все данные</span>
+        <div class="participation__fields">
+          <label>
+            <input class="input" type="text" name="teacher_fullName" id="teacher_fullName" placeholder="ФИО">
+          </label>
+          <label>
+            <input class="input" type="text" name="teacher_age" id="teacher_age" placeholder="Возраст">
+          </label>
+          <label class="participation__fields long">
+            <input class="input" type="text" name="teacher_schoolName" id="teacher_schoolName"
+                   placeholder="Название школы">
+          </label>
+        </div>
+      </div>
+      <div class="participation__block">
+        <span class="participation__label">Видеозаписи до 3 штук</span>
+        <button class="participation__load" type="button">
+          <svg class="participation__svg" width="472" height="136" viewBox="0 0 472 136" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="471" height="135" rx="67.5" stroke="#031F03" stroke-opacity="0.1"
+                  stroke-linecap="round" stroke-dasharray="12 12"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+                d="M18.2217 6.375C18.0226 6.375 17.8235 6.375 17.6244 6.375C16.5294 4.32955 14.3394 3 11.9502 3C9.66063 3 7.57014 4.32955 6.37557 6.375C6.17647 6.375 5.97738 6.375 5.77828 6.375C3.19005 6.375 1 8.625 1 11.3864C1 14.1477 3.19005 16.2955 5.87783 16.2955H8.46606C9.06335 16.2955 9.46154 15.8864 9.46154 15.2727C9.46154 14.6591 9.06335 14.25 8.46606 14.25H5.87783C4.28507 14.25 2.99095 12.9205 2.99095 11.3864C2.99095 9.85227 4.28507 8.42045 5.87783 8.42045C6.17647 8.42045 6.47511 8.42045 6.67421 8.52273C7.17195 8.72727 7.66968 8.42045 7.86878 7.90909C8.56561 6.17045 10.1584 5.04545 12.0498 5.04545C13.9412 5.04545 15.5339 6.17045 16.2308 7.90909C16.4299 8.42045 16.9276 8.625 17.4253 8.52273C17.724 8.42045 17.9231 8.42045 18.2217 8.42045C19.8145 8.42045 21.1086 9.75 21.1086 11.3864C21.1086 13.0227 19.8145 14.25 18.2217 14.25H13.0452V11.1818L14.0407 12.2045C14.2398 12.4091 14.5385 12.5114 14.7376 12.5114C14.9367 12.5114 15.2353 12.4091 15.4344 12.2045C15.8326 11.7955 15.8326 11.1818 15.4344 10.7727L12.6471 7.90909C12.5475 7.80682 12.448 7.70455 12.3484 7.70455C12.1493 7.60227 11.8507 7.60227 11.552 7.70455C11.4525 7.80682 11.3529 7.80682 11.2534 7.90909L8.56561 10.7727C8.16742 11.1818 8.16742 11.8977 8.56561 12.2045C8.9638 12.5114 9.56109 12.6136 9.95928 12.2045L10.9548 11.1818V19.9773C10.9548 20.5909 11.3529 21 11.9502 21C12.5475 21 12.9457 20.5909 12.9457 19.9773V16.2955H18.1222C20.81 16.2955 23 14.0455 23 11.2841C23 8.52273 20.9095 6.375 18.2217 6.375Z"
+                fill="#031F03"/>
+          </svg>
+          <div class="participation__info">
+            <span class="participation__text">Перетащите сюда, для загрузки</span>
+            <span class="participation__size">Максимальный размер: 5GB</span>
+          </div>
+        </button>
+      </div>
+      <a class="participation__btn" href="">Приступить к оплате</a>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="footer" id="community">
+  <div class="container">
+    <div class="footer__inner">
+      <nav class="footer__nav">
+        <ul class="footer__list">
+          <li>
+            <a class="footer__link" href="">Главная</a>
+          </li>
+          <li>
+            <a class="footer__link" href="">Особенности</a>
+          </li>
+          <li>
+            <a class="footer__link" href="">Призы</a>
+          </li>
+          <li>
+            <a class="footer__link" href="">Центр</a>
+          </li>
+          <li>
+            <a class="footer__link" href="">Стоимость</a>
+          </li>
+        </ul>
+      </nav>
+      <img src="images/logo-dark.svg" alt="логотип">
+      <div class="footer__right">
+        <a class="footer__top" href="">Подняться наверх</a>
+        <a class="tooltip tooltip--footer" href="">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+                d="M7.32374 11.7963C7.39366 11.866 7.44913 11.9488 7.48699 12.04C7.52484 12.1311 7.54433 12.2289 7.54433 12.3276C7.54433 12.4263 7.52484 12.524 7.48699 12.6152C7.44913 12.7064 7.39366 12.7892 7.32374 12.8588L7.00374 13.1788C6.66405 13.5198 6.26014 13.79 5.81536 13.9739C5.37058 14.1578 4.89377 14.2516 4.41249 14.2501C3.68769 14.2503 2.97912 14.0356 2.3764 13.633C1.77368 13.2304 1.30391 12.6582 1.02651 11.9886C0.749115 11.3189 0.676559 10.5821 0.818022 9.87125C0.959486 9.1604 1.30861 8.50747 1.82124 7.99509L3.99311 5.82321C4.45507 5.36132 5.03209 5.0313 5.66443 4.86731C6.29677 4.70332 6.96146 4.71132 7.58967 4.89049C8.21788 5.06966 8.78678 5.41348 9.23748 5.88637C9.68818 6.35925 10.0043 6.944 10.1531 7.58009C10.1778 7.6768 10.1829 7.77746 10.1681 7.87617C10.1533 7.97488 10.119 8.06965 10.0672 8.15493C10.0153 8.24021 9.94698 8.31428 9.86614 8.37281C9.78529 8.43133 9.69358 8.47313 9.59637 8.49576C9.49917 8.51839 9.39842 8.52138 9.30004 8.50458C9.20166 8.48777 9.10763 8.4515 9.02345 8.39789C8.93926 8.34427 8.86663 8.27439 8.8098 8.19235C8.75297 8.1103 8.71309 8.01774 8.69249 7.92009C8.60418 7.54461 8.4172 7.19952 8.15086 6.92051C7.88452 6.6415 7.54849 6.43869 7.17752 6.33304C6.80654 6.2274 6.41409 6.22275 6.04071 6.31958C5.66734 6.41641 5.32661 6.61121 5.05374 6.88384L2.88186 9.05571C2.57912 9.35821 2.37288 9.74369 2.28923 10.1634C2.20557 10.5831 2.24827 11.0182 2.41191 11.4137C2.57555 11.8091 2.85278 12.1472 3.20855 12.385C3.56432 12.6229 3.98264 12.75 4.41061 12.7501C4.69497 12.7509 4.97666 12.6953 5.23939 12.5865C5.50212 12.4777 5.74067 12.3179 5.94124 12.1163L6.26061 11.7963C6.3303 11.7263 6.41313 11.6708 6.50435 11.6329C6.59558 11.5949 6.69339 11.5754 6.79217 11.5754C6.89096 11.5754 6.98877 11.5949 7.07999 11.6329C7.17121 11.6708 7.25405 11.7263 7.32374 11.7963ZM14.1769 2.82321C13.4895 2.13603 12.5573 1.75 11.5853 1.75C10.6133 1.75 9.68114 2.13603 8.99374 2.82321L8.67436 3.14259C8.53346 3.28348 8.45431 3.47458 8.45431 3.67384C8.45431 3.87309 8.53346 4.06419 8.67436 4.20509C8.81526 4.34598 9.00635 4.42514 9.20561 4.42514C9.40487 4.42514 9.59596 4.34598 9.73686 4.20509L10.0569 3.88509C10.463 3.47897 11.0138 3.25082 11.5881 3.25082C12.1624 3.25082 12.7132 3.47897 13.1194 3.88509C13.5255 4.2912 13.7536 4.84201 13.7536 5.41634C13.7536 5.99067 13.5255 6.54147 13.1194 6.94759L10.9437 9.11634C10.7432 9.31797 10.5047 9.47781 10.2419 9.5866C9.97919 9.69539 9.69748 9.75096 9.41311 9.75009C8.9253 9.74974 8.4519 9.58461 8.0697 9.28149C7.6875 8.97836 7.41891 8.55501 7.30749 8.08009C7.2624 7.88631 7.14218 7.71839 6.97328 7.61325C6.80438 7.50811 6.60063 7.47437 6.40686 7.51946C6.21309 7.56455 6.04516 7.68476 5.94002 7.85366C5.83488 8.02256 5.80115 8.22631 5.84624 8.42009C6.03443 9.22438 6.4888 9.94152 7.13567 10.4552C7.78254 10.9689 8.58397 11.249 9.40999 11.2501H9.41311C9.89462 11.2514 10.3716 11.1572 10.8165 10.973C11.2614 10.7888 11.6653 10.5183 12.005 10.177L14.1769 8.00509C14.5172 7.66487 14.7871 7.26094 14.9713 6.81638C15.1554 6.37183 15.2502 5.89534 15.2502 5.41415C15.2502 4.93295 15.1554 4.45647 14.9713 4.01191C14.7871 3.56736 14.5172 3.16343 14.1769 2.82321Z"
+                fill="#031F03"/>
+          </svg>
+          Поделиться
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="js/main.min.js" type="module"></script>

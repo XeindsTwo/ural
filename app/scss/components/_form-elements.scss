@@ -1,0 +1,54 @@
+.input {
+  padding: 20px 24px;
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+  border-radius: 112px;
+  background-color: $light-gray;
+  letter-spacing: -0.14px;
+  border: 1px solid transparent;
+  transition: all .4s;
+  color: $deep-forest-green;
+
+  &:hover {
+    border-color: rgba($deep-forest-green, .16);
+
+    &::placeholder {
+      color: $deep-forest-green;
+    }
+  }
+
+  &:focus {
+    border-color: $deep-forest-green;
+
+    &::placeholder {
+      color: $deep-forest-green;
+    }
+  }
+
+  &::placeholder {
+    color: $sage-green;
+    transition: color .4s;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus {
+    -webkit-box-shadow: inset 0 0 0 50px $light-gray;
+    -webkit-text-fill-color: $deep-forest-green;
+  }
+
+  &:-webkit-autofill:hover {
+    -webkit-text-fill-color: $deep-forest-green;
+  }
+}
+
+.error {
+  display: none;
+  color: $red;
+  margin-bottom: -10px;
+  font-size: 14px;
+
+  &.active {
+    display: block;
+  }
+}

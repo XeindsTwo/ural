@@ -1,0 +1,20 @@
+@import 'vendor/reset';
+@import 'vendor/fonts';
+@import 'vendor/vars';
+@import 'vendor/mixin';
+@import 'vendor/global';
+
+@import "components/menu-btn";
+@import "components/btn";
+@import "components/footer";
+@import "components/header";
+@import "components/title-section";
+@import "components/form-elements";
+@import "components/tooltip";
+
+@import "home/home";
+@import "home/competition";
+@import "home/prizes";
+@import "home/jury";
+@import "home/price";
+@import "home/participation";
