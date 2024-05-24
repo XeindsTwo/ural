@@ -136,8 +136,13 @@
         width: 108%;
         height: 26px;
       }
-      @media (max-width: 440px) {
+      @media (max-width: 510px) {
         height: 22px;
+        top: 2px;
+      }
+      @media (max-width: 440px) {
+        height: 20px;
+        top: 1px;
       }
     }
   }

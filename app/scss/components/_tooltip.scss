@@ -9,6 +9,13 @@
   border: 1px solid transparent;
   transition: background-color .4s, border .4s, color .4s;
 
+  &.mobile {
+    @include r($phone) {
+      display: flex;
+      margin-bottom: 20px;
+    }
+  }
+
   &:hover {
     background-color: $teal-green50;
   }
@@ -58,6 +65,12 @@
     &.header {
       right: 17px;
       top: 60px;
+      @media (max-width: 840px) {
+        top: 52px;
+      }
+      @include r($phone) {
+        right: 20px;
+      }
     }
 
     &.footer {
