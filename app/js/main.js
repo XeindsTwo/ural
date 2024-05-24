@@ -1,8 +1,10 @@
 import {bindScrollToLinks} from './gsap.js';
 import {bindShareLinks} from './copy.js';
+import {animateCompetitionSection} from './animateCompetitionSection.js';
 
 bindScrollToLinks();
 bindShareLinks();
+animateCompetitionSection();
 
 new Swiper('.prizes__swiper', {
   loop: false,

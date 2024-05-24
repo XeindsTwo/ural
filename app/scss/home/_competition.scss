@@ -1,22 +1,122 @@
 .competition {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  @include r($lg) {
+    height: auto;
+  }
+
+  &__inner {
+    padding-top: 55px;
+    @include r($lg) {
+      padding-top: 20px;
+    }
+  }
+
+  &__top {
+    position: relative;
+    z-index: 1;
+  }
 
   &__title {
+    top: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     max-width: 690px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
+    z-index: 2;
+    @include r($lg) {
+      max-width: 640px;
+    }
+    @include r($tablet) {
+      max-width: 590px;
+    }
   }
 
   &__img {
     @include objectCoverBg;
-    margin-bottom: 192px;
+    position: relative;
+    transition: all .4s;
+    user-select: none;
+    @media (max-height: 700px) {
+      height: 590px;
+      margin: 0 auto;
+    }
+    @media (max-height: 665px) {
+      height: 560px;
+    }
+    @media (max-width: 1080px) {
+      height: 560px;
+    }
+    @include r($lg) {
+      height: 530px;
+      margin: 0 auto;
+    }
+    @media (max-width: 960px) {
+      height: 520px;
+    }
+    @media (max-width: 920px) {
+      height: 490px;
+    }
+    @media (max-width: 880px) {
+      height: 470px;
+    }
+    @media (max-width: 835px) {
+      height: 450px;
+    }
+    @media (max-width: 805px) {
+      height: 430px;
+    }
+    @include r($tablet) {
+      height: 400px;
+    }
+    @media (max-width: 710px) {
+      margin: 0 -20px;
+      height: auto;
+      min-width: 780px;
+    }
+    @include r($sm) {
+      min-width: 720px;
+    }
+    @media (max-width: 550px) {
+      min-width: 670px;
+    }
+    @include r($phone) {
+      min-width: 640px;
+    }
+    @media (max-width: 415px) {
+      min-width: 600px;
+    }
   }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
+    margin-top: 180px;
     margin-bottom: 48px;
+    @media (max-width: 1300px) {
+      margin-top: 140px;
+    }
+    @media (max-width: 1100px) {
+      margin-top: 100px;
+    }
+    @media (max-width: 1060px) {
+      grid-gap: 12px;
+    }
+    @media (max-width: 910px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 85px;
+    }
+    @media (max-width: 575px) {
+      margin-top: -50px;
+      z-index: 5;
+      position: relative;
+    }
   }
 
   &__item {
@@ -28,6 +128,19 @@
     padding: 24px 16px 16px 16px;
     border-radius: 16px 16px 52px 52px;
     background-color: $light-gray;
+    @media (max-width: 910px) {
+      width: 48%;
+    }
+    @include r($tablet) {
+      min-height: 390px;
+    }
+    @media (max-width: 575px) {
+      width: 100%;
+      max-width: 370px;
+    }
+    @include r($phone) {
+      min-height: 340px;
+    }
   }
 
   &__name {
@@ -37,6 +150,23 @@
     line-height: .8;
     font-weight: 700;
     color: $deep-forest-green;
+    @media (max-width: 1300px) {
+      font-size: 36px;
+    }
+    @include r($lg) {
+      font-size: 32px;
+      letter-spacing: -1px;
+      line-height: .85;
+    }
+    @include r($tablet) {
+      font-size: 28px;
+    }
+
+    br {
+      @media (max-width: 575px) {
+        display: none;
+      }
+    }
 
     span {
       font-style: italic;
@@ -56,6 +186,9 @@
     border: 1px solid transparent;
     color: $deep-forest-green;
     transition: background-color .4s, color .4s, border .4s;
+    @include r($phone) {
+      font-size: 14px;
+    }
 
     &:hover {
       background-color: transparent;
@@ -69,10 +202,29 @@
     }
   }
 
+  &__bottom {
+    @media (max-width: 710px) {
+      margin-top: -60px;
+    }
+  }
+
   &__text {
     font-size: 20px;
     text-align: center;
     max-width: 880px;
     margin: 0 auto;
+    @include r($tablet) {
+      font-size: 18px;
+      max-width: 690px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+    }
+
+    br {
+      @include r($lg) {
+        display: none;
+      }
+    }
   }
 }
