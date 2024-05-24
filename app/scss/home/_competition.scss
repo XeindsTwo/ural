@@ -30,8 +30,16 @@
     @include r($lg) {
       max-width: 640px;
     }
+    @media (max-width: 880px) {
+      position: static;
+      transform: none;
+      margin-bottom: 20px;
+    }
     @include r($tablet) {
       max-width: 590px;
+    }
+    @include r($phone) {
+      margin-bottom: 10px;
     }
   }
 
@@ -61,39 +69,43 @@
       height: 490px;
     }
     @media (max-width: 880px) {
-      height: 470px;
-    }
-    @media (max-width: 835px) {
-      height: 450px;
-    }
-    @media (max-width: 805px) {
-      height: 430px;
-    }
-    @include r($tablet) {
       height: 400px;
     }
+    @media (max-width: 835px) {
+      height: 380px;
+    }
+    @include r($tablet) {
+      height: 360px;
+    }
     @media (max-width: 710px) {
-      margin: 0 -20px;
-      height: auto;
-      min-width: 780px;
+      height: 330px;
     }
     @include r($sm) {
-      min-width: 720px;
+      height: 300px;
     }
     @media (max-width: 550px) {
-      min-width: 670px;
+      height: 270px;
     }
     @include r($phone) {
-      min-width: 600px;
+      height: 240px;
     }
-    @media (max-width: 415px) {
-      min-width: 560px;
+    @media (max-width: 440px) {
+      height: 230px;
     }
-    @media (max-width: 405px) {
-      min-width: 540px;
+    @media (max-width: 420px) {
+      height: 220px;
     }
-    @media (max-width: 380px) {
-      min-width: 530px;
+    @media (max-width: 410px) {
+      height: 210px;
+    }
+    @media (max-width: 400px) {
+      height: 200px;
+    }
+    @media (max-width: 385px) {
+      height: 190px;
+    }
+    @media (max-width: 358px) {
+      height: 185px;
     }
   }
 
@@ -116,7 +128,13 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 85px;
+      margin-top: 80px;
+    }
+    @include r($tablet) {
+      margin-top: 60px;
+    }
+    @include r($sm) {
+      margin-top: 40px;
     }
     @media (max-width: 575px) {
       z-index: 5;
@@ -129,22 +147,20 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    min-height: 415px;
+    min-height: 355px;
     padding: 24px 16px 16px 16px;
     border-radius: 16px 16px 52px 52px;
     background-color: $light-gray;
     @media (max-width: 910px) {
       width: 48%;
-    }
-    @include r($tablet) {
-      min-height: 390px;
+      min-height: 330px;
     }
     @media (max-width: 575px) {
       width: 100%;
       max-width: 370px;
     }
     @include r($phone) {
-      min-height: 340px;
+      min-height: 300px;
       padding-bottom: 14px;
     }
   }
@@ -166,6 +182,15 @@
     }
     @include r($tablet) {
       font-size: 28px;
+      letter-spacing: -0.7px;
+    }
+    @include r($sm) {
+      font-size: 26px;
+      line-height: .9;
+      letter-spacing: -0.4px;
+    }
+    @include r($phone) {
+      letter-spacing: -0.2px;
     }
 
     br {
@@ -182,6 +207,7 @@
 
   &__step {
     color: $teal-green;
+    display: none;
   }
 
   &__btn {
@@ -205,12 +231,6 @@
       background-color: $teal-green;
       border-color: $teal-green;
       color: $white;
-    }
-  }
-
-  &__bottom {
-    @media (max-width: 710px) {
-      margin-top: -60px;
     }
   }
 

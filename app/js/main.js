@@ -23,6 +23,8 @@ new Swiper('.prizes__swiper', {
       spaceBetween: 16,
     },
     992: {
+      slidesPerView: 4,
+      slidesPerGroup: 2,
       spaceBetween: 12
     },
     860: {
@@ -62,6 +64,8 @@ new Swiper('.jury__swiper', {
       spaceBetween: 16,
     },
     992: {
+      slidesPerView: 4,
+      slidesPerGroup: 2,
       spaceBetween: 12
     },
     860: {
