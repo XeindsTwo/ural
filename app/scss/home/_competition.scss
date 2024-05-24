@@ -84,10 +84,16 @@
       min-width: 670px;
     }
     @include r($phone) {
-      min-width: 640px;
+      min-width: 600px;
     }
     @media (max-width: 415px) {
-      min-width: 600px;
+      min-width: 560px;
+    }
+    @media (max-width: 405px) {
+      min-width: 540px;
+    }
+    @media (max-width: 380px) {
+      min-width: 530px;
     }
   }
 
@@ -113,7 +119,6 @@
       margin-top: 85px;
     }
     @media (max-width: 575px) {
-      margin-top: -50px;
       z-index: 5;
       position: relative;
     }
@@ -140,6 +145,7 @@
     }
     @include r($phone) {
       min-height: 340px;
+      padding-bottom: 14px;
     }
   }
 
