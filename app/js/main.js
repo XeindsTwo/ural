@@ -28,7 +28,7 @@ new Swiper('.prizes__swiper', {
       slidesPerGroup: 3,
       spaceBetween: 12
     },
-    515: {
+    555: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 12
