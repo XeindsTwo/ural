@@ -43,6 +43,14 @@
   &:-webkit-autofill:hover {
     -webkit-text-fill-color: $deep-forest-green;
   }
+
+  &--error {
+    border-color: $red;
+
+    &::placeholder {
+      color: $red;
+    }
+  }
 }
 
 .error {

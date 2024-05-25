@@ -69,7 +69,7 @@
     padding: 29px 20px;
     font-weight: 400;
     border: 1px dashed rgba(3, 31, 3, 0.10);
-    transition: border .4s;
+    transition: border .4s, background-color .4s;
     background-color: $light-gray;
     @media (max-width: 515px) {
       border-radius: 55px;
@@ -83,6 +83,10 @@
 
     &:hover {
       border-color: rgba(3, 31, 3, 0.40);
+    }
+
+    &:focus {
+      background-color: rgba($teal-green50, .2);
     }
   }
 
