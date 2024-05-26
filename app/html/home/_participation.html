@@ -10,10 +10,14 @@
           <span class="error" :class="{ active: errors.contact }">Пожалуйста, заполните все поля</span>
           <div class="participation__fields">
             <label>
-              <input v-model="form.contact.phone" class="input" type="text" name="phone" id="phone" data-tel-input placeholder="Свой номер телефона" :class="{ 'input--error': errors.contact && !form.contact.phone }">
+              <input v-model="form.contact.phone" class="input" type="text" name="phone" id="phone" data-tel-input
+                     placeholder="Свой номер телефона" maxlength="30"
+                     :class="{ 'input--error': errors.contact && !form.contact.phone }">
             </label>
             <label>
-              <input v-model="form.contact.messenger" class="input" type="text" name="messenger" id="messenger" placeholder="Менеджер Whatsapp / Tg" :class="{ 'input--error': errors.contact && !form.contact.messenger }">
+              <input v-model="form.contact.messenger" class="input" type="text" name="messenger" id="messenger"
+                     placeholder="Менеджер Whatsapp / Tg" maxlength="255"
+                     :class="{ 'input--error': errors.contact && !form.contact.messenger }">
             </label>
           </div>
         </div>
@@ -24,41 +28,71 @@
           <span class="error active" v-if="errors.ageMax">Максимальный возраст - 70 лет</span>
           <div class="participation__fields">
             <label>
-              <input v-model="form.personal.fullName" class="input" type="text" name="fullName" id="fullName" placeholder="ФИО" :class="{ 'input--error': errors.personal && !form.personal.fullName }">
+              <input v-model="form.personal.fullName" class="input" type="text" name="fullName" id="fullName"
+                     placeholder="ФИО" maxlength="255"
+                     :class="{ 'input--error': errors.personal && !form.personal.fullName }">
             </label>
             <label>
-              <input v-model="form.personal.age" class="input" type="number" name="age" id="age" placeholder="Возраст" :class="{ 'input--error': (errors.personal || errors.ageMin || errors.ageMax) && !form.personal.age }">
+              <input v-model="form.personal.age" class="input" type="number" name="age" id="age" placeholder="Возраст"
+                     :class="{ 'input--error': (errors.personal || errors.ageMin || errors.ageMax) && !form.personal.age }">
             </label>
             <label class="participation__fields long">
-              <input v-model="form.personal.address" class="input" type="text" name="address" id="address" placeholder="Место проживания" :class="{ 'input--error': errors.personal && !form.personal.address }">
+              <input v-model="form.personal.address" class="input" type="text" name="address" id="address"
+                     placeholder="Место проживания" maxlength="255"
+                     :class="{ 'input--error': errors.personal && !form.personal.address }">
             </label>
           </div>
         </div>
         <div class="participation__block">
           <span class="participation__label">Педагог <span>(при наличии)</span></span>
           <span class="error" :class="{ active: errors.teacher }">Пожалуйста, заполните все поля</span>
+          <span class="error active" v-if="errors.teacherAgeMin">Минимальный возраст - 18 лет</span>
+          <span class="error active" v-if="errors.teacherAgeMax">Максимальный возраст - 90 лет</span>
           <div class="participation__fields">
             <label>
-              <input v-model="form.teacher.fullName" class="input" type="text" name="teacher_fullName" id="teacher_fullName" placeholder="ФИО" :class="{ 'input--error': errors.teacher && !form.teacher.fullName }">
+              <input v-model="form.teacher.fullName" class="input" type="text" name="teacher_fullName"
+                     id="teacher_fullName" placeholder="ФИО" maxlength="255"
+                     :class="{ 'input--error': errors.teacher && !form.teacher.fullName }">
             </label>
             <label>
-              <input v-model="form.teacher.age" class="input" type="number" name="teacher_age" id="teacher_age" placeholder="Возраст" :class="{ 'input--error': errors.teacher && !form.teacher.age }" min="10" max="70">
+              <input v-model="form.teacher.age" class="input" type="number" name="teacher_age" id="teacher_age"
+                     placeholder="Возраст" :class="{ 'input--error': errors.teacher && !form.teacher.age }">
             </label>
             <label class="participation__fields long">
-              <input v-model="form.teacher.schoolName" class="input" type="text" name="teacher_schoolName" id="teacher_schoolName" placeholder="Название школы" :class="{ 'input--error': errors.teacher && !form.teacher.schoolName }">
+              <input v-model="form.teacher.schoolName" class="input" type="text" name="teacher_schoolName"
+                     id="teacher_schoolName" placeholder="Название школы" maxlength="255"
+                     :class="{ 'input--error': errors.teacher && !form.teacher.schoolName }">
             </label>
           </div>
         </div>
         <div class="participation__block">
-          <span class="participation__label">Видеозаписи до 3 штук</span>
-          <button class="participation__load" type="button">
-            <div class="participation__info">
-              <span class="participation__text">Перетащите сюда, для загрузки</span>
-              <span class="participation__size">Максимальный размер: 5GB</span>
-            </div>
-          </button>
+          <span class="participation__label">Видеозапись</span>
+          <span class="error" :class="{ active: errors.video }">Ошибка загрузки видео, повторите попытку</span>
+          <span class="error" :class="{ active: errors.videoRequired }">Пожалуйста, загрузите видео</span>
+          <div class="participation__loader">
+            <label for="video" class="participation__load"
+                   :class="{ loading: form.video, 'error-load': errors.videoSizeExceeded }">
+              <img src="images/icons/load.svg" alt="load icon">
+              <div class="participation__info">
+                <span class="participation__text">Перетащите сюда, для загрузки</span>
+                <div class="participation__file">
+                  <span class="participation__size">Максимальный размер: 3.5 ГБ</span>
+                  <span class="participation__file-load" v-if="form.video">Видео загружено</span>
+                </div>
+              </div>
+            </label>
+            <input type="file" id="video" name="video" accept="video/*" @change="handleFileChange"
+                   style="display: none;">
+          </div>
         </div>
-        <button class="participation__btn" type="submit">Приступить к оплате</button>
+        <span class="error" :class="{ active: errors.formSubmission }">Произошла ошибка при отправке заявки, попробуйте ещё раз позже</span>
+        <button class="participation__btn" type="submit" :disabled="submitting">
+          <svg v-if="submitting" class="circular-loader" viewBox="25 25 50 50">
+            <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke="#031F03" stroke-width="3"/>
+          </svg>
+          <span v-if="!submitting">Приступить к оплате</span>
+          <span v-else>Отправка данных</span>
+        </button>
       </form>
     </div>
   </div>
@@ -82,42 +116,164 @@
           fullName: '',
           age: '',
           schoolName: ''
-        }
+        },
+        video: null
       },
       errors: {
         contact: false,
         personal: false,
         teacher: false,
         ageMin: false,
-        ageMax: false
-      }
+        ageMax: false,
+        teacherAgeMin: false,
+        teacherAgeMax: false,
+        video: false,
+        videoRequired: false,
+        videoSizeExceeded: false,
+        formSubmission: false
+      },
+      errorTimer: null,
+      submitting: false
     },
     methods: {
+      handleFileChange(event) {
+        const file = event.target.files[0];
+        if (file && this.form.video && file.name === this.form.video.name && file.size === this.form.video.size) {
+          this.errors.video = true;
+          return;
+        }
+
+        if (file) {
+          document.getElementById('video').value = '';
+          this.errors.videoSizeExceeded = file.size > 3500 * 1024 * 1024;
+          if (!this.errors.videoSizeExceeded) {
+            this.form.video = file;
+          } else {
+            this.form.video = null;
+          }
+          this.errors.videoRequired = false;
+        }
+
+        this.errors.video = false;
+        clearTimeout(this.errorTimer);
+        this.errorTimer = setTimeout(() => {
+          this.errors.videoSizeExceeded = false;
+        }, 2800);
+      },
+      removeVideo() {
+        document.getElementById('video').value = '';
+        this.form.video = null;
+
+        clearTimeout(this.errorTimer);
+        this.errors.videoSizeExceeded = false;
+      },
       validateForm() {
+        if (this.form.video) {
+          this.errors.videoSizeExceeded = this.form.video.size > 3500 * 1024 * 1024;
+          this.errors.videoRequired = false;
+        } else {
+          this.errors.videoRequired = true;
+        }
+
         this.errors.contact = !this.form.contact.phone || !this.form.contact.messenger;
         this.errors.personal = !this.form.personal.fullName || !this.form.personal.age || !this.form.personal.address;
+
+        const personalAge = parseInt(this.form.personal.age);
+        const teacherAge = parseInt(this.form.teacher.age);
+
+        this.errors.ageMin = personalAge < 10;
+        this.errors.ageMax = personalAge > 70;
+
+        if (this.form.teacher.age) {
+          this.errors.teacherAgeMin = teacherAge < 18;
+          this.errors.teacherAgeMax = teacherAge > 90;
+        }
 
         const teacherFields = [this.form.teacher.fullName, this.form.teacher.age, this.form.teacher.schoolName];
         const anyTeacherFieldFilled = teacherFields.some(field => field.trim() !== '');
         const allTeacherFieldsFilled = teacherFields.every(field => field.trim() !== '');
-        this.errors.teacher = anyTeacherFieldFilled && !allTeacherFieldsFilled;
 
-        // Validate age
-        const age = parseInt(this.form.personal.age);
-        this.errors.ageMin = age < 10;
-        this.errors.ageMax = age > 70;
-
-        if (!this.errors.contact && !this.errors.personal && !this.errors.teacher && !this.errors.ageMin && !this.errors.ageMax) {
-          // Proceed to payment
-        } else {
-          setTimeout(() => {
-            this.errors.contact = false;
-            this.errors.personal = false;
-            this.errors.teacher = false;
-            this.errors.ageMin = false;
-            this.errors.ageMax = false;
-          }, 2800);
+        if (anyTeacherFieldFilled) {
+          this.errors.teacher = !allTeacherFieldsFilled;
         }
+
+        if (!this.hasErrors()) {
+          this.sendForm(anyTeacherFieldFilled);
+        }
+
+        clearTimeout(this.errorTimer);
+        this.errorTimer = setTimeout(() => {
+          this.resetForm();
+        }, 2800);
+
+        return Promise.resolve();
+      },
+      hasErrors() {
+        for (const error in this.errors) {
+          if (this.errors.hasOwnProperty(error) && this.errors[error]) {
+            return true;
+          }
+        }
+        return false;
+      },
+      async sendForm(teacherFilled = false) {
+        try {
+          this.submitting = true;
+
+          const formData = new FormData();
+          formData.append('contact[phone]', this.form.contact.phone);
+          formData.append('contact[messenger]', this.form.contact.messenger);
+          formData.append('personal[fullName]', this.form.personal.fullName);
+          formData.append('personal[age]', this.form.personal.age);
+          formData.append('personal[address]', this.form.personal.address);
+
+          if (teacherFilled) {
+            formData.append('teacher[fullName]', this.form.teacher.fullName.trim() || '');
+            formData.append('teacher[age]', this.form.teacher.age.trim() || '');
+            formData.append('teacher[schoolName]', this.form.teacher.schoolName.trim() || '');
+          }
+
+          if (this.form.video) {
+            formData.append('video', this.form.video);
+          }
+
+          const response = await fetch('php/includes/process_form.php', {
+            method: 'POST',
+            body: formData
+          });
+
+          if (!response.ok) {
+            const data = await response.json();
+            console.error(data.message);
+            this.errors.formSubmission = true;
+
+            setTimeout(() => {
+              this.errors.formSubmission = false;
+            }, 4000);
+          } else {
+            this.resetForm();
+          }
+        } catch (error) {
+          console.error('Error sending form data:', error);
+          this.errors.formSubmission = true;
+
+          setTimeout(() => {
+            this.errors.formSubmission = false;
+          }, 4000);
+        } finally {
+          this.submitting = false; // Устанавливаем флаг submitting в false после завершения запроса, включая обработку ошибок
+        }
+      },
+      resetForm() {
+        this.errors.contact = false;
+        this.errors.personal = false;
+        this.errors.teacher = false;
+        this.errors.ageMin = false;
+        this.errors.ageMax = false;
+        this.errors.teacherAgeMin = false;
+        this.errors.teacherAgeMax = false;
+        this.errors.videoRequired = false;
+        this.errors.videoSizeExceeded = false;
       }
     }
   });

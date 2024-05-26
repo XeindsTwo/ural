@@ -9,8 +9,14 @@
   border: 1px solid transparent;
   transition: all .4s;
   color: $deep-forest-green;
+  @include r($sm) {
+    padding: 19px 20px;
+  }
   @media (max-width: 515px) {
     border-radius: 25px;
+  }
+  @include r($phone) {
+    padding: 19px 17px;
   }
 
   &:hover {
@@ -58,6 +64,9 @@
   color: $red;
   margin-bottom: -10px;
   font-size: 14px;
+  @include r($phone) {
+    margin-bottom: -5px;
+  }
 
   &.active {
     display: block;
