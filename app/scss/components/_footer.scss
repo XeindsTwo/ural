@@ -39,11 +39,7 @@
   }
 
   &__list {
-    padding-left: 8px;
     @include flex-align-center(16);
-    @media (max-width: 1060px) {
-      padding-left: 0;
-    }
     @include r($sm) {
       flex-wrap: wrap;
       justify-content: center;
@@ -112,5 +108,32 @@
     @include r($tablet) {
       order: -1;
     }
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+    font-size: 12px;
+
+    align-items: flex-start;
+    opacity: .6;
+  }
+
+  &__address {
+    max-width: 310px;
+  }
+
+  &__phone {
+    transition: color .4s;
+    margin-left: auto;
+    &:hover {
+      color: $teal-green;
+    }
+  }
+
+  &__konkurs {
+    font-size: 12px;
+    padding-bottom: 8px;
   }
 }

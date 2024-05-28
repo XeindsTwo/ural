@@ -1,0 +1,115 @@
+.admin {
+  padding-bottom: 20px;
+
+  &__title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  &__logout {
+    display: flex;
+    font-size: 14px;
+    max-width: max-content;
+    color: $red;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: color .4s, border .4s;
+    margin-bottom: 50px;
+
+    &:hover {
+      color: $forest-green;
+    }
+
+    &:focus {
+      border-color: $red;
+    }
+  }
+
+  &__search {
+    max-width: 560px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  &__day {
+    &:not(:last-child) {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba($forest-green, .2);
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 710px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    border: 1px solid $olive-green;
+    padding: 20px;
+    border-radius: 10px;
+    @include flex-column(14);
+  }
+
+  &__date {
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  &__head {
+    @include flex-align-center(10);
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 10px;
+    @media (max-width: 880px) {
+      font-size: 16px;
+    }
+  }
+
+  &__view {
+    display: flex;
+    max-width: max-content;
+    color: #1890ea;
+    border: 1px solid transparent;
+    padding: 1px 0;
+    border-radius: 5px;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: $teal-green;
+    }
+
+    &:focus {
+      border-color: $teal-green;
+      color: $teal-green;
+    }
+  }
+
+  &__delete {
+    color: $red;
+    border-radius: 5px;
+    transition: color .4s, border .4s;
+    border: 1px solid transparent;
+    padding: 1px 0;
+
+    &:hover {
+      color: #9a0000;
+    }
+
+    &:focus {
+      border-color: #9a0000;
+      color: #9a0000;
+    }
+  }
+
+  &__teacher {
+    @include flex-column(12);
+  }
+}
