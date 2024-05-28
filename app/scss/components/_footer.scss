@@ -115,6 +115,10 @@
     gap: 30px;
     margin-top: 10px;
     font-size: 12px;
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 8px;
+    }
 
     align-items: flex-start;
     opacity: .6;
@@ -122,17 +126,25 @@
 
   &__address {
     max-width: 310px;
+    @media (max-width: 900px) {
+      max-width: 100%;
+    }
   }
 
   &__phone {
     transition: color .4s;
     margin-left: auto;
+    @media (max-width: 900px) {
+      margin-left: 0;
+    }
+
     &:hover {
       color: $teal-green;
     }
   }
 
   &__konkurs {
+    display: inline-block;
     font-size: 12px;
     padding-bottom: 8px;
   }
