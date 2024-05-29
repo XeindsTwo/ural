@@ -258,6 +258,51 @@
       transition: all .4s;
     }
   }
+
+  &__contact {
+    margin-top: -10px;
+    @include flex-column(10);
+    font-size: 15px;
+
+    span {
+      font-size: 17px;
+      margin-bottom: 0px;
+    }
+
+    a {
+      transition: color .4s, opacity .4s, border .4s;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding-bottom: 3px;
+      opacity: 1;
+
+      &:focus {
+        opacity: 1;
+        color: $teal-green;
+        border-color: $teal-green;
+      }
+    }
+
+    &-socials {
+      @include flex-align-center(10);
+
+      a {
+        width: 48px;
+        height: 48px;
+        padding: 7px;
+        border-radius: 50%;
+        background-color: $teal-green;
+        @include flex-center;
+
+        &.telegram {
+          background-color: #2AABEE;
+          svg {
+            transform: translateX(-2px);
+          }
+        }
+      }
+    }
+  }
 }
 
 .circular-loader {

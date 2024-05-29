@@ -29,8 +29,11 @@
   }
 
   &--header {
-    @media (max-width: 840px) {
+    @media (max-width: 980px) {
       display: flex;
+    }
+    @include r($sm) {
+      margin-left: auto;
     }
   }
 

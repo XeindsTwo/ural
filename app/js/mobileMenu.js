@@ -2,7 +2,7 @@ export function setupMobileMenu() {
   const html = document.documentElement;
   const menuBtn = document.querySelector('.menu-btn');
   const headerMobile = document.querySelector('.header__mobile');
-  const anchors = document.querySelectorAll('a.header__link.mobile');
+  const anchors = document.querySelectorAll('a.mobile');
 
   menuBtn.addEventListener('click', () => {
     menuBtn.blur();

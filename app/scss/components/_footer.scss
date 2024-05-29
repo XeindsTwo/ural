@@ -93,6 +93,11 @@
     color: $midnight-blue;
   }
 
+  &__logo {
+    width: auto;
+    height: 44px;
+  }
+
   &__right {
     @include flex-align-center(16);
     justify-content: flex-end;
