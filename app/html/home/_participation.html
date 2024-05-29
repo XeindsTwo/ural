@@ -8,6 +8,7 @@
         <div class="participation__block">
           <span class="participation__label">Заполните контактные данные</span>
           <span class="error" :class="{ active: errors.contact }">Пожалуйста, заполните все поля</span>
+          <span class="error" :class="{ active: errors.emailInvalid }">Пожалуйста, введите корректный адрес электронной почты</span>
           <div class="participation__fields">
             <label>
               <input v-model="form.contact.phone" class="input" type="text" name="phone" id="phone" data-tel-input
@@ -16,8 +17,96 @@
             </label>
             <label>
               <input v-model="form.contact.messenger" class="input" type="text" name="messenger" id="messenger"
-                     placeholder="Менеджер Whatsapp / Tg" maxlength="255"
+                     placeholder="Электронная почта" maxlength="255"
                      :class="{ 'input--error': errors.contact && !form.contact.messenger }">
+            </label>
+            <label class="participation__fields long">
+              <select id="mySelect" class="choices" placeholder="Выберите регион">
+                <option disabled selected hidden>Выберите регион</option>
+                <option value="Адыгея">Республика Адыгея</option>
+                <option value="Алтай">Республика Алтай</option>
+                <option value="Башкортостан">Республика Башкортостан</option>
+                <option value="Бурятия">Республика Бурятия</option>
+                <option value="Дагестан">Республика Дагестан</option>
+                <option value="Ингушетия">Республика Ингушетия</option>
+                <option value="Кабардино-Балкария">Кабардино-Балкарская Республика</option>
+                <option value="Калмыкия">Республика Калмыкия</option>
+                <option value="Карачаево-Черкессия">Карачаево-Черкесская Республика</option>
+                <option value="Карелия">Республика Карелия</option>
+                <option value="Коми">Республика Коми</option>
+                <option value="Марий Эл">Республика Марий Эл</option>
+                <option value="Мордовия">Республика Мордовия</option>
+                <option value="Саха (Якутия)">Республика Саха (Якутия)</option>
+                <option value="Северная Осетия - Алания">Республика Северная Осетия - Алания</option>
+                <option value="Татарстан">Республика Татарстан</option>
+                <option value="Тыва">Республика Тыва</option>
+                <option value="Удмуртская">Удмуртская Республика</option>
+                <option value="Хакасия">Республика Хакасия</option>
+                <option value="Чеченская">Чеченская Республика</option>
+                <option value="Чувашская Республика">Чувашская Республика</option>
+                <option value="Алтайский край">Алтайский край</option>
+                <option value="Забайкальский край">Забайкальский край</option>
+                <option value="Камчатский край">Камчатский край</option>
+                <option value="Краснодарский край">Краснодарский край</option>
+                <option value="Красноярский край">Красноярский край</option>
+                <option value="Пермский край">Пермский край</option>
+                <option value="Приморский край">Приморский край</option>
+                <option value="Ставропольский край">Ставропольский край</option>
+                <option value="Хабаровский край">Хабаровский край</option>
+                <option value="Амурская область">Амурская область</option>
+                <option value="Архангельская область">Архангельская область</option>
+                <option value="Астраханская область">Астраханская область</option>
+                <option value="Белгородская область">Белгородская область</option>
+                <option value="Брянская область">Брянская область</option>
+                <option value="Владимирская область">Владимирская область</option>
+                <option value="Волгоградская область">Волгоградская область</option>
+                <option value="Вологодская область">Вологодская область</option>
+                <option value="Воронежская область">Воронежская область</option>
+                <option value="Ивановская область">Ивановская область</option>
+                <option value="Иркутская область">Иркутская область</option>
+                <option value="Калининградская область">Калининградская область</option>
+                <option value="Калужская область">Калужская область</option>
+                <option value="Кемеровская область">Кемеровская область</option>
+                <option value="Кировская область">Кировская область</option>
+                <option value="Костромская область">Костромская область</option>
+                <option value="Курганская область">Курганская область</option>
+                <option value="Курская область">Курская область</option>
+                <option value="Ленинградская область">Ленинградская область</option>
+                <option value="Липецкая область">Липецкая область</option>
+                <option value="Магаданская область">Магаданская область</option>
+                <option value="Московская область">Московская область</option>
+                <option value="Мурманская область">Мурманская область</option>
+                <option value="Нижегородская область">Нижегородская область</option>
+                <option value="Новгородская область">Новгородская область</option>
+                <option value="Новосибирская область">Новосибирская область</option>
+                <option value="Омская область">Омская область</option>
+                <option value="Оренбургская область">Оренбургская область</option>
+                <option value="Орловская область">Орловская область</option>
+                <option value="Пензенская область">Пензенская область</option>
+                <option value="Псковская область">Псковская область</option>
+                <option value="Ростовская область">Ростовская область</option>
+                <option value="Рязанская область">Рязанская область</option>
+                <option value="Самарская область">Самарская область</option>
+                <option value="Саратовская область">Саратовская область</option>
+                <option value="Сахалинская область">Сахалинская область</option>
+                <option value="Свердловская область">Свердловская область</option>
+                <option value="Смоленская область">Смоленская область</option>
+                <option value="Тамбовская область">Тамбовская область</option>
+                <option value="Тверская область">Тверская область</option>
+                <option value="Томская область">Томская область</option>
+                <option value="Тульская область">Тульская область</option>
+                <option value="Тюменская область">Тюменская область</option>
+                <option value="Ульяновская область">Ульяновская область</option>
+                <option value="Челябинская область">Челябинская область</option>
+                <option value="Ярославская область">Ярославская область</option>
+                <option value="Москва">Москва</option>
+                <option value="Санкт-Петербург">Санкт-Петербург</option>
+                <option value="Еврейская АО">Еврейская АО</option>
+                <option value="Ненецкий АО">Ненецкий АО</option>
+                <option value="Ханты-Мансийский АО">Ханты-Мансийский АО</option>
+                <option value="Чукотский АО">Чукотский АО</option>
+                <option value="Ямало-Ненецкий АО">Ямало-Ненецкий АО</option>
+              </select>
             </label>
           </div>
         </div>
@@ -46,17 +135,11 @@
         <div class="participation__block">
           <span class="participation__label">Педагог <span>(при наличии)</span></span>
           <span class="error" :class="{ active: errors.teacher }">Пожалуйста, заполните все поля</span>
-          <span class="error active" v-if="errors.teacherAgeMin">Минимальный возраст - 18 лет</span>
-          <span class="error active" v-if="errors.teacherAgeMax">Максимальный возраст - 90 лет</span>
           <div class="participation__fields">
-            <label>
+            <label class="participation__fields long">
               <input v-model="form.teacher.fullName" class="input" type="text" name="teacher_fullName"
                      id="teacher_fullName" placeholder="ФИО" maxlength="255"
                      :class="{ 'input--error': errors.teacher && !form.teacher.fullName }">
-            </label>
-            <label>
-              <input v-model="form.teacher.age" class="input" type="number" name="teacher_age" id="teacher_age"
-                     placeholder="Возраст" :class="{ 'input--error': errors.teacher && !form.teacher.age }">
             </label>
             <label class="participation__fields long">
               <input v-model="form.teacher.schoolName" class="input" type="text" name="teacher_schoolName"
@@ -69,6 +152,7 @@
           <span class="participation__label">Видеозапись</span>
           <span class="error" :class="{ active: errors.video }">Ошибка загрузки видео, повторите попытку</span>
           <span class="error" :class="{ active: errors.videoRequired }">Пожалуйста, загрузите видео</span>
+          <span class="error" :class="{ active: errors.invalidFileType }">Загружать можно только видеофайлы</span>
           <div class="participation__loader">
             <label for="video" class="participation__load"
                    :class="{ loading: form.video, 'error-load': errors.videoSizeExceeded }">
@@ -97,7 +181,9 @@
     </div>
   </div>
 </section>
+
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <script>
   new Vue({
     el: '#app',
@@ -114,7 +200,6 @@
         },
         teacher: {
           fullName: '',
-          age: '',
           schoolName: ''
         },
         video: null
@@ -122,32 +207,48 @@
       errors: {
         contact: false,
         personal: false,
+        emailInvalid: false,
         teacher: false,
         ageMin: false,
         ageMax: false,
-        teacherAgeMin: false,
-        teacherAgeMax: false,
         video: false,
         videoRequired: false,
         videoSizeExceeded: false,
+        invalidFileType: false,
         formSubmission: false
       },
       errorTimer: null,
-      submitting: false
+      submitting: false,
+    },
+    mounted() {
+      new Choices('#mySelect', {
+        searchEnabled: true,
+        placeholder: true,
+        placeholderValue: 'Выберите регион',
+        searchPlaceholderValue: 'Поиск...',
+      });
     },
     methods: {
       handleFileChange(event) {
         const file = event.target.files[0];
+        const allowedTypes = ['video/mp4', 'video/webm', 'video/ogg'];
+
         if (file && this.form.video && file.name === this.form.video.name && file.size === this.form.video.size) {
-          this.errors.video = true;
           return;
         }
 
-        if (file) {
+        if (file && !allowedTypes.includes(file.type)) {
+          this.errors.invalidFileType = true;
+          this.form.video = null;
+        } else if (file && this.form.video && file.name === this.form.video.name && file.size === this.form.video.size) {
+          this.errors.video = true;
+          return;
+        } else if (file) {
           document.getElementById('video').value = '';
           this.errors.videoSizeExceeded = file.size > 3500 * 1024 * 1024;
           if (!this.errors.videoSizeExceeded) {
             this.form.video = file;
+            this.errors.invalidFileType = false;
           } else {
             this.form.video = null;
           }
@@ -158,6 +259,7 @@
         clearTimeout(this.errorTimer);
         this.errorTimer = setTimeout(() => {
           this.errors.videoSizeExceeded = false;
+          this.errors.invalidFileType = false;
         }, 2800);
       },
       removeVideo() {
@@ -166,6 +268,7 @@
 
         clearTimeout(this.errorTimer);
         this.errors.videoSizeExceeded = false;
+        this.errors.invalidFileType = false;
       },
       validateForm() {
         if (this.form.video) {
@@ -175,21 +278,20 @@
           this.errors.videoRequired = true;
         }
 
+        const emailPattern = /^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (this.form.contact.messenger && !emailPattern.test(this.form.contact.messenger)) {
+          this.errors.emailInvalid = true;
+        }
+
         this.errors.contact = !this.form.contact.phone || !this.form.contact.messenger;
         this.errors.personal = !this.form.personal.fullName || !this.form.personal.age || !this.form.personal.address;
 
         const personalAge = parseInt(this.form.personal.age);
-        const teacherAge = parseInt(this.form.teacher.age);
 
         this.errors.ageMin = personalAge < 10;
         this.errors.ageMax = personalAge > 70;
 
-        if (this.form.teacher.age) {
-          this.errors.teacherAgeMin = teacherAge < 18;
-          this.errors.teacherAgeMax = teacherAge > 90;
-        }
-
-        const teacherFields = [this.form.teacher.fullName, this.form.teacher.age, this.form.teacher.schoolName];
+        const teacherFields = [this.form.teacher.fullName, this.form.teacher.schoolName];
         const anyTeacherFieldFilled = teacherFields.some(field => field.trim() !== '');
         const allTeacherFieldsFilled = teacherFields.every(field => field.trim() !== '');
 
@@ -229,7 +331,6 @@
 
           if (teacherFilled) {
             formData.append('teacher[fullName]', this.form.teacher.fullName.trim() || '');
-            formData.append('teacher[age]', this.form.teacher.age.trim() || '');
             formData.append('teacher[schoolName]', this.form.teacher.schoolName.trim() || '');
           }
 
@@ -261,19 +362,19 @@
             this.errors.formSubmission = false;
           }, 4000);
         } finally {
-          this.submitting = false; // Устанавливаем флаг submitting в false после завершения запроса, включая обработку ошибок
+          this.submitting = false;
         }
       },
       resetForm() {
         this.errors.contact = false;
         this.errors.personal = false;
         this.errors.teacher = false;
+        this.errors.emailInvalid = false;
         this.errors.ageMin = false;
         this.errors.ageMax = false;
-        this.errors.teacherAgeMin = false;
-        this.errors.teacherAgeMax = false;
         this.errors.videoRequired = false;
         this.errors.videoSizeExceeded = false;
+        this.errors.invalidFileType = false;
       }
     }
   });

@@ -12,9 +12,6 @@
   @include r($sm) {
     padding: 19px 20px;
   }
-  @media (max-width: 515px) {
-    border-radius: 25px;
-  }
   @include r($phone) {
     padding: 19px 17px;
   }
