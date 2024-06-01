@@ -1,0 +1,38 @@
+.pagination {
+  @include flex-align-center(9);
+
+  &__button {
+    @include flex-center;
+    padding: 10px 17px;
+    min-height: 46px;
+    min-width: 46px;
+    border-radius: 10px;
+    border: 1px solid $teal-green;
+    user-select: none;
+    transition: border .4s, color .4s, background-color .4s;
+
+    &:hover {
+      background-color: $teal-green;
+      color: $white;
+    }
+
+    &:focus {
+      background-color: rgba($teal-green, .15);
+      color: $deep-forest-green;
+    }
+
+    &:disabled {
+      pointer-events: none;
+    }
+
+    &--active {
+      background-color: $teal-green;
+      color: $white;
+      pointer-events: none;
+    }
+  }
+
+  &__digital {
+    border-radius: 7px;
+  }
+}
