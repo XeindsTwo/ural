@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "choices.js": "^10.2.0",
     "gulp-imagemin": "^7.1.0",
     "swiper": "^11.1.4",
     "urix": "^0.1.0"

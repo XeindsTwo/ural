@@ -94,8 +94,13 @@
   }
 
   &__logo {
-    width: auto;
-    height: 44px;
+    @include r($lg) {
+      width: auto;
+      height: 55px;
+    }
+    @include r($phone) {
+      height: 52px;
+    }
   }
 
   &__right {

@@ -5,17 +5,6 @@
   z-index: 20;
   color: $white;
 
-  &__logo {
-    width: auto;
-    height: 47px;
-    @media (max-width: 1220px) {
-      height: 43px;
-    }
-    @media (max-width: 820px) {
-      height: 41px;
-    }
-  }
-
   &__nav, &__right {
     max-width: 415px;
     width: 100%;
@@ -26,7 +15,7 @@
 
   &__inner {
     @include flex-between-center-gap(30);
-    padding: 13px 0;
+    padding: 14px 0;
     border-bottom: 1px solid rgba(255, 229, 145, 0.12);
     @media (max-width: 1220px) {
       justify-content: initial;
@@ -35,6 +24,19 @@
       gap: 16px;
       position: relative;
       z-index: 50;
+    }
+  }
+
+  &__logo {
+    @include r($lg) {
+      width: auto;
+      height: 54px;
+    }
+    @include r($tablet) {
+      height: 50px;
+    }
+    @include r($phone) {
+      height: 47px;
     }
   }
 
