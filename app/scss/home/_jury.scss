@@ -49,16 +49,16 @@
     align-items: center;
     min-height: 100%;
     background-color: $light-gray;
-    padding: 56px 16px 46px 16px;
+    padding: 56px 16px 19px 16px;
     border-radius: 16px 16px 52px 52px;
     @media (max-width: 1300px) {
       padding-bottom: 30px;
     }
     @media (max-width: 1100px) {
-      padding: 46px 15px 22px 15px;
+      padding: 46px 15px 16px 15px;
     }
     @media (max-width: 880px) {
-      padding: 36px 15px 34px 15px;
+      padding: 36px 15px 16px 15px;
     }
     @include r($sm) {
       padding-bottom: 20px;
@@ -113,9 +113,54 @@
     }
   }
 
+  &__link {
+    position: relative;
+    padding: 24px;
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 60px;
+    background-color: $white;
+    border: 1px solid transparent;
+    color: $deep-forest-green;
+    transition: background-color .4s, color .4s, border .4s;
+    @include r($phone) {
+      font-size: 14px;
+    }
+
+    &::before {
+      @include pseudo;
+      @include topLeft50;
+      width: 104%;
+      height: 113%;
+      background-color: rgba($deep-purple, .15);
+      border: 1px solid $teal-green;
+      border-radius: 64px;
+      opacity: 0;
+      transition: background-color .4s, opacity .4s;
+    }
+
+    &:hover {
+      border-color: $teal-green;
+      background-color: transparent;
+    }
+
+    &:focus {
+      background-color: $teal-green;
+      border-color: $teal-green;
+      color: $white;
+
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+
   &__description {
     color: rgba($midnight-blue, .4);
     letter-spacing: -0.16px;
+    margin-bottom: 25px;
   }
 
   .swiper {
@@ -145,5 +190,53 @@
     @media (max-width: 365px) {
       max-width: 280px;
     }
+  }
+}
+
+.close {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  transition: outline .4s;
+  outline: 1px solid transparent;
+  border-radius: 10px;
+
+  &:hover {
+    color: $teal-green;
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  &:focus {
+    outline-color: $teal-green;
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    width: 45%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: currentColor;
+    border-radius: 4px;
+    transition: transform .4s;
+    will-change: transform;
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 }

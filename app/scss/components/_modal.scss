@@ -1,0 +1,294 @@
+.modal-jury {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 1100px;
+  width: 100%;
+  background-color: $white;
+  padding: 72px 50px;
+  border-radius: 30px;
+  box-shadow: 0 25px 50px -15px rgba(51, 51, 51, .4);
+  transform: translate(-50%, 0%);
+  opacity: 0;
+  z-index: 180;
+  pointer-events: none;
+  outline: transparent;
+  transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+  @media (max-width: 1120px) {
+    max-width: 100%;
+    width: 98%;
+  }
+  @include r($lg) {
+    padding: 65px 40px;
+  }
+  @media (max-width: 870px) {
+    padding: 60px 35px;
+    border-radius: 22px;
+  }
+  @include r($tablet) {
+    padding: 40px 30px;
+    max-height: 810px;
+    overflow-y: scroll;
+  }
+  @include r($sm) {
+    padding: 35px 30px 30px;
+  }
+  @media (max-width: 560px) {
+    max-height: 680px;
+  }
+  @include r($phone) {
+    padding: 35px 25px 30px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__close {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    z-index: 2;
+    transition: outline .4s;
+    outline: 1px solid transparent;
+    border-radius: 10px;
+    @media (max-width: 395px) {
+      right: 8px;
+      top: 10px;
+    }
+    @media (max-width: 375px) {
+      top: 7px;
+    }
+
+    &:hover {
+      color: $teal-green;
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+
+    &:focus {
+      outline-color: $teal-green;
+    }
+
+    &::before,
+    &::after {
+      display: block;
+      content: "";
+      width: 48%;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: currentColor;
+      border-radius: 4px;
+      transition: transform .4s;
+      will-change: transform;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    gap: 45px;
+    @include r($lg) {
+      gap: 30px;
+    }
+    @include r($tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    user-select: none;
+    border-radius: 20px;
+    @include r($lg) {
+      height: auto;
+    }
+    @media (max-width: 870px) {
+      width: 300px;
+    }
+    @include r($tablet) {
+      height: 410px;
+    }
+    @include r($sm) {
+      height: 380px;
+    }
+    @media (max-width: 560px) {
+      height: 340px;
+      width: 280px;
+    }
+    @media (max-width: 375px) {
+      width: 270px;
+      height: 310px;
+    }
+  }
+
+  &__line {
+    width: 1px;
+    background-color: #EEEEEE;
+    @include r($tablet) {
+      display: none;
+    }
+  }
+
+  &__content {
+    @include flex-column(0);
+    padding: 38px 0;
+    max-width: 599px;
+    width: 100%;
+    @media (max-width: 870px) {
+      padding: 32px 0;
+    }
+    @include r($tablet) {
+      padding: 0;
+      max-width: 100%;
+    }
+  }
+
+  &__name {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 28px;
+    @media (max-width: 1120px) {
+      font-size: 32px;
+    }
+    @media (max-width: 870px) {
+      font-size: 28px;
+    }
+    @include r($tablet) {
+      margin-bottom: 17px;
+      font-size: 26px;
+    }
+    @include r($phone) {
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    line-height: 1.4;
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: -0.18px;
+    @media (max-width: 870px) {
+      font-size: 16px;
+    }
+    @include r($phone) {
+      font-size: 14px;
+    }
+  }
+
+  &__socials {
+    @include flex-align-center(10);
+    margin-top: auto;
+  }
+
+  &__link {
+    width: 50px;
+    height: 50px;
+    @include flex-center;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: background-color .4s, border .4s, opacity .4s;
+
+    &.telegram {
+      background-color: #0088CC;
+
+      svg {
+        transform: translateX(-1px);
+      }
+
+      &:hover {
+        background-color: transparent;
+        border-color: #0088CC;
+
+        svg path {
+          fill: #0088CC;
+        }
+      }
+
+      &:focus {
+        background-color: $forest-green;
+        border-color: transparent;
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+
+    &.vk {
+      background-color: #0077FF;
+
+      &:hover {
+        background-color: transparent;
+        border-color: #0077FF;
+
+        svg path {
+          &:first-child {
+            fill: #0077FF;
+          }
+
+          &:last-child {
+            fill: $white;
+          }
+        }
+      }
+
+      &:focus {
+        background-color: $forest-green;
+        border-color: transparent;
+
+        svg path {
+          &:first-child {
+            fill: $white;
+          }
+
+          &:last-child {
+            fill: #0077FF;
+          }
+        }
+      }
+    }
+
+    &.instagram {
+      background-color: #F00073;
+
+      &:hover {
+        background-color: transparent;
+        border-color: #F00073;
+
+        svg path {
+          fill: #F00073;
+        }
+      }
+
+      &:focus {
+        background-color: $forest-green;
+        border-color: transparent;
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+  }
+}

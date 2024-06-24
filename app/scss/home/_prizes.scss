@@ -167,6 +167,7 @@
   &__img {
     @include objectCoverBg;
     user-select: none;
+    border-radius: 50%;
     @include r($desktop) {
       width: 184px;
       height: 184px;
@@ -203,7 +204,7 @@
     font-family: $garamond;
     font-size: 40px;
     font-weight: 700;
-    line-height: 80%;
+    line-height: 1.1;
     letter-spacing: -1.2px;
     @include r($desktop) {
       font-size: 36px;
