@@ -140,6 +140,10 @@
       width: 270px;
       height: 310px;
     }
+
+    &.left {
+      object-position: -1.7cm;
+    }
   }
 
   &__line {
@@ -180,6 +184,17 @@
     }
     @include r($phone) {
       font-size: 24px;
+    }
+  }
+
+  &__position {
+    @include flex-align-center(10);
+    font-size: 18px;
+    color: $teal-green;
+    margin-bottom: 15px;
+
+    img {
+      transform: translateY(1px);
     }
   }
 

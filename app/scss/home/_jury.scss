@@ -87,6 +87,14 @@
       width: 150px;
       height: 150px;
     }
+
+    &.top {
+      object-position: top;
+    }
+
+    &.left {
+      object-position: left;
+    }
   }
 
   &__name {
