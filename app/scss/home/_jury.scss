@@ -1,7 +1,6 @@
 .jury {
   &__top {
-    @include flex-between(30);
-    align-items: center;
+    @include flex-column(30);
     margin-bottom: 64px;
     @include r($lg) {
       margin-bottom: 50px;
@@ -15,6 +14,13 @@
     @include flex-align-center(8);
     @media (max-width: 515px) {
       display: none;
+    }
+
+    &.none {
+      display: none;
+      @include r($lg) {
+        display: flex;
+      }
     }
   }
 
@@ -197,6 +203,27 @@
     }
     @media (max-width: 365px) {
       max-width: 280px;
+    }
+  }
+
+  &__text {
+    @include flex-column(30);
+    font-size: 20px;
+    text-align: center;
+    max-width: 890px;
+    margin: -15px auto 30px;
+    @include r($tablet) {
+      font-size: 18px;
+      max-width: 690px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+    }
+
+    br {
+      @include r($lg) {
+        display: none;
+      }
     }
   }
 }

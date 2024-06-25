@@ -39,6 +39,9 @@
   @include r($phone) {
     padding: 35px 25px 30px;
   }
+  @media (max-width: 370px) {
+    padding: 35px 20px 30px;
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -192,9 +195,16 @@
     font-size: 18px;
     color: $teal-green;
     margin-bottom: 15px;
+    @include r($lg) {
+      font-size: 16px;
+    }
 
     img {
       transform: translateY(1px);
+      @include r($lg) {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 
@@ -208,6 +218,10 @@
     }
     @include r($phone) {
       font-size: 14px;
+    }
+
+    &.non {
+      margin-bottom: 0;
     }
   }
 
