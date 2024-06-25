@@ -77,8 +77,8 @@ function browsersync() {
     server: {
       baseDir: "app/"
     },
-    online: true,
-    tunnel: true,
+/*    online: true,
+    tunnel: true,*/
     notify: false
   });
 }
