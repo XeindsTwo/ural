@@ -208,7 +208,7 @@
   &__btn {
     @include flex-align-center(12);
     justify-content: center;
-    margin: 0 auto;
+    margin: -11px auto 0;
     max-width: 466px;
     width: 100%;
     padding: 25px 40px;
@@ -216,13 +216,13 @@
     background-color: $deep-purple;
     border-radius: 72px;
     border: 1px solid transparent;
-    transition: all .5s;
     position: relative;
     box-shadow: 0 0 24px 0 rgba(25, 247, 207, 0.25);
+    transition: all .5s;
+
     @include r($phone) {
       padding: 20px 37px;
       font-size: 14px;
-      margin-top: -10px;
     }
     @media (max-width: 395px) {
       padding: 19px;
@@ -296,6 +296,7 @@
 
         &.telegram {
           background-color: #2AABEE;
+
           svg {
             transform: translateX(-2px);
           }

@@ -39,7 +39,8 @@ title: 'Вокальный конкурс на Урале'
           fullName: '',
           schoolName: ''
         },
-        video: null
+        video: null,
+        agreement: true
       },
       errors: {
         contact: false,
@@ -53,7 +54,8 @@ title: 'Вокальный конкурс на Урале'
         videoSizeExceeded: false,
         invalidFileType: false,
         formSubmission: false,
-        region: false
+        region: false,
+        agreement: false
       },
       errorTimer: null,
       submitting: false,
@@ -133,6 +135,7 @@ title: 'Вокальный конкурс на Урале'
         }
 
         this.errors.region = !this.form.contact.region;
+        this.errors.agreement = !this.form.agreement;
 
         if (this.form.video) {
           this.errors.videoSizeExceeded = this.form.video.size > 3500 * 1024 * 1024;
@@ -219,6 +222,7 @@ title: 'Вокальный конкурс на Урале'
         this.errors.videoSizeExceeded = false;
         this.errors.invalidFileType = false;
         this.errors.region = false;
+        this.errors.agreement = false;
       }
     }
   });

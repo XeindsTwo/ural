@@ -171,6 +171,14 @@
           </div>
         </div>
         <span class="error" :class="{ active: errors.formSubmission }">Произошла ошибка при отправке заявки, попробуйте ещё раз позже</span>
+        <label class="checkbox" :class="{ 'error': errors.agreement }">
+          <input type="checkbox" v-model="form.agreement"/>
+          <div class="checkbox__checkmark"></div>
+          <p class="checkbox__body">
+            Я согласен с обработкой персональных данных и ознакомлен с
+            <a href="files/polozenie_o_konkurse.pdf" target="_blank">приложением</a> конкурса
+          </p>
+        </label>
         <button class="participation__btn" type="submit" :disabled="submitting">
           <svg v-if="submitting" class="circular-loader" viewBox="25 25 50 50">
             <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke="#031F03" stroke-width="3"/>

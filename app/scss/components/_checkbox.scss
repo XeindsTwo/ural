@@ -1,0 +1,88 @@
+.checkbox {
+  display: inline-block;
+  position: relative;
+  max-width: max-content;
+  padding-left: 30px;
+  cursor: pointer;
+  user-select: none;
+  transition: color .4s ease;
+
+  &:hover {
+    color: $teal-green;
+  }
+
+  &.error {
+    margin-bottom: 0;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .checkbox__checkmark {
+      background-color: $teal-green;
+    }
+
+    &:checked ~ .checkbox__checkmark:after {
+      opacity: 1;
+    }
+  }
+
+  &:hover input ~ .checkbox__checkmark {
+    background-color: $light-gray;
+  }
+
+  &:hover input:checked ~ .checkbox__checkmark {
+    background-color: $teal-green;
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+
+    &:after {
+      @include pseudo;
+      left: 8px;
+      top: 4px;
+      width: 5px;
+      height: 10px;
+      border: solid $white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+  }
+
+  &__body {
+    line-height: 1.4;
+    transform: translateY(1px);
+    font-size: 16px;
+
+    a {
+      color: $teal-green;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      transition: color .4s, border .4s;
+
+      &:hover {
+        color: $deep-forest-green;
+      }
+
+      &:focus {
+        color: $deep-forest-green;
+        border-color: $deep-forest-green;
+      }
+    }
+  }
+}
