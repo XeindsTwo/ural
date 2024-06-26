@@ -10,7 +10,7 @@ setupMobileMenu();
 modalJury();
 animateCompetitionSection();
 
-new Swiper('.prizes__swiper', {
+/*new Swiper('.prizes__swiper', {
   loop: false,
   speed: 800,
   navigation: {
@@ -49,7 +49,7 @@ new Swiper('.prizes__swiper', {
       },
     }
   }
-});
+});*/
 
 new Swiper('.command__swiper', {
   loop: false,

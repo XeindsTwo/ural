@@ -8,41 +8,64 @@
     }
   }
 
-  &__navigation {
-    @include flex-align-center(8);
-    margin-bottom: 25px;
-    @media (max-width: 555px) {
-      display: none;
-    }
-  }
-
-  &__btn {
-    @include flex-center;
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    border: 1px solid transparent;
-    background-color: #eeeeee;
-    transition: all .4s;
-
-    &.swiper-button-disabled {
-      opacity: .4;
-      pointer-events: none;
-      user-select: none;
+  /*  &__navigation {
+      @include flex-align-center(8);
+      margin-bottom: 25px;
+      @media (max-width: 555px) {
+        display: none;
+      }
     }
 
-    &:hover {
-      background-color: $deep-purple;
-    }
+    &__btn {
+      @include flex-center;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      border: 1px solid transparent;
+      background-color: #eeeeee;
+      transition: all .4s;
 
-    &:focus {
-      background-color: transparent;
-      border-color: $teal-green50;
+      &.swiper-button-disabled {
+        opacity: .4;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      &:hover {
+        background-color: $deep-purple;
+      }
+
+      &:focus {
+        background-color: transparent;
+        border-color: $teal-green50;
+      }
+    }*/
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    @include r($desktop) {
+      grid-gap: 12px;
+    }
+    @media (max-width: 890px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include r($sm) {
+      display: flex;
+      grid-gap: 15px;
+      overflow-x: scroll;
+      margin: 0 -15px;
+      padding: 0 15px 20px;
+      &::-webkit-scrollbar {
+        height: 10px;
+      }
     }
   }
 
   &__item {
     @include flex-column(0);
+    position: relative;
     text-align: center;
     align-items: center;
     background-color: $light-gray;
@@ -59,6 +82,24 @@
     }
     @media (max-width: 890px) {
       padding: 32px 15px 14px 15px;
+    }
+    @include r($sm) {
+      min-width: 360px;
+    }
+    @media (max-width: 520px) {
+      min-width: 330px;
+    }
+    @include r($phone) {
+      min-width: 310px;
+    }
+    @media (max-width: 425px) {
+      min-width: 300px;
+    }
+    @media (max-width: 405px) {
+      min-width: 290px;
+    }
+    @media (max-width: 385px) {
+      min-width: 280px;
     }
 
     &::before {
@@ -83,17 +124,6 @@
       }
 
       .prizes__avatar::before {
-        opacity: 1;
-      }
-
-      .prizes__name {
-        opacity: 0;
-        @include r($lg) {
-          opacity: 1;
-        }
-      }
-
-      .prizes__value {
         opacity: 1;
       }
 
@@ -123,17 +153,25 @@
         }
       }
     }
+
+    &:last-child {
+      @media (max-width: 890px) {
+        grid-column: span 2;
+        max-width: 410px;
+        margin: 0 auto;
+      }
+      @include r($tablet) {
+        max-width: 360px;
+      }
+    }
   }
 
   &__avatar {
     margin-bottom: 72px;
     position: relative;
     z-index: 2;
-    @include r($sm) {
-      margin-bottom: 60px;
-    }
-    @include r($phone) {
-      margin-bottom: 50px;
+    @include r($lg) {
+      margin-bottom: 55px;
     }
 
     &::before {
@@ -192,28 +230,27 @@
 
   &__content {
     @include flex-column(32);
-    width: 100%;
+    height: 100%;
     position: relative;
     z-index: 2;
-    @media (max-width: 890px) {
+    @media (max-width: 920px) {
       gap: 26px;
     }
   }
 
   &__name, &__value {
     font-family: $garamond;
-    font-size: 40px;
+    font-size: 34px;
     font-weight: 700;
     line-height: 1.1;
-    letter-spacing: -1.2px;
-    @include r($desktop) {
-      font-size: 36px;
-    }
-    @media (max-width: 890px) {
+    @include r($lg) {
       font-size: 32px;
     }
-    @media (max-width: 505px) {
+    @media (max-width: 920px) {
       font-size: 30px;
+    }
+    @media (max-width: 430px) {
+      font-size: 28px;
     }
 
     span {
@@ -225,30 +262,33 @@
 
   &__name {
     transition: color .4s ease-in-out, opacity .4s;
-    @include r($lg) {
-      padding-bottom: 32px;
-      border-bottom: 1px solid $teal-green50;
-    }
-    @media (max-width: 890px) {
-      padding-bottom: 26px;
-    }
   }
 
   &__value {
-    color: $white;
+    font-size: 20px;
+    line-height: 1.3;
+    padding: 0 15px;
+    font-family: inherit;
+    font-weight: 400;
     width: 100%;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity .4s, color .4s;
-    @include r($lg) {
-      position: static;
-      opacity: 1;
-      color: inherit;
-      font-size: 30px;
+    transition: color .4s;
+    @media (max-width: 1300px) {
+      padding: 0 5px;
     }
-    @media (max-width: 890px) {
-      font-size: 26px;
+    @media (max-width: 1220px) {
+      font-size: 18px;
+    }
+    @include r($lg) {
+      padding: 0;
+    }
+    @include r($tablet) {
+      font-size: 17px;
+    }
+    @media (max-width: 680px) {
+      font-size: 16px;
+    }
+    @media (max-width: 400px) {
+      font-size: 14px;
     }
   }
 
@@ -261,6 +301,7 @@
     border-radius: 60px;
     background-color: $white;
     border: 1px solid transparent;
+    margin-top: auto;
     color: $deep-forest-green;
     transition: background-color .4s, color .4s, border .4s;
     @include r($phone) {
@@ -290,38 +331,38 @@
     }
   }
 
-  .swiper {
-    overflow: visible !important;
+  /*  .swiper {
+      overflow: visible !important;
 
-    &-wrapper {
-      box-sizing: border-box !important;
+      &-wrapper {
+        box-sizing: border-box !important;
+      }
     }
-  }
 
-  .swiper-wrapper {
-    @media (max-width: 555px) {
-      box-sizing: border-box !important;
+    .swiper-wrapper {
+      @media (max-width: 555px) {
+        box-sizing: border-box !important;
+      }
     }
-  }
 
-  .swiper-slide {
-    @media (max-width: 555px) {
-      max-width: 380px;
-    }
-    @media (max-width: 505px) {
-      max-width: 350px;
-    }
-    @include r($phone) {
-      max-width: 330px;
-    }
-    @media (max-width: 415px) {
-      max-width: 310px;
-    }
-    @media (max-width: 395px) {
-      max-width: 300px;
-    }
-    @media (max-width: 385px) {
-      max-width: 280px;
-    }
-  }
+    .swiper-slide {
+      @media (max-width: 555px) {
+        max-width: 380px;
+      }
+      @media (max-width: 505px) {
+        max-width: 350px;
+      }
+      @include r($phone) {
+        max-width: 330px;
+      }
+      @media (max-width: 415px) {
+        max-width: 310px;
+      }
+      @media (max-width: 395px) {
+        max-width: 300px;
+      }
+      @media (max-width: 385px) {
+        max-width: 280px;
+      }
+    }*/
 }
