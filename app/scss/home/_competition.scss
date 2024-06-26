@@ -167,21 +167,21 @@
 
   &__name {
     font-family: $garamond;
-    font-size: 40px;
+    font-size: 36px;
     letter-spacing: -1.2px;
-    line-height: .8;
+    line-height: .88;
     font-weight: 700;
     color: $deep-forest-green;
     @media (max-width: 1300px) {
-      font-size: 36px;
+      font-size: 32px;
+      line-height: .9;
     }
     @include r($lg) {
-      font-size: 32px;
+      font-size: 28px;
       letter-spacing: -1px;
       line-height: .85;
     }
     @include r($tablet) {
-      font-size: 28px;
       letter-spacing: -0.7px;
     }
     @include r($sm) {
@@ -197,11 +197,6 @@
       @media (max-width: 575px) {
         display: none;
       }
-    }
-
-    span {
-      font-style: italic;
-      font-weight: 400;
     }
   }
 
