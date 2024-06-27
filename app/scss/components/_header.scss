@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 220;
   color: $white;
 
   &__nav, &__right {
@@ -135,7 +135,7 @@
     padding: 100px 20px 30px;
     display: none;
     position: fixed;
-    z-index: 30;
+    z-index: 25;
     top: 0;
     left: 0;
     width: 100%;

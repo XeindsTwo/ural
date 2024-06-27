@@ -135,15 +135,13 @@
       background-color: rgba($teal-green50, .14);
     }
 
-    &.error-load {
+    &.error-load-file, &.error-load {
       border-color: $red;
       color: inherit;
-      background-color: $light-gray;
+      background-color: rgba($red, .02);
+    }
 
-      &:focus {
-        background-color: rgba($red, .04);
-      }
-
+    &.error-load {
       .participation__size {
         color: $red;
       }
@@ -193,10 +191,12 @@
     font-size: 12px;
     @include flex-align-center(4);
     color: #5EAC00;
+    display: none;
     position: relative;
 
     &::before {
       content: "";
+      transform: translateY(-1px);
       display: flex;
       width: 4px;
       height: 4px;
@@ -257,6 +257,10 @@
       border-radius: 64px;
       transition: all .4s;
     }
+
+    span:last-child {
+      display: none;
+    }
   }
 
   &__contact {
@@ -307,6 +311,7 @@
 }
 
 .circular-loader {
+  display: none;
   animation: rotate 2s linear infinite;
   transform-origin: center center;
   width: 24px;

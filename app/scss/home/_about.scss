@@ -48,8 +48,7 @@
       padding: 0;
     }
     @include r($tablet) {
-      flex-wrap: wrap;
-      justify-content: center;
+      display: none;
     }
 
     img {
@@ -111,6 +110,19 @@
           display: none;
         }
       }
+    }
+  }
+
+  &__mobile {
+    @include objectCoverBg;
+    display: none;
+    @include r($tablet) {
+      display: block;
+    }
+    @include r($phone) {
+      margin: 0 -14px;
+      height: 130px;
+      max-width: initial;
     }
   }
 

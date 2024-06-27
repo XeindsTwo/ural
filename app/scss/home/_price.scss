@@ -249,20 +249,20 @@
       @media (max-width: 880px) {
         @include flex-column(0);
         align-items: center;
-        width: 28%;
       }
-      @include r($phone) {
-        width: 25%;
-      }
-      @media (max-width: 395px) {
-        width: 30%;
-      }
+    }
+  }
 
-      &:nth-child(5) {
-        @include r($lg) {
-          display: none;
-        }
-      }
+  &__link {
+    transition: filter .4s, opacity .4s;
+
+    &:hover {
+      filter: grayscale(100%);
+    }
+
+    &:focus {
+      opacity: .7;
+      filter: grayscale(0%);
     }
   }
 }

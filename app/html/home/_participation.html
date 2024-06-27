@@ -4,25 +4,21 @@
       Принять <span>участие</span> <br> в конкурсе
     </h2>
     <div id="app">
-      <form @submit.prevent="validateForm" class="participation__form" action="">
+      <form id="participationForm" class="participation__form" action="">
         <div class="participation__block">
           <span class="participation__label">Заполните контактные данные</span>
-          <span class="error" :class="{ active: errors.region }">Пожалуйста, выберите регион</span>
-          <span class="error" :class="{ active: errors.contact }">Пожалуйста, заполните все поля</span>
-          <span class="error" :class="{ active: errors.emailInvalid }">Пожалуйста, введите корректный адрес электронной почты</span>
+          <span class="error" id="errorRegion">Пожалуйста, выберите регион</span>
+          <span class="error" id="errorContact">Пожалуйста, заполните все поля</span>
+          <span class="error" id="errorEmailInvalid">Пожалуйста, введите корректный адрес электронной почты</span>
           <div class="participation__fields">
             <label>
-              <input v-model="form.contact.phone" class="input" type="text" name="phone" id="phone" data-tel-input
-                     placeholder="Свой номер телефона" maxlength="30"
-                     :class="{ 'input--error': errors.contact && !form.contact.phone }">
+              <input class="input" type="text" name="phone" id="phone" placeholder="Свой номер телефона" maxlength="30">
             </label>
             <label>
-              <input v-model="form.contact.messenger" class="input" type="text" name="messenger" id="messenger"
-                     placeholder="Электронная почта" maxlength="255"
-                     :class="{ 'input--error': errors.contact && !form.contact.messenger }">
+              <input class="input" type="text" name="messenger" id="messenger" placeholder="Электронная почта" maxlength="255">
             </label>
-            <label class="participation__fields long" for="mySelect">
-              <select id="mySelect" class="choices" placeholder="Выберите регион">
+            <label class="participation__fields long">
+              <select id="region" class="choices" placeholder="Выберите регион">
                 <option value="" disabled selected hidden>Выберите регион</option>
                 <option value="Адыгея">Республика Адыгея</option>
                 <option value="Алтай">Республика Алтай</option>
@@ -113,78 +109,67 @@
         </div>
         <div class="participation__block">
           <span class="participation__label">Заполните свои личные данные</span>
-          <span class="error" :class="{ active: errors.personal }">Пожалуйста, заполните все поля</span>
-          <span class="error active" v-if="errors.ageMin">Минимальный возраст - 10 лет</span>
-          <span class="error active" v-if="errors.ageMax">Максимальный возраст - 70 лет</span>
+          <span class="error" id="errorPersonal">Пожалуйста, заполните все поля</span>
+          <span class="error" id="errorAgeMin">Минимальный возраст - 10 лет</span>
+          <span class="error" id="errorAgeMax">Максимальный возраст - 70 лет</span>
           <div class="participation__fields">
             <label>
-              <input v-model="form.personal.fullName" class="input" type="text" name="fullName" id="fullName"
-                     placeholder="ФИО" maxlength="255"
-                     :class="{ 'input--error': errors.personal && !form.personal.fullName }">
+              <input class="input" type="text" name="fullName" id="fullName" placeholder="ФИО" maxlength="255">
             </label>
             <label>
-              <input v-model="form.personal.age" class="input" type="number" name="age" id="age" placeholder="Возраст"
-                     :class="{ 'input--error': (errors.personal || errors.ageMin || errors.ageMax) && !form.personal.age }">
+              <input class="input" type="number" name="age" id="age" placeholder="Возраст">
             </label>
             <label class="participation__fields long">
-              <input v-model="form.personal.address" class="input" type="text" name="address" id="address"
-                     placeholder="Место проживания" maxlength="255"
-                     :class="{ 'input--error': errors.personal && !form.personal.address }">
+              <input class="input" type="text" name="address" id="address" placeholder="Место проживания" maxlength="255">
             </label>
           </div>
         </div>
         <div class="participation__block">
           <span class="participation__label">Педагог <span>(при наличии)</span></span>
-          <span class="error" :class="{ active: errors.teacher }">Пожалуйста, заполните все поля</span>
+          <span class="error" id="errorTeacher">Пожалуйста, заполните все поля</span>
           <div class="participation__fields">
             <label class="participation__fields long">
-              <input v-model="form.teacher.fullName" class="input" type="text" name="teacher_fullName"
-                     id="teacher_fullName" placeholder="ФИО" maxlength="255"
-                     :class="{ 'input--error': errors.teacher && !form.teacher.fullName }">
+              <input class="input" type="text" name="teacherFullName" id="teacherFullName" placeholder="ФИО" maxlength="255">
             </label>
             <label class="participation__fields long">
-              <input v-model="form.teacher.schoolName" class="input" type="text" name="teacher_schoolName"
-                     id="teacher_schoolName" placeholder="Название школы" maxlength="255"
-                     :class="{ 'input--error': errors.teacher && !form.teacher.schoolName }">
+              <input class="input" type="text" name="teacherSchoolName" id="teacherSchoolName" placeholder="Название школы" maxlength="255">
             </label>
           </div>
         </div>
         <div class="participation__block">
           <span class="participation__label">Видеозапись</span>
-          <span class="error" :class="{ active: errors.video }">Ошибка загрузки видео, повторите попытку</span>
-          <span class="error" :class="{ active: errors.videoRequired }">Пожалуйста, загрузите видео</span>
-          <span class="error" :class="{ active: errors.invalidFileType }">Загружать можно только видеофайлы</span>
+          <span class="error" id="errorVideo">Превышен максимально допустимый вес видео</span>
+          <span class="error" id="errorVideoRequired">Пожалуйста, загрузите видео</span>
+          <span class="error" id="errorInvalidFileType">Загружать можно только видеофайлы</span>
           <div class="participation__loader">
-            <label for="video" class="participation__load"
-                   :class="{ loading: form.video, 'error-load': errors.videoSizeExceeded }">
+            <label for="video" class="participation__load">
               <img src="images/icons/load.svg" alt="load icon">
               <div class="participation__info">
                 <span class="participation__text">Перетащите сюда, для загрузки</span>
                 <div class="participation__file">
-                  <span class="participation__size">Максимальный размер: 3.5 ГБ</span>
-                  <span class="participation__file-load" v-if="form.video">Видео загружено</span>
+                  <span class="participation__size">Максимальный размер: 5 ГБ</span>
+                  <span class="participation__file-load" id="videoLoaded">Видео загружено</span>
                 </div>
               </div>
             </label>
-            <input type="file" id="video" name="video" accept="video/*" @change="handleFileChange"
-                   style="display: none;">
+            <input type="file" id="video" name="video" accept="video/*" style="display: none;">
           </div>
         </div>
-        <span class="error" :class="{ active: errors.formSubmission }">Произошла ошибка при отправке заявки, попробуйте ещё раз позже</span>
-        <label class="checkbox" :class="{ 'error': errors.agreement }">
-          <input type="checkbox" v-model="form.agreement"/>
+        <span class="error" id="errorFormSubmit">Произошла ошибка при отправке заявки, попробуйте ещё раз позже</span>
+        <label class="checkbox" id="agreementLabel" >
+          <input type="checkbox" id="agreement" checked/>
           <div class="checkbox__checkmark"></div>
-          <p class="checkbox__body">
+          <div class="checkbox__body">
             Я согласен с обработкой персональных данных и ознакомлен с
-            <a href="files/polozenie_o_konkurse.pdf" target="_blank">приложением</a> конкурса
-          </p>
+            <a href="files/polozenie_o_konkurse.pdf" target="_blank">положением</a> конкурса
+          </div>
         </label>
-        <button class="participation__btn" type="submit" :disabled="submitting">
-          <svg v-if="submitting" class="circular-loader" viewBox="25 25 50 50">
+        <button class="participation__btn" type="submit" id="submitBtn">
+          <svg class="circular-loader" viewBox="25 25 50 50">
             <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke="#031F03" stroke-width="3"/>
           </svg>
-          <span v-if="!submitting">Приступить к оплате</span>
-          <span v-else>Отправка данных</span>
+          <span>Приступить к оплате</span>
+          <span>Отправка данных</span>
         </button>
         <div class="participation__contact">
           <span>Контакты для связи:</span>

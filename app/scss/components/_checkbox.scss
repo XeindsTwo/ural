@@ -32,7 +32,7 @@
   }
 
   &:hover input ~ .checkbox__checkmark {
-    background-color: $light-gray;
+    background-color: #ececec;
   }
 
   &:hover input:checked ~ .checkbox__checkmark {
@@ -68,6 +68,9 @@
     line-height: 1.4;
     transform: translateY(1px);
     font-size: 16px;
+    @include r($phone) {
+      font-size: 14px;
+    }
 
     a {
       color: $teal-green;
