@@ -774,26 +774,28 @@
   <ul class="price__logos">
     <li>
       <a class="price__link" href="https://musicstudioekb.ru/" target="_blank">
-        <img src="images/logos/1.png" width="114" height="114" alt="логотип">
+        <img class="circle" src="images/logos/music.webp" width="114" height="114" alt="Компания Music Studio">
       </a>
     </li>
     <li>
-      <img src="images/logos/2.svg" alt="логотип">
+      <a class="price__link outline" href="https://prirodazvuka.ru" target="_blank">
+        <img src="images/logos/priroda.svg" alt="Компания Природа Звука">
+      </a>
     </li>
     <li>
-      <img src="images/logos/4.svg" alt="логотип">
+      <a class="price__link" href="https://vk.com/e_set_ekb" target="_blank">
+        <img class="circle" src="images/logos/eset.webp" width="114" height="114" alt="Компания Е-СЕТЬ">
+      </a>
     </li>
     <li>
-      <img src="images/logos/5.svg" alt="логотип">
+      <a class="price__link outline" href="https://chupinphoto.ru/" target="_blank">
+        <img src="images/logos/chupin.webp" alt="логотип">
+      </a>
     </li>
     <li>
-      <img src="images/logos/6.svg" alt="логотип">
-    </li>
-    <li>
-      <img src="images/logos/7.svg" alt="логотип">
-    </li>
-    <li>
-      <img src="images/logos/8.svg" alt="логотип">
+      <a class="price__link" href="https://honky-tonky.ru" target="_blank">
+        <img class="circle" src="images/logos/honky.webp" width="114" height="114" alt="логотип">
+      </a>
     </li>
   </ul>
 </div>
@@ -814,7 +816,8 @@
               <input class="input" type="text" name="phone" id="phone" placeholder="Свой номер телефона" maxlength="30">
             </label>
             <label>
-              <input class="input" type="text" name="messenger" id="messenger" placeholder="Электронная почта" maxlength="255">
+              <input class="input" type="text" name="messenger" id="messenger" placeholder="Электронная почта"
+                     maxlength="255">
             </label>
             <label class="participation__fields long">
               <select id="region" class="choices" placeholder="Выберите регион">
@@ -919,7 +922,8 @@
               <input class="input" type="number" name="age" id="age" placeholder="Возраст">
             </label>
             <label class="participation__fields long">
-              <input class="input" type="text" name="address" id="address" placeholder="Место проживания" maxlength="255">
+              <input class="input" type="text" name="address" id="address" placeholder="Место проживания"
+                     maxlength="255">
             </label>
           </div>
         </div>
@@ -928,10 +932,12 @@
           <span class="error" id="errorTeacher">Пожалуйста, заполните все поля</span>
           <div class="participation__fields">
             <label class="participation__fields long">
-              <input class="input" type="text" name="teacherFullName" id="teacherFullName" placeholder="ФИО" maxlength="255">
+              <input class="input" type="text" name="teacherFullName" id="teacherFullName" placeholder="ФИО"
+                     maxlength="255">
             </label>
             <label class="participation__fields long">
-              <input class="input" type="text" name="teacherSchoolName" id="teacherSchoolName" placeholder="Название школы" maxlength="255">
+              <input class="input" type="text" name="teacherSchoolName" id="teacherSchoolName"
+                     placeholder="Название школы" maxlength="255">
             </label>
           </div>
         </div>
@@ -955,7 +961,7 @@
           </div>
         </div>
         <span class="error" id="errorFormSubmit">Произошла ошибка при отправке заявки, попробуйте ещё раз позже</span>
-        <label class="checkbox" id="agreementLabel" >
+        <label class="checkbox" id="agreementLabel">
           <input type="checkbox" id="agreement" checked/>
           <div class="checkbox__checkmark"></div>
           <div class="checkbox__body">
@@ -992,9 +998,30 @@
                       fill="white"/>
               </svg>
             </a>
+            <a class="pdf__link" href="files/polozenie_o_konkurse.pdf" target="_blank">
+              <span class="pdf__icon">
+                <span class="sr-only">Положение о конкурсе</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="38" viewBox="0 0 27 38" fill="none">
+                <path
+                    d="M26.0086 7.27202L20.1094 1.04628C19.4766 0.378442 18.6188 0 17.7258 0H3.375C1.51172 0.00742043 0 1.60281 0 3.56922V34.4382C0 36.4046 1.51172 38 3.375 38H23.625C25.4883 38 27 36.4046 27 34.4382V9.79496C27 8.85257 26.6414 7.93986 26.0086 7.27202ZM23.3508 9.50557H18V3.85862L23.3508 9.50557ZM3.375 34.4382V3.56922H14.625V11.2865C14.625 12.2734 15.3773 13.0674 16.3125 13.0674H23.625V34.4382H3.375ZM20.9672 23.775C20.1094 22.8846 17.6625 23.1295 16.4391 23.2927C15.2297 22.5136 14.4211 21.4376 13.8516 19.8571C14.1258 18.6624 14.5617 16.8444 14.2312 15.7016C13.9359 13.7575 11.5734 13.9504 11.2359 15.2638C10.9266 16.4585 11.2078 18.1207 11.7281 20.2429C11.025 22.0164 9.97734 24.3984 9.23906 25.7637C7.83281 26.528 5.93438 27.7079 5.65313 29.192C5.42109 30.3644 7.48125 33.288 11.0039 26.8768C12.5789 26.3277 14.2945 25.6524 15.8133 25.3853C17.1422 26.1422 18.6961 26.6467 19.7367 26.6467C21.5297 26.6467 21.7055 24.5542 20.9672 23.775ZM7.03828 29.5481C7.39687 28.5315 8.76094 27.3591 9.17578 26.951C7.83984 29.1994 7.03828 29.6001 7.03828 29.5481ZM12.7758 15.4048C13.2961 15.4048 13.2469 17.7868 12.9023 18.4323C12.593 17.4009 12.6 15.4048 12.7758 15.4048ZM11.0602 25.5411C11.7422 24.2871 12.3258 22.7955 12.7969 21.4821C13.3805 22.6026 14.1258 23.5005 14.9133 24.1164C13.4508 24.4355 12.1781 25.0885 11.0602 25.5411ZM20.3133 25.1701C20.3133 25.1701 19.9617 25.6153 17.6906 24.5913C20.1586 24.3984 20.5664 24.992 20.3133 25.1701Z"
+                    fill="#FB3449"/>
+                </svg>
+              </span>
+              Положение о конкурсе
+            </a>
           </div>
         </div>
       </form>
+    </div>
+    <div class="modal-payment modal-payment--success" id="payment-modal-success">
+      <h3 class="modal-payment__title">Успешное создание заявки!</h3>
+      <p class="modal-payment__text">
+        Поздравляем, ваша заявка была успешно оплачена и принята. Ожидайте дальнейшего оценивания жюри и подведения
+        итогов.
+      </p>
+      <button class="modal-payment__close success" type="button">
+        <span class="sr-only">закрыть модальное окно</span>
+      </button>
     </div>
   </div>
 </section>

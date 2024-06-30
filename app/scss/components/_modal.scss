@@ -321,3 +321,140 @@
     }
   }
 }
+
+.modal-payment {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 560px;
+  max-height: 650px;
+  overflow-y: scroll;
+  width: 100%;
+  background-color: $white;
+  padding: 42px 50px 20px;
+  border-radius: 30px;
+  box-shadow: 0 25px 50px -15px rgba(51, 51, 51, .4);
+  transform: translate(-50%, 0%);
+  opacity: 0;
+  z-index: 180;
+  pointer-events: none;
+  outline: transparent;
+  transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 575px) {
+    max-width: 98%;
+    border-radius: 20px;
+    padding: 42px 15px 20px;
+  }
+  @include r($phone) {
+    padding: 42px 0 10px;
+  }
+  @media (max-height: 685px) {
+    max-height: 550px;
+  }
+  @media (max-height: 570px) {
+    max-height: 480px;
+  }
+
+  &.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &--success {
+    max-width: 500px;
+    padding: 40px 30px;
+    @include r($sm) {
+      padding: 35px 25px;
+    }
+    @media (max-width: 540px) {
+      max-width: 98%;
+    }
+    @media (max-width: 410px) {
+      padding: 35px 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: 600;
+    @include r($phone) {
+      font-size: 20px;
+    }
+    @media (max-width: 410px) {
+      font-size: 18px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    @media (max-width: 410px) {
+      font-size: 14px;
+    }
+  }
+
+  &__close {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    z-index: 2;
+    transition: outline .4s;
+    outline: 1px solid transparent;
+    border-radius: 10px;
+    @media (max-width: 395px) {
+      right: 8px;
+      top: 10px;
+    }
+    @media (max-width: 375px) {
+      top: 7px;
+    }
+
+    &:hover {
+      color: $teal-green;
+
+      &::before, &::after {
+        background-color: $teal-green;
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+
+    &:focus {
+      outline-color: $teal-green;
+    }
+
+    &::before,
+    &::after {
+      display: block;
+      content: "";
+      width: 48%;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: $charcoal-gray;
+      border-radius: 4px;
+      transition: transform .4s;
+      will-change: transform;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}

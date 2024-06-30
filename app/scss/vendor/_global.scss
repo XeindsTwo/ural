@@ -15,6 +15,10 @@
     transition: opacity .4s, visibility .4s;
   }
 
+  &--min-height {
+    min-height: 100%;
+  }
+
   &.active {
     overflow: hidden;
 

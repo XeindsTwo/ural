@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="html" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Описание сайта">
+  <meta http-equiv="content-type" content="public, max-age=3600">
+  <meta name="theme-color" content="#fff">
+  <title>Вокальный конкурс на Урале</title>
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="body">
+
+<main>
+  <section class="admin">
+    <div class="container">
+      <a class="authorization__link admin" href="/"></a>
+      <h2 class="admin__title">Управление промокодами</h2>
+      <a class="admin__logout" href="/php/">Вернуться к заявками</a>
+      <button class="authorization__btn promo__btn none" id="create-promo-code">Создать промокод</button>
+      <ul class="promo__list">
+        <li class="promo__item" data-id="8">
+          <div class="promo__actions">
+            <button class="promo__edit" type="button">Редактировать</button>
+            <span>|</span>
+            <button class="promo__delete" type="button">Удалить промокод</button>
+          </div>
+          <span class="promo__code">Название: САВАА</span><span class="promo__discount">Процент скидки: 5%</span><span
+            class="promo__line"></span><span class="promo__max-activations">Максимальное количество активаций: 10</span><span
+            class="promo__current-activations">Текущее количество активаций: 0</span></li>
+        <li class="promo__item" data-id="9">
+          <div class="promo__actions">
+            <button class="promo__edit" type="button">Редактировать</button>
+            <span>|</span>
+            <button class="promo__delete" type="button">Удалить промокод</button>
+          </div>
+          <span class="promo__code">Название: 477622</span><span class="promo__discount">Процент скидки: 55%</span><span
+            class="promo__line"></span><span
+            class="promo__max-activations">Максимальное количество активаций: 555</span><span
+            class="promo__current-activations">Текущее количество активаций: 0</span></li>
+        <li class="promo__item" data-id="13">
+          <div class="promo__actions">
+            <button class="promo__edit" type="button">Редактировать</button>
+            <span>|</span>
+            <button class="promo__delete" type="button">Удалить промокод</button>
+          </div>
+          <span class="promo__code">Название: 982415</span><span class="promo__discount">Процент скидки: 54%</span><span
+            class="promo__line"></span><span
+            class="promo__max-activations">Максимальное количество активаций: 555</span><span
+            class="promo__current-activations">Текущее количество активаций: 0</span></li>
+        <li class="promo__item" data-id="16">
+          <div class="promo__actions">
+            <button class="promo__edit" type="button">Редактировать</button>
+            <span>|</span>
+            <button class="promo__delete" type="button">Удалить промокод</button>
+          </div>
+          <span class="promo__code">Название: САВА</span><span class="promo__discount">Процент скидки: 34%</span><span
+            class="promo__line"></span><span
+            class="promo__max-activations">Максимальное количество активаций: 555</span><span
+            class="promo__current-activations">Текущее количество активаций: 0</span></li>
+      </ul>
+      <form class="modal modal-payment modal-payment--success" action="" method="post" id="promo-modal-create">
+        <h3 class="modal-payment__title">Создание промокода</h3>
+        <span class="error promo__error" id="exist_promo-error">Промокод с таким названием уже существует</span>
+        <ul class="promo__fields">
+          <li class="promo__field">
+            <label class="participation__label" for="code">Название промокода</label>
+            <label class="participation__fields long">
+              <input class="input" type="text" name="code" id="code" required
+                     placeholder="Введите название" maxlength="25">
+            </label>
+          </li>
+          <li class="promo__field">
+            <label class="participation__label" for="discount_percent">Процент скидки промокода</label>
+            <label class="participation__fields long">
+              <input class="input" type="number" name="discount_percent" id="discount_percent" required
+                     min="5" max="90"
+                     placeholder="Введите процент скидки" maxlength="10">
+            </label>
+          </li>
+          <li class="promo__field">
+            <label class="participation__label" for="max_activations">Количество активаций</label>
+            <label class="participation__fields long">
+              <input class="input" type="number" name="max_activations" id="max_activations" required
+                     min="10" max="1000"
+                     placeholder="Введите количество" maxlength="10">
+            </label>
+          </li>
+        </ul>
+        <button class="authorization__btn promo__btn non-bottom">Создать промокод</button>
+        <button class="modal-payment__close success" type="button" id="promo-modal-create-close">
+          <span class="sr-only">закрыть модальное окно</span>
+        </button>
+      </form>
+      <form class="modal modal-payment modal-payment--success" action="" method="post" id="promo-modal-edit">
+        <h3 class="modal-payment__title">Редактирование промокода</h3>
+        <span class="error promo__error" id="exist_promo_edit-error">Промокод с таким названием уже существует</span>
+        <ul class="promo__fields">
+          <li class="promo__field">
+            <label class="participation__label" for="edit-code">Название промокода</label>
+            <label class="participation__fields long">
+              <input class="input" type="text" name="code" id="edit-code" required
+                     placeholder="Введите название" maxlength="25">
+            </label>
+          </li>
+          <li class="promo__field">
+            <label class="participation__label" for="edit-discount_percent">Процент скидки промокода</label>
+            <label class="participation__fields long">
+              <input class="input" type="number" name="discount_percent" id="edit-discount_percent" required
+                     min="5" max="90"
+                     placeholder="Введите процент скидки" maxlength="10">
+            </label>
+          </li>
+          <li class="promo__field">
+            <label class="participation__label" for="edit-max_activations">Количество активаций</label>
+            <label class="participation__fields long">
+              <input class="input" type="number" name="max_activations" id="edit-max_activations" required
+                     min="10" max="1000"
+                     placeholder="Введите количество" maxlength="10">
+            </label>
+          </li>
+        </ul>
+        <button class="authorization__btn promo__btn non-bottom">Сохранить изменения</button>
+        <button class="modal-payment__close success" type="button" id="promo-modal-edit-close">
+          <span class="sr-only">закрыть модальное окно</span>
+        </button>
+      </form>
+    </div>
+  </section>
+</main>
+<div class="modal-backdrop" id="modal-backdrop"></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const createPromoCodeBtn = document.getElementById('create-promo-code');
+    const promoModalCreate = document.getElementById('promo-modal-create');
+    const promoModalEdit = document.getElementById('promo-modal-edit');
+    const promoModalCreateClose = document.getElementById('promo-modal-create-close');
+    const promoModalEditClose = document.getElementById('promo-modal-edit-close');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const createCodeInput = document.getElementById('code');
+    const editCodeInput = document.getElementById('edit-code');
+    const html = document.querySelector('.html');
+
+    const toUpperCaseHandler = (event) => {
+      const input = event.target;
+      input.value = input.value.toUpperCase();
+    };
+
+    const openModal = (modal) => {
+      modal.classList.add('active');
+      modalBackdrop.classList.add('active');
+      html.classList.add('active');
+    };
+
+    const closeModal = (modal) => {
+      modal.classList.remove('active');
+      modalBackdrop.classList.remove('active');
+      html.classList.remove('active');
+    };
+
+    createPromoCodeBtn.addEventListener('click', () => {
+      openModal(promoModalCreate);
+    });
+
+    createCodeInput.addEventListener('input', toUpperCaseHandler);
+    editCodeInput.addEventListener('input', toUpperCaseHandler);
+
+    document.querySelectorAll('.promo__edit').forEach(editBtn => {
+      editBtn.addEventListener('click', () => {
+        const promoItem = editBtn.closest('.promo__item');
+        const promoId = promoItem.getAttribute('data-id');
+        const promoCode = promoItem.querySelector('.promo__code').textContent.trim().split(': ')[1];
+        const promoDiscount = promoItem.querySelector('.promo__discount').textContent.trim().split(': ')[1].replace('%', '');
+        const promoMaxActivations = promoItem.querySelector('.promo__max-activations').textContent.trim().split(': ')[1];
+
+        document.getElementById('edit-code').value = promoCode;
+        document.getElementById('edit-discount_percent').value = promoDiscount;
+        document.getElementById('edit-max_activations').value = promoMaxActivations;
+
+        promoModalEdit.setAttribute('data-id', promoId);
+        openModal(promoModalEdit);
+      });
+    });
+
+    const promoFormCreate = document.getElementById('promo-modal-create');
+    promoFormCreate.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(promoFormCreate);
+      formData.set('code', formData.get('code').toUpperCase());
+
+      fetch('create_promo.php', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 'success') {
+            Toastify({
+              text: data.message,
+              backgroundColor: "green",
+              className: "info",
+            }).showToast();
+            closeModal(promoModalCreate);
+            promoFormCreate.reset();
+
+            const promoList = document.querySelector('.promo__list');
+            if (!promoList) {
+              const newPromoList = document.createElement('ul');
+              newPromoList.classList.add('promo__list');
+              document.querySelector('.container').insertBefore(newPromoList, createPromoCodeBtn);
+            }
+
+            const newPromoItem = document.createElement('li');
+            newPromoItem.classList.add('promo__item');
+            newPromoItem.setAttribute('data-id', data.promo.id);
+            newPromoItem.innerHTML = `
+          <div class="promo__actions">
+            <button class="promo__delete" type="button">Удалить промокод</button>
+          </div>
+          <span class="promo__code">Название: ${data.promo.code}</span>
+          <span class="promo__discount">Процент скидки: ${data.promo.discount_percent}%</span>
+          <span class="promo__line"></span>
+          <span class="promo__max-activations">Максимальное количество активаций: ${data.promo.max_activations}</span>
+          <span class="promo__current-activations">Текущее количество активаций: 0</span>
+        `;
+            promoList.appendChild(newPromoItem);
+
+            const deleteBtn = newPromoItem.querySelector('.promo__delete');
+            deleteBtn.addEventListener('click', () => {
+              if (confirm(`Вы действительно хотите удалить промокод "${data.promo.code}"? Отменить действие будет невозможно`)) {
+                fetch('delete_promo.php', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                  },
+                  body: `promo_id=${encodeURIComponent(data.promo.id)}`
+                })
+                  .then(response => response.json())
+                  .then(deleteData => {
+                    if (deleteData.status === 'success') {
+                      Toastify({
+                        text: deleteData.message,
+                        backgroundColor: "green",
+                        className: "info",
+                      }).showToast();
+
+                      newPromoItem.remove();
+                    } else {
+                      Toastify({
+                        text: deleteData.message,
+                        backgroundColor: "red",
+                        className: "info",
+                      }).showToast();
+                    }
+                  })
+                  .catch(error => {
+                    console.error('Error:', error);
+                  });
+              }
+            });
+
+          } else {
+            const existPromoError = document.getElementById('exist_promo-error');
+            existPromoError.classList.add('active');
+
+            setTimeout(() => {
+              existPromoError.classList.remove('active');
+            }, 3000);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+    const promoFormEdit = document.getElementById('promo-modal-edit');
+    promoFormEdit.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(promoFormEdit);
+      const promoId = promoModalEdit.getAttribute('data-id');
+      formData.append('promo_id', promoId);
+
+      formData.set('code', formData.get('code').toUpperCase());
+
+      fetch('edit_promo.php', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 'success') {
+            Toastify({
+              text: data.message,
+              backgroundColor: "green",
+              className: "info",
+            }).showToast();
+            closeModal(promoModalEdit);
+
+            // Найти и обновить элемент в списке промокодов
+            const promoItemToUpdate = document.querySelector(`.promo__item[data-id="${data.promo.id}"]`);
+            if (promoItemToUpdate) {
+              promoItemToUpdate.querySelector('.promo__code').textContent = `Название: ${data.promo.code}`;
+              promoItemToUpdate.querySelector('.promo__discount').textContent = `Процент скидки: ${data.promo.discount_percent}%`;
+              promoItemToUpdate.querySelector('.promo__max-activations').textContent = `Максимальное количество активаций: ${data.promo.max_activations}`;
+            }
+
+          } else {
+            const existPromoEditError = document.getElementById('exist_promo_edit-error');
+            existPromoEditError.classList.add('active');
+
+            setTimeout(() => {
+              existPromoEditError.classList.remove('active');
+            }, 3000);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+    promoModalCreateClose.addEventListener('click', () => {
+      closeModal(promoModalCreate);
+    });
+
+    promoModalEditClose.addEventListener('click', () => {
+      closeModal(promoModalEdit);
+    });
+
+    modalBackdrop.addEventListener('click', (event) => {
+      if (promoModalCreate.classList.contains('active') && event.target === modalBackdrop) {
+        closeModal(promoModalCreate);
+      }
+      if (promoModalEdit.classList.contains('active') && event.target === modalBackdrop) {
+        closeModal(promoModalEdit);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeModal(promoModalCreate);
+        closeModal(promoModalEdit);
+      }
+    });
+
+    document.querySelectorAll('.promo__delete').forEach(deleteBtn => {
+      deleteBtn.addEventListener('click', () => {
+        const promoItem = deleteBtn.closest('.promo__item');
+        const promoId = promoItem.getAttribute('data-id');
+        const promoCode = promoItem.querySelector('.promo__code').textContent.trim().split(': ')[1];
+
+        if (confirm(`Вы действительно хотите удалить промокод "${promoCode}"? Отменить действие будет невозможно`)) {
+          fetch('delete_promo.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `promo_id=${encodeURIComponent(promoId)}`
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.status === 'success') {
+                Toastify({
+                  text: data.message,
+                  backgroundColor: "green",
+                  className: "info",
+                }).showToast();
+
+                promoItem.remove();
+              } else {
+                Toastify({
+                  text: data.message,
+                  backgroundColor: "red",
+                  className: "info",
+                }).showToast();
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

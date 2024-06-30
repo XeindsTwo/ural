@@ -112,4 +112,11 @@
   &__teacher {
     @include flex-column(12);
   }
+
+  &__promo {
+    color: $teal-green;
+    display: flex;
+    max-width: max-content;
+    margin-bottom: 15px;
+  }
 }

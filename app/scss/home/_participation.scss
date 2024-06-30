@@ -305,6 +305,30 @@
             transform: translateX(-2px);
           }
         }
+
+        &.pdf {
+          &__link {
+            display: flex;
+            background-color: transparent;
+            border-radius: 5px;
+            gap: 10px;
+            width: auto;
+            height: auto;
+
+            &:hover {
+              color: #FB3449;
+            }
+
+            &:focus {
+              color: #FB3449;
+              border-color: #FB3449;
+            }
+
+            span {
+              display: flex;
+            }
+          }
+        }
       }
     }
   }
