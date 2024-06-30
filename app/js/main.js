@@ -2,12 +2,14 @@ import {bindScrollToLinks} from './gsap.js';
 import {bindShareLinks} from './copy.js';
 import {setupMobileMenu} from "./mobileMenu.js";
 import {modalJury} from "./modalJury.js";
+import {setupFAQ} from "./faq.js";
 import {animateCompetitionSection} from './animateCompetitionSection.js';
 
 bindScrollToLinks();
 bindShareLinks();
 setupMobileMenu();
 modalJury();
+setupFAQ();
 animateCompetitionSection();
 
 new Swiper('.command__swiper', {

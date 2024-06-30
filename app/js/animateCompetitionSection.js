@@ -26,7 +26,6 @@ export function animateCompetitionSection() {
     });
 
     tl
-      .to('.fromLeft', {height: '100vh', ease: "power2.out", duration: 1,})
       .to(content, {
         y: () => window.innerHeight - content.clientHeight - 40,
         duration: 1.5,
