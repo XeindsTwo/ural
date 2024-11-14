@@ -6,14 +6,30 @@ title: 'Вокальный конкурс на Урале'
 <main>
   @include('home/_home.html')
   @include('home/_about.html')
-  @include('home/_command.html')
+  @include('home/_jury.html')
   @include('home/_prizes.html')
   @include('home/_faq.html')
   @include('home/_competition.html')
-  @include('home/_jury.html')
+  @include('home/_command.html')
   @include('home/_price.html')
   @include('home/_participation.html')
 </main>
+<div class="offer">
+  <div class="container">
+    <div class="offer__inner">
+      <div class="offer__content">
+        <button class="offer__close" type="button">
+          <span class="sr-only">закрыть модальное окно</span>
+        </button>
+        <p>Оформите заявку сейчас, и получите скидку на 15%!</p>
+        <form action="" class="offer__form">
+          <input class="offer__input input" type="text" data-tel-input placeholder="Введите номер">
+          <a class="offer__btn desktop" href="#participation">Принять участие</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 @include('components/_footer.html')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer></script>

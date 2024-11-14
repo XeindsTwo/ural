@@ -117,6 +117,17 @@
     @include r($tablet) {
       flex-direction: column;
     }
+
+    &.comp {
+      gap: 30px;
+      @include r($lg) {
+        gap: 20px;
+      }
+      @include r($tablet) {
+        flex-direction: column-reverse;
+        gap: 30px;
+      }
+    }
   }
 
   &__img {
@@ -147,6 +158,38 @@
     &.left {
       object-position: -1.7cm;
     }
+
+    &.small {
+      margin-left: auto;
+      margin-bottom: auto;
+      margin-top: auto;
+      border-radius: 50%;
+      @include r($lg) {
+        width: 200px;
+        height: 200px;
+      }
+      @media (max-width: 870px) {
+        width: 190px;
+        height: 190px;
+      }
+      @include r($tablet) {
+        margin-left: 0;
+        width: 175px;
+        height: 175px;
+      }
+      @include r($sm) {
+        width: 165px;
+        height: 165px;
+      }
+      @include r($phone) {
+        width: 155px;
+        height: 155px;
+      }
+      @media (max-width: 410px) {
+        width: 145px;
+        height: 145px;
+      }
+    }
   }
 
   &__line {
@@ -168,6 +211,11 @@
     @include r($tablet) {
       padding: 0;
       max-width: 100%;
+    }
+
+    &.left {
+      max-width: 565px;
+      margin-right: 30px;
     }
   }
 
@@ -204,6 +252,21 @@
       @include r($lg) {
         width: 30px;
         height: 30px;
+      }
+    }
+
+    &.link {
+      max-width: max-content;
+      border-bottom: 1px solid transparent;
+      transition: color .4s, border .4s;
+
+      &:hover {
+        color: $midnight-blue;
+      }
+
+      &:focus {
+        border-bottom-color: $teal-green50;
+        color: $teal-green50;
       }
     }
   }
@@ -367,7 +430,7 @@
   }
 
   &--success {
-    max-width: 500px;
+    max-width: 475px;
     padding: 40px 30px;
     @include r($sm) {
       padding: 35px 25px;
@@ -383,7 +446,7 @@
   &__title {
     margin-bottom: 25px;
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 400;
     @include r($phone) {
       font-size: 20px;
     }
@@ -394,6 +457,7 @@
 
   &__text {
     font-size: 16px;
+    font-weight: 600;
     @media (max-width: 410px) {
       font-size: 14px;
     }

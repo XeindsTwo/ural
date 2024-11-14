@@ -16,6 +16,10 @@
       display: none;
     }
 
+    &.bottom {
+      margin-bottom: 25px;
+    }
+
     &.none {
       display: none;
       @include r($lg) {
@@ -34,7 +38,7 @@
     width: 56px;
     height: 56px;
     border: 1px solid transparent;
-    background-color: #eeeeee;
+    background-color: $teal-green;
     transition: all .4s;
 
     &.swiper-button-disabled {
@@ -45,12 +49,27 @@
 
     &:hover {
       background-color: $deep-purple;
+
+      svg path {
+        fill: $midnight-blue;
+      }
     }
 
     &:focus {
       background-color: transparent;
       border-color: $teal-green50;
+
+      svg path {
+        fill: $teal-green50;
+      }
     }
+  }
+
+  &__subtext {
+    font-size: 20px;
+    max-width: 790px;
+    text-align: center;
+    margin: 0 auto 40px;
   }
 
   &__item {
@@ -96,6 +115,14 @@
     @include r($sm) {
       width: 150px;
       height: 150px;
+    }
+
+    &.turov {
+      object-position: 1% 15%;
+    }
+
+    &.saharov {
+      object-position: 5% 12%;
     }
 
     &.top {
@@ -183,6 +210,20 @@
 
   .swiper {
     overflow: visible !important;
+  }
+
+  .swiper-scrollbar {
+    display: none;
+    height: 6px;
+    bottom: -20px;
+    background-color: $light-gray;
+    @include r($lg) {
+      display: flex;
+    }
+
+    &-drag {
+      background-color: $teal-green;
+    }
   }
 
   .swiper-wrapper {

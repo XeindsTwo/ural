@@ -8,39 +8,6 @@
     }
   }
 
-  /*  &__navigation {
-      @include flex-align-center(8);
-      margin-bottom: 25px;
-      @media (max-width: 555px) {
-        display: none;
-      }
-    }
-
-    &__btn {
-      @include flex-center;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
-      border: 1px solid transparent;
-      background-color: #eeeeee;
-      transition: all .4s;
-
-      &.swiper-button-disabled {
-        opacity: .4;
-        pointer-events: none;
-        user-select: none;
-      }
-
-      &:hover {
-        background-color: $deep-purple;
-      }
-
-      &:focus {
-        background-color: transparent;
-        border-color: $teal-green50;
-      }
-    }*/
-
   &__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -331,38 +298,70 @@
     }
   }
 
-  /*  .swiper {
-      overflow: visible !important;
+  &__text {
+    font-size: 20px;
+    text-align: center;
+    max-width: 880px;
+    margin: 45px auto 0;
+    @include r($tablet) {
+      font-size: 18px;
+      max-width: 690px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+    }
 
-      &-wrapper {
-        box-sizing: border-box !important;
+    br {
+      @include r($lg) {
+        display: none;
       }
     }
 
-    .swiper-wrapper {
-      @media (max-width: 555px) {
-        box-sizing: border-box !important;
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__bar-artist, &__bar-level {
+    position: relative;
+    line-height: 1.3;
+    color: $deep-purple;
+    display: inline-block;
+    max-width: max-content;
+
+    &::before {
+      @include pseudo;
+      top: 0;
+      left: -4px;
+      width: 107%;
+      height: 28px;
+      z-index: -1;
+      border-radius: 8px;
+      background-color: $olive-green;
+      transform: rotate(-1.4deg);
+      @include r($tablet) {
+        left: -3px;
+        width: 108%;
+        height: 26px;
+      }
+      @media (max-width: 510px) {
+        height: 22px;
+        top: 2px;
+      }
+      @media (max-width: 440px) {
+        height: 20px;
+        top: 1px;
       }
     }
+  }
 
-    .swiper-slide {
-      @media (max-width: 555px) {
-        max-width: 380px;
-      }
-      @media (max-width: 505px) {
-        max-width: 350px;
-      }
-      @include r($phone) {
-        max-width: 330px;
-      }
-      @media (max-width: 415px) {
-        max-width: 310px;
-      }
-      @media (max-width: 395px) {
-        max-width: 300px;
-      }
-      @media (max-width: 385px) {
-        max-width: 280px;
-      }
-    }*/
+  &__bar-level {
+    color: inherit;
+
+    &::before {
+      width: 108%;
+      background-color: $deep-purple;
+      transform: rotate(0.7deg);
+    }
+  }
 }

@@ -1,24 +1,24 @@
 .faq {
   &__title {
-    margin-bottom: 65px;
+    max-width: 650px;
+    margin: 0 auto 65px;
     @media (max-width: 1130px) {
-      max-width: 780px;
       margin: 0 auto 60px;
-    }
-    @include r($lg) {
-      max-width: 640px;
     }
     @media (max-width: 550px) {
       margin-bottom: 50px;
+    }
+    @media (max-width: 395px) {
+      font-size: 36px;
     }
   }
 
   &__list {
     @include flex-column(16);
-    max-width: 720px;
-    margin: 0 auto;
+    max-width: 620px;
+    margin: 0 auto 40px;
     @include r($phone) {
-      margin: 0 -10px;
+      margin-bottom: 30px;
     }
   }
 
@@ -75,10 +75,9 @@
   }
 
   &__text {
-    height: 0;
-    overflow: hidden;
     opacity: .7;
-    max-width: 624px;
+    font-size: 18px;
+    max-width: 550px;
     @include r($phone) {
       font-size: 14px;
     }
@@ -128,6 +127,62 @@
 
     &::after {
       transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  &__action {
+    display: flex;
+    max-width: max-content;
+    margin: 0 auto 30px;
+    padding: 24px 40px;
+    color: $deep-forest-green;
+    background-color: $deep-purple;
+    border-radius: 72px;
+    border: 1px solid transparent;
+    transition: background-color .4s, color .4s, border .4s, box-shadow .5s;
+    position: relative;
+    box-shadow: 0 0 24px 0 rgba(25, 247, 207, 0.25);
+    @include r($desktop) {
+      margin-bottom: 0;
+      margin-top: auto;
+    }
+    @media (max-height: 740px) {
+      margin-bottom: 0;
+    }
+    @include r($phone) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      background-color: $midnight-blue;
+      color: $white;
+      box-shadow: 0 0 24px 0 rgba($midnight-blue, 0.25);
+
+      &::before {
+        border-color: $midnight-blue;
+      }
+    }
+
+    &:focus {
+      background-color: transparent;
+      box-shadow: 0 0 24px 0 rgba(25, 247, 207, 0);
+      border-color: $deep-forest-green;
+      color: $deep-forest-green;
+
+      &::before {
+        opacity: 0;
+      }
+    }
+
+    &::before {
+      @include pseudo;
+      @include topLeft50;
+      width: 105%;
+      height: 114%;
+      background-color: rgba($deep-purple, .15);
+      border: 1px solid $teal-green;
+      border-radius: 64px;
+      transition: background-color .4s, opacity .4s;
     }
   }
 }

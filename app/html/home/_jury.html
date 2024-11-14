@@ -1,27 +1,31 @@
 <section class="jury indent">
   <div class="container">
     <div class="jury__top">
-      <h2 class="title-section">
+      <h2 class="title-section center">
         Жюри <span>конкурса</span>
       </h2>
-      <div class="jury__navigation">
-        <button class="jury__btn jury__btn--prev" type="button">
-          <span class="sr-only">Предыдущий слайд</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M16.2071 5.70711C16.5976 5.31658 16.5976 4.68342 16.2071 4.29289C15.8166 3.90237 15.1834 3.90237 14.7929 4.29289L7.79289 11.2929C7.40237 11.6834 7.40237 12.3166 7.79289 12.7071L14.7929 19.7071C15.1834 20.0976 15.8166 20.0976 16.2071 19.7071C16.5976 19.3166 16.5976 18.6834 16.2071 18.2929L9.91421 12L16.2071 5.70711Z"
-                  fill="#00241F"/>
-          </svg>
-        </button>
-        <button class="jury__btn jury__btn--next" type="button">
-          <span class="sr-only">Следующий слайд</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M9.20711 4.29289C8.81658 3.90237 8.18342 3.90237 7.79289 4.29289C7.40237 4.68342 7.40237 5.31658 7.79289 5.70711L14.0858 12L7.79289 18.2929C7.40237 18.6834 7.40237 19.3166 7.79289 19.7071C8.18342 20.0976 8.81658 20.0976 9.20711 19.7071L16.2071 12.7071C16.5976 12.3166 16.5976 11.6834 16.2071 11.2929L9.20711 4.29289Z"
-                  fill="#00241F"/>
-          </svg>
-        </button>
-      </div>
+    </div>
+    <p class="jury__subtext">
+      Участник получит оперативную обратную связь от опытной команды организаторов. Мы гарантируем, что все
+      вопросы будут рассмотрены, а участник получит поддержку на всех этапах конкурса.
+    </p>
+    <div class="jury__navigation bottom">
+      <button class="jury__btn jury__btn--prev" type="button">
+        <span class="sr-only">Предыдущий слайд</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M16.2071 5.70711C16.5976 5.31658 16.5976 4.68342 16.2071 4.29289C15.8166 3.90237 15.1834 3.90237 14.7929 4.29289L7.79289 11.2929C7.40237 11.6834 7.40237 12.3166 7.79289 12.7071L14.7929 19.7071C15.1834 20.0976 15.8166 20.0976 16.2071 19.7071C16.5976 19.3166 16.5976 18.6834 16.2071 18.2929L9.91421 12L16.2071 5.70711Z"
+                fill="white"/>
+        </svg>
+      </button>
+      <button class="jury__btn jury__btn--next" type="button">
+        <span class="sr-only">Следующий слайд</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M9.20711 4.29289C8.81658 3.90237 8.18342 3.90237 7.79289 4.29289C7.40237 4.68342 7.40237 5.31658 7.79289 5.70711L14.0858 12L7.79289 18.2929C7.40237 18.6834 7.40237 19.3166 7.79289 19.7071C8.18342 20.0976 8.81658 20.0976 9.20711 19.7071L16.2071 12.7071C16.5976 12.3166 16.5976 11.6834 16.2071 11.2929L9.20711 4.29289Z"
+                fill="white"/>
+        </svg>
+      </button>
     </div>
     <div class="jury__swiper swiper">
       <ul class="swiper-wrapper">
@@ -37,7 +41,7 @@
         </li>
         <li class="swiper-slide">
           <div class="jury__item">
-            <img class="jury__avatar" src="images/jury/2.webp" width="192" height="192" alt="Туров Никита">
+            <img class="jury__avatar turov" src="images/jury/2.webp" width="192" height="192" alt="Туров Никита">
             <h3 class="jury__name">Туров <br> Никита</h3>
             <p class="jury__description">
               Педагог по актёрскому мастерству и сценической речи, ведущий радио, автор детских песен
@@ -67,7 +71,7 @@
         </li>
         <li class="swiper-slide">
           <div class="jury__item">
-            <img class="jury__avatar" src="images/jury/5.webp" width="192" height="192" alt="Сахаров Сергей">
+            <img class="jury__avatar saharov" src="images/jury/5.webp" width="192" height="192" alt="Сахаров Сергей">
             <h3 class="jury__name">Сахаров <br> Сергей</h3>
             <p class="jury__description">
               Актёр театра и кино, режиссер-педагог, преподаватель риторики
@@ -76,6 +80,7 @@
           </div>
         </li>
       </ul>
+      <div class="swiper-scrollbar swiper-scrollbar--jury"></div>
     </div>
   </div>
 </section>
@@ -131,7 +136,7 @@
     <span class="sr-only">закрыть модальное окно</span>
   </button>
   <div class="modal-jury__inner">
-    <img class="modal-jury__img" src="images/jury/jury.webp" width="310" height="465" alt="Туров Никита">
+    <img class="modal-jury__img" src="images/jury/2.webp" width="310" height="465" alt="Туров Никита">
     <span class="modal-jury__line"></span>
     <div class="modal-jury__content">
       <h3 class="modal-jury__name">Туров Никита</h3>
@@ -283,7 +288,7 @@
     <span class="sr-only">закрыть модальное окно</span>
   </button>
   <div class="modal-jury__inner">
-    <img class="modal-jury__img" src="images/jury/jury-sergey.webp" width="310" height="465" alt="Сахаров Сергей">
+    <img class="modal-jury__img" src="images/jury/5.webp" width="310" height="465" alt="Сахаров Сергей">
     <span class="modal-jury__line"></span>
     <div class="modal-jury__content">
       <h3 class="modal-jury__name">Сахаров Сергей</h3>

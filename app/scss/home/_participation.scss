@@ -40,6 +40,7 @@
     @include flex-align-center(8);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    position: relative;
     @include r($phone) {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -270,7 +271,7 @@
 
     span {
       font-size: 17px;
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
 
     a {
@@ -329,6 +330,58 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+.promo {
+  color: $teal-green;
+  display: none;
+  margin-bottom: -10px;
+  font-size: 14px;
+  @include r($phone) {
+    margin-bottom: -5px;
+  }
+
+  &.active {
+    display: block;
+  }
+
+  &__check {
+    position: absolute;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: $midnight-blue;
+    border: 1px solid transparent;
+    transition: background-color .4s, border .4s;
+    @include r($sm) {
+      width: 42px;
+      height: 42px;
+    }
+
+    &:hover {
+      background-color: $teal-green;
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: $midnight-blue;
+
+      svg path {
+        fill: $midnight-blue;
+      }
+    }
+
+    svg path {
+      @include r($sm) {
+        width: auto;
+        height: 16px;
       }
     }
   }

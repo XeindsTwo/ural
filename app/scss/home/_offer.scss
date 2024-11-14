@@ -1,0 +1,124 @@
+.offer {
+  position: fixed;
+  width: 100%;
+  bottom: -330px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  transition: all .6s;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    bottom: 30px;
+    pointer-events: auto;
+    visibility: visible;
+    @include r($sm) {
+      bottom: 20px;
+    }
+  }
+
+  &__inner {
+    margin: 0 auto;
+    max-width: 460px;
+    width: 100%;
+  }
+
+  &__content {
+    position: relative;
+    @include flex-column(25);
+    padding: 16px 20px;
+    border-radius: 14px;
+    background-color: $teal-green;
+    box-shadow: 0 0 40px 0 rgba($deep-purple, 0.15);
+    color: $white;
+    @include r($phone) {
+      padding: 14px 17px;
+    }
+  }
+
+  &__form {
+    @include flex-column(15);
+  }
+
+  &__btn {
+    display: flex;
+    max-width: max-content;
+    font-size: 14px;
+    background-color: $deep-purple;
+    border: 1px solid $deep-purple;
+    color: $midnight-blue;
+    padding: 12px 13px;
+    border-radius: 9px;
+    transition: background-color .4s, border .4s, color .4s;
+
+    &:hover {
+      background-color: transparent;
+      color: $white;
+      border-color: $white;
+    }
+  }
+
+  &__input {
+    border-radius: 8px;
+    padding: 17px 13px;
+    @include r($phone) {
+      padding: 15px 12px;
+    }
+  }
+
+  &__close {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 0 10px 0 rgba($midnight-blue, 0.2);
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 2;
+    transition: outline .4s;
+    outline: 1px solid transparent;
+    border-radius: 10px;
+    background-color: $white;
+    @include r($phone) {
+
+    }
+
+    &:hover {
+      color: $teal-green;
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+
+    &:focus {
+      outline-color: $teal-green;
+    }
+
+    &::before,
+    &::after {
+      display: block;
+      content: "";
+      width: 48%;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: currentColor;
+      border-radius: 4px;
+      transition: transform .4s;
+      will-change: transform;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}

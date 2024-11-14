@@ -52,6 +52,7 @@
     font-size: 112px;
     font-weight: 700;
     line-height: 78%;
+    max-width: 1000px;
     letter-spacing: -3.36px;
     @media (max-width: 1300px) {
       font-size: 104px;
@@ -109,18 +110,11 @@
       font-size: 46px;
     }
     @media (max-width: 440px) {
-      font-size: 44px;
       line-height: 1;
       letter-spacing: -0.4px;
     }
     @media (max-width: 410px) {
       letter-spacing: 0;
-    }
-    @media (max-width: 385px) {
-      font-size: 40px;
-    }
-    @media (max-width: 377px) {
-      font-size: 38px;
     }
 
     span {
@@ -175,7 +169,7 @@
   &__btn {
     display: flex;
     max-width: max-content;
-    margin: 0 auto 30px;
+    margin: 0 auto -140px;
     padding: 24px 40px;
     color: $deep-forest-green;
     background-color: $deep-purple;
@@ -188,11 +182,8 @@
       margin-bottom: 0;
       margin-top: auto;
     }
-    @media (max-height: 740px) {
-      margin-bottom: 0;
-    }
     @include r($phone) {
-      font-size: 14px;
+      font-size: 15px;
     }
 
     &:hover {
@@ -224,7 +215,7 @@
 
   &__text {
     margin: 0 auto;
-    max-width: 550px;
+    max-width: 460px;
     font-size: 20px;
     text-align: center;
     font-weight: 400;
@@ -245,10 +236,16 @@
   &__decor {
     @include objectCoverBg;
     position: absolute;
-    bottom: 21%;
+    bottom: 137px;
     width: 100%;
     z-index: 0;
     user-select: none;
+    @media (max-height: 830px) {
+      bottom: 10%;
+    }
+    @media (max-height: 780px) {
+      bottom: 8%;
+    }
     @include r($desktop) {
       bottom: 10%;
     }
@@ -264,9 +261,6 @@
     @include r($tablet) {
       bottom: 15%;
       height: 140px;
-    }
-    @include r($sm) {
-      height: 130px;
     }
     @media (max-width: 530px) {
       bottom: 18%;

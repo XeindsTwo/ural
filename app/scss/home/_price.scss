@@ -29,29 +29,32 @@
   }
 
   &__title {
-    max-width: 522px;
+    max-width: 770px;
+    line-height: 0.95;
     margin: 0 auto 32px;
     text-align: center;
     color: $white;
     @include r($lg) {
-      max-width: 450px;
+      max-width: 700px;
     }
     @include r($tablet) {
-      max-width: 420px;
+      max-width: 600px;
     }
     @include r($sm) {
-      max-width: 390px;
+      max-width: 540px;
     }
     @include r($phone) {
       max-width: 370px;
+      font-size: 40px;
     }
     @media (max-width: 410px) {
       max-width: 310px;
+      font-size: 38px;
     }
   }
 
   &__description {
-    font-size: 14px;
+    font-size: 15px;
     max-width: 570px;
     text-align: center;
     letter-spacing: -0.14px;
@@ -68,15 +71,22 @@
     padding: 24px 32px;
     max-width: max-content;
     margin: 0 auto 24px;
-    border-radius: 56px;
+    border-radius: 42px;
     background-color: rgba($deep-purple, .04);
-    @media (max-width: 715px) {
-      border-radius: 46px;
-      padding: 22px 28px;
+    @include r($tablet) {
+      border-radius: 36px;
+    }
+    @include r($sm) {
+      border-radius: 30px;
+    }
+    @media (max-width: 520px) {
+      border-radius: 26px;
     }
     @include r($phone) {
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
       padding: 20px 22px;
-      border-radius: 38px;
     }
     @media (max-width: 390px) {
       padding: 18px 20px;
@@ -97,36 +107,91 @@
       letter-spacing: -9px;
     }
     @include r($lg) {
-      font-size: 186px;
+      font-size: 180px;
     }
-    @media (max-width: 715px) {
-      font-size: 174px;
+    @media (max-width: 880px) {
+      font-size: 170px;
       letter-spacing: -8px;
     }
-    @include r($sm) {
+    @include r($tablet) {
       font-size: 160px;
     }
-    @media (max-width: 560px) {
-      font-size: 146px;
+    @media (max-width: 660px) {
+      font-size: 148px;
     }
-    @media(max-width: 515px) {
+    @include r($sm) {
       font-size: 130px;
     }
-    @include r($phone) {
-      font-size: 124px;
+    @media (max-width: 570px) {
+      font-size: 120px;
     }
-    @media (max-width: 430px) {
+    @media (max-width: 510px) {
       font-size: 114px;
+    }
+    @include r($phone) {
+      letter-spacing: -5px;
     }
     @media (max-width: 390px) {
       font-size: 108px;
       letter-spacing: -4px;
     }
-    @media (max-width: 380px) {
-      font-size: 98px;
-    }
     @media (max-width: 360px) {
-      font-size: 94px;
+      font-size: 100px;
+    }
+
+    &.old {
+      font-size: 120px;
+      margin-right: 25px;
+      position: relative;
+      color: rgba($deep-purple, .6);
+      @include r($lg) {
+        font-size: 114px;
+      }
+      @media (max-width: 860px) {
+        font-size: 110px;
+      }
+      @include r($tablet) {
+        font-size: 104px;
+      }
+      @media (max-width: 660px) {
+        font-size: 98px;
+      }
+      @include r($sm) {
+        font-size: 92px;
+      }
+      @media (max-width: 570px) {
+        font-size: 86px;
+        letter-spacing: -5px;
+        margin-right: 17px;
+      }
+      @media (max-width: 510px) {
+        font-size: 82px;
+      }
+      @media (max-width: 500px) {
+        margin-right: 5px;
+        font-size: 76px;
+      }
+      @include r($phone) {
+        font-size: 70px;
+        margin-right: 0;
+      }
+      @media (max-width: 390px) {
+        font-size: 66px;
+        letter-spacing: -2px;
+      }
+      @media (max-width: 360px) {
+
+      }
+
+      &::before {
+        @include pseudo;
+        top: 30%;
+        left: 54%;
+        transform: rotate(-16deg) translate(-50%, -50%);
+        width: 120%;
+        height: 2px;
+        background-color: $light-gray;
+      }
     }
   }
 
@@ -150,8 +215,13 @@
     @media (max-width: 515px) {
       font-size: 44px;
     }
-    @include r($phone) {
+    @include r($sm) {
       font-size: 40px;
+      letter-spacing: -1px;
+    }
+    @media (max-width: 560px) {
+      font-size: 36px;
+      letter-spacing: 0;
     }
     @media (max-width: 390px) {
       font-size: 37px;
@@ -229,25 +299,29 @@
     margin: 0 auto;
     align-items: center;
     padding: 40px 0;
+    @media (max-width: 1050px) {
+      max-width: 700px;
+      grid-gap: 35px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      align-items: center;
+    }
     @include r($lg) {
       padding: 35px 0 0;
     }
-    @media (max-width: 880px) {
-      max-width: 510px;
-      margin: 0 auto;
-      padding-top: 30px;
-      grid-gap: 40px 30px;
-      flex-wrap: wrap;
-      justify-content: center;
+    @media (max-width: 670px) {
+      grid-gap: 35px 10px;
     }
-    @include r($tablet) {
-      grid-gap: 30px;
+    @media (max-width: 580px) {
+      grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: 395px) {
-      grid-gap: 30px 30px;
+    @include r($phone) {
+      margin: 0 -10px;
     }
 
     li {
+      @include flex-center;
       @media (max-width: 880px) {
         @include flex-column(0);
         align-items: center;
@@ -279,7 +353,7 @@
         opacity: 1;
       }
 
-      @include r($sm) {
+      @include r($phone) {
         width: auto;
         height: 56px;
       }
@@ -287,6 +361,7 @@
 
     & > .circle {
       @include objectCoverBg;
+      border-radius: 50%;
       @include r($sm) {
         width: 102px;
         height: 102px;

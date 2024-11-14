@@ -1,10 +1,4 @@
 .competition {
-  height: 100vh;
-  overflow: hidden;
-  @include r($lg) {
-    height: auto;
-  }
-
   &__inner {
     padding-top: 55px;
     @include r($lg) {
@@ -18,28 +12,23 @@
   }
 
   &__title {
-    top: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     max-width: 690px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 50px;
     text-align: center;
     z-index: 2;
+
     @include r($lg) {
       max-width: 640px;
-    }
-    @media (max-width: 880px) {
-      position: static;
-      transform: none;
-      margin-bottom: 20px;
     }
     @include r($tablet) {
       max-width: 590px;
     }
     @include r($phone) {
-      margin-bottom: 10px;
+      font-size: 38px;
+    }
+    @media (max-width: 410px) {
+      font-size: 36px;
     }
   }
 
@@ -106,39 +95,6 @@
     }
     @media (max-width: 358px) {
       height: 185px;
-    }
-  }
-
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
-    margin-top: 180px;
-    margin-bottom: 48px;
-    @media (max-width: 1300px) {
-      margin-top: 140px;
-    }
-    @media (max-width: 1100px) {
-      margin-top: 100px;
-    }
-    @media (max-width: 1060px) {
-      grid-gap: 12px;
-    }
-    @media (max-width: 910px) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 80px;
-    }
-    @include r($tablet) {
-      margin-top: 60px;
-    }
-    @include r($sm) {
-      margin-top: 40px;
-    }
-    @media (max-width: 575px) {
-      z-index: 5;
-      position: relative;
     }
   }
 
@@ -250,6 +206,49 @@
 
     &:not(:last-child) {
       margin-bottom: 25px;
+    }
+  }
+
+  .swiper {
+    overflow: visible !important;
+  }
+
+  .swiper-scrollbar {
+    display: none;
+    height: 6px;
+    bottom: -20px;
+    background-color: $light-gray;
+    @include r($lg) {
+      display: flex;
+    }
+
+    &-drag {
+      background-color: $teal-green;
+    }
+  }
+
+  .swiper-wrapper {
+    box-sizing: border-box;
+  }
+
+  .swiper-slide {
+    height: auto !important;
+
+    @media (max-width: 515px) {
+      max-width: 340px;
+      width: 100%;
+    }
+    @include r($phone) {
+      max-width: 310px;
+    }
+    @media (max-width: 415px) {
+      max-width: 300px;
+    }
+    @media (max-width: 375px) {
+      max-width: 290px;
+    }
+    @media (max-width: 365px) {
+      max-width: 280px;
     }
   }
 }
