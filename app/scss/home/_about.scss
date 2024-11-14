@@ -18,6 +18,27 @@
 
   &__title {
     max-width: 750px;
+    @media (max-width: 540px) {
+      font-size: 44px;
+    }
+    @media (max-width: 510px) {
+      font-size: 42px;
+    }
+    @media (max-width: 485px) {
+      font-size: 40px;
+    }
+    @media (max-width: 465px) {
+      font-size: 36px;
+    }
+    @media (max-width: 420px) {
+      font-size: 34px;
+    }
+    @media (max-width: 395px) {
+      font-size: 32px;
+    }
+    @media (max-width: 380px) {
+      font-size: 30px;
+    }
   }
 
   &__text {

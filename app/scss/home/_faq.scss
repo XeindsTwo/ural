@@ -41,7 +41,6 @@
     @include flex-between(20);
     align-items: center;
     transition: color .4s;
-    cursor: pointer;
 
     &:hover {
       color: $teal-green;

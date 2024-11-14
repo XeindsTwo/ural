@@ -9,10 +9,21 @@
     border-radius: 0 0 46px 46px;
   }
   @include r($lg) {
+    height: 76vh;
     border-radius: 0 0 40px 40px;
   }
+  @media (max-width: 860px) {
+    height: 64vh;
+  }
   @include r($tablet) {
-    height: auto;
+    height: 60vh;
+  }
+  @include r($sm) {
+    padding-top: 110px;
+  }
+  @include r($phone) {
+    padding-top: 100px;
+    height: 64vh;
   }
 
   .container {
@@ -32,17 +43,8 @@
     @include r($desktop) {
       gap: 50px;
     }
-    @include r($tablet) {
-      min-height: 540px;
-    }
-    @media (max-height: 665px) {
-      min-height: 500px;
-    }
-    @media (max-height: 625px) {
-      min-height: 470px;
-    }
-    @media (max-height: 595px) {
-      min-height: 450px;
+    @media (max-width: 860px) {
+
     }
   }
 
@@ -73,6 +75,7 @@
     }
     @include r($tablet) {
       font-size: 64px;
+      max-width: 640px;
     }
     @media (max-width: 690px) {
       font-size: 62px;
@@ -86,10 +89,10 @@
       font-size: 62px;
     }
     @include r($sm) {
-      font-size: 58px;
+      font-size: 60px;
     }
     @media (max-width: 590px) {
-      font-size: 54px;
+      font-size: 56px;
     }
     @media (max-width: 540px) {
       font-size: 52px;
@@ -99,15 +102,9 @@
     @media (max-width: 530px) {
       font-size: 50px;
     }
-    @media (max-width: 510px) {
-      font-size: 48px;
-    }
     @media (max-width: 500px) {
       letter-spacing: -0.8px;
       line-height: 94%;
-    }
-    @include r($phone) {
-      font-size: 46px;
     }
     @media (max-width: 440px) {
       line-height: 1;
@@ -225,11 +222,14 @@
       font-size: 18px;
     }
     @media (max-width: 530px) {
-      max-width: 370px;
+      max-width: 490px;
     }
     @include r($phone) {
       font-size: 16px;
-      max-width: 320px;
+      max-width: 340px;
+    }
+    @media (max-width: 390px) {
+      font-size: 15px;
     }
   }
 
@@ -266,8 +266,11 @@
       bottom: 18%;
     }
     @include r($phone) {
-      height: 140px;
-      bottom: 16%;
+      height: 110px;
+      bottom: 19%;
+    }
+    @media (max-width: 380px) {
+      height: 90px;
     }
     @media (max-height: 665px) {
       bottom: 17%;
