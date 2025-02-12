@@ -1,0 +1,60 @@
+.who-can {
+  &__title {
+    max-width: 530px;
+    margin: 0 auto 32px;
+    text-align: center;
+  }
+
+  &__text {
+    max-width: 980px;
+    font-weight: 400;
+    margin: 0 auto 56px;
+    text-align: center;
+    color: #858585;
+    font-size: 20px;
+    letter-spacing: -0.2px;
+
+    span {
+      color: $midnight-blue;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__item {
+    padding: 12px 12px 25px;
+    border-radius: 52px;
+    text-align: center;
+    background-color: $light-gray;
+  }
+
+  &__img {
+    @include objectCoverBg;
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+  &__subtitle {
+    font-size: 30px;
+    line-height: 0.78;
+    color: $midnight-blue;
+    font-family: $garamond;
+    letter-spacing: -0.96px;
+    margin: 0 auto 16px;
+
+    &.short {
+      max-width: 250px;
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    color: #9A9A9A;
+    font-weight: 400;
+    letter-spacing: -0.18px;
+  }
+}

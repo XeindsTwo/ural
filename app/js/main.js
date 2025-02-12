@@ -10,6 +10,10 @@ setupMobileMenu();
 modalJury();
 setupFAQ();
 
+Fancybox.bind("[data-fancybox]", {
+  // любые дополнительные настройки
+});
+
 new Swiper('.command__swiper', {
   loop: false,
   speed: 800,

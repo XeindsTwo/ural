@@ -10,6 +10,7 @@
   <meta name="theme-color" content="#fff">
   <title>Вокальный конкурс на Урале</title>
   <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4/dist/fancybox.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body class="body">
@@ -122,7 +123,7 @@
       </h1>
       <ul class="home__list">
         <li class="home__item">
-          Получите перспективные контракты и яркие выступления Саваааа
+          Получите перспективные контракты и яркие выступления
         </li>
         <li class="home__item">
           Денежные призы, айфоны, наушники и многое другое ждут вас
@@ -169,313 +170,218 @@
     </ul>
   </div>
 </section>
+  <section class="who-can indent">
+  <div class="container">
+    <h2 class="who-can__title title-section center">
+      Кто может принять <span>участие</span>
+    </h2>
+    <p class="who-can__text">
+      Мы честно оцениваем навыки наших конкурсантов, предоставляя объективную обратную связь и
+      не смешиваем новичков с профессионалами.
+      <span>На каждую категорию участников мы выделили пакет призов!</span>
+    </p>
+    <ul class="who-can__list">
+      <li class="who-can__item">
+        <img class="who-can__img" width="280" height="267" src="images/who_can/1.png" alt="Новички без опыта в вокале">
+        <h3 class="who-can__subtitle short">
+          Новички без опыта в вокале
+        </h3>
+        <p class="who-can__description">
+          Научитесь уверенно выступать на сцене. Получите первый опыт участия в конкурсах
+          и начните свой путь к профессиональной карьере.
+        </p>
+      </li>
+      <li class="who-can__item">
+        <img class="who-can__img" width="280" height="267" src="images/who_can/2.png" alt="Любители с опытом">
+        <h3 class="who-can__subtitle">
+          Любители <br> с опытом
+        </h3>
+        <p class="who-can__description">
+          Раскройте свой потенциал и получите обратную связь от профессионалов.
+          Участвуйте в конкурсах и привлекайте внимание продюсеров.
+        </p>
+      </li>
+      <li class="who-can__item">
+        <img class="who-can__img" width="280" height="267" src="images/who_can/3.png" alt="Любители с опытом">
+        <h3 class="who-can__subtitle">
+          Профессиональные вокалисты
+        </h3>
+        <p class="who-can__description">
+          Покажите свой талант широкой аудитории и получите возможность заключить контракты.
+          Укрепите позиции в музыкальной индустрии.
+        </p>
+      </li>
+      <li class="who-can__item">
+        <img class="who-can__img" width="280" height="267" src="images/who_can/4.png" alt="Любители с опытом">
+        <h3 class="who-can__subtitle">
+          Авторам-исполнителям
+        </h3>
+        <p class="who-can__description">
+          Представьте свои авторские песни и получите шанс на их продвижение.
+          Найдите аудиторию и начните сотрудничество с профессионалами.
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
   <section class="prizes indent" id="prizes">
   <div class="container">
-    <div class="prizes__top">
-      <h2 class="title-section">
-        Призы конкурса
-      </h2>
-    </div>
+    <h2 class="prizes__title title-section center">
+      Что я получу если <span>выиграю?</span>
+    </h2>
+    <p class="prizes__subtext">
+      Твой билет к музыкальному успеху!
+    </p>
     <ul class="prizes__items">
       <li class="prizes__item">
-        <div class="prizes__avatar">
-          <img class="prizes__img" src="images/prizes/1.webp" width="192" height="192"
-               alt="Вокальный динамический микрофон">
-        </div>
-        <div class="prizes__content">
-          <h3 class="prizes__name">Первое место</h3>
-          <p class="prizes__value">Профессиональный брендовый вокальный микрофон, 30 000₽ и передача портфолио</p>
-          <a class="prizes__link desktop" href="#participation">Принять участие</a>
-        </div>
-      </li>
-      <li class="prizes__item">
-        <div class="prizes__avatar">
-          <img class="prizes__img" src="images/prizes/2.webp" width="192" height="192" alt="Наушники беспроводные">
-        </div>
-        <div class="prizes__content">
-          <h3 class="prizes__name">Второе место</h3>
-          <p class="prizes__value">Профессиональные брендовые наушники, 15 000₽ и передача портфолио</p>
-          <a class="prizes__link desktop" href="#participation">Принять участие</a>
-        </div>
-      </li>
-      <li class="prizes__item">
-        <div class="prizes__avatar">
-          <img class="prizes__img" src="images/prizes/3.webp" width="192" height="192" alt="Съёмка видеоклипа">
-        </div>
-        <div class="prizes__content">
-          <h3 class="prizes__name">Третье место</h3>
-          <p class="prizes__value">Специальный вокальный держатель для телефона, 10 000₽ и передача портфолио</p>
-          <a class="prizes__link desktop" href="#participation">Принять участие</a>
-        </div>
-      </li>
-    </ul>
-    <p class="prizes__text">
-      Каждый участник гарантированно получает <span class="prizes__bar-artist">пакет призов</span> от наших спонсоров
-      (в том числе, подарочные и скидочные сертификаты на услуги студий звукозаписи, фотографов, операторов и
-      <span class="prizes__bar-level">клипмейкеров</span>, аранжировщиков и т.д.).
-    </p>
-  </div>
-</section>
-  <section class="faq indent" id="faq">
-  <div class="container">
-    <h2 class="faq__title title-section center">Как принять участие?</h2>
-    <ul class="faq__list">
-      <li class="faq__item">
-        <div class="faq__head">
-          <h3 class="faq__name">Этапы конкурса</h3>
-        </div>
-        <p class="faq__text">
-          <br>
-          Первый этап: <br>
-          Онлайн-отборы в регионах России (4 - 6 недель). По
-          итогам каждого отбора жюри определяет
-          обладателей гран-при и призеров в каждой
-          номинации / возрастной категории.
-          <br> <br>
-          Второй этап: <br>
-
-          Финальный Всероссийский концерт с участием
-          обладателей гран-при и призеров онлайн-отборов,
-          среди которых также определяются лучшие.
-        </p>
-      </li>
-      <li class="faq__item">
-        <div class="faq__head">
-          <h3 class="faq__name">Порядок и условия приниятия участия</h3>
-        </div>
-        <p class="faq__text">
-          <br>
-          Для участия необходимо подать заявку на сайте. <br>
-          Итоги всех этапов Конкурса подлежат обязательному опубликованию на сайте и
-          в социальных сетях продюсерского
-          центра.
-          <br>
-          В конкурсе могут принимать участие артисты независимо от возраста, национальности,
-          места проживания, профессионального опыта.
-        </p>
-      </li>
-      <li class="faq__item">
-        <div class="faq__head">
-          <h3 class="faq__name">Номинации конкурса</h3>
-        </div>
-        <p class="faq__text">
-          <br>
-          Будут следующие номинации конкурса: <br>
-          - индивидуальное исполнение (соло); <br>
-          - дуэтное исполнение (дуэты) / групповое вокальное исполнение (вокальные коллективы).
-        </p>
-      </li>
-      <li class="faq__item">
-        <div class="faq__head">
-          <h3 class="faq__name">Возрастные категории конкурса</h3>
-        </div>
-        <p class="faq__text">
-          <br>
-          - I возрастная группа — до 11 лет; <br>
-          - II возрастная группа 12 - 18 лет; <br>
-          - III возрастная группа 19 - 30 лет; <br>
-          - IV возрастная категория 31 год и старше. <br>
-        </p>
-      </li>
-    </ul>
-    <a class="faq__action desktop" href="#participation">Принять участие</a>
-  </div>
-</section>
-  <section class="competition indent" id="competition">
-  <div class="container">
-    <div class="competition__inner">
-      <div class="competition__top">
-        <h2 class="competition__title title-section">
-          Наши <br> продюсерские центры
-        </h2>
-      </div>
-      <div class="jury__navigation bottom">
-        <button class="jury__btn competition__btn--prev" type="button">
-          <span class="sr-only">Предыдущий слайд</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M16.2071 5.70711C16.5976 5.31658 16.5976 4.68342 16.2071 4.29289C15.8166 3.90237 15.1834 3.90237 14.7929 4.29289L7.79289 11.2929C7.40237 11.6834 7.40237 12.3166 7.79289 12.7071L14.7929 19.7071C15.1834 20.0976 15.8166 20.0976 16.2071 19.7071C16.5976 19.3166 16.5976 18.6834 16.2071 18.2929L9.91421 12L16.2071 5.70711Z"
-                  fill="white"/>
-          </svg>
-        </button>
-        <button class="jury__btn competition__btn--next" type="button">
-          <span class="sr-only">Следующий слайд</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M9.20711 4.29289C8.81658 3.90237 8.18342 3.90237 7.79289 4.29289C7.40237 4.68342 7.40237 5.31658 7.79289 5.70711L14.0858 12L7.79289 18.2929C7.40237 18.6834 7.40237 19.3166 7.79289 19.7071C8.18342 20.0976 8.81658 20.0976 9.20711 19.7071L16.2071 12.7071C16.5976 12.3166 16.5976 11.6834 16.2071 11.2929L9.20711 4.29289Z"
-                  fill="white"/>
-          </svg>
-        </button>
-      </div>
-      <div class="competition__swiper swiper">
-        <ul class="swiper-wrapper">
-          <li class="swiper-slide">
-            <div class="jury__item">
-              <img class="jury__avatar top" src="images/centers/1.svg" width="192" height="192"
-                   alt="YOCH">
-              <h3 class="jury__name">YOCH</h3>
-              <p class="jury__description">
-                YOCH — сообщество творцов, создающих уникальные и стильные проекты с полной отдачей...
-              </p>
-              <button class="jury__link" type="button" data-btn-jury="14">Узнать подробнее</button>
-            </div>
+        <img class="prizes__img" src="images/prizes/1.png" width="390" height="267" alt="1 место">
+        <h3 class="prizes__name">1 место</h3>
+        <ul class="prizes__list">
+          <li class="prizes__subitem">
+            Брендовый вокальный микрофон
           </li>
-          <li class="swiper-slide">
-            <div class="jury__item">
-              <img class="jury__avatar left" src="images/centers/2.png" width="192" height="192"
-                   alt="ANNUM">
-              <h3 class="jury__name">ANNUM</h3>
-              <p class="jury__description">
-                Команда профессионалов в студии Москвы, раскрывающая творческий потенциал людей...
-              </p>
-              <button class="jury__link" type="button" data-btn-jury="15">Узнать подробнее</button>
-            </div>
+          <li class="prizes__subitem">
+            30 000₽
           </li>
-          <li class="swiper-slide">
-            <div class="jury__item">
-              <img class="jury__avatar" src="images/centers/3.png" width="192" height="192"
-                   alt="EM SCHOOL">
-              <h3 class="jury__name">EM SCHOOL</h3>
-              <p class="jury__description">
-                Школа вокала и музыкальных навыков, основанная певицей и педагогом Еленой Масловой...
-              </p>
-              <button class="jury__link" type="button" data-btn-jury="16">Узнать подробнее</button>
-            </div>
-          </li>
-          <li class="swiper-slide">
-            <div class="jury__item">
-              <img class="jury__avatar top" src="images/centers/4.png" width="192" height="192"
-                   alt="Джас Денис">
-              <h3 class="jury__name">PRIME</h3>
-              <p class="jury__description">
-                Центр звукозаписи и аудиопроизводства с высоким уровнем качества...
-              </p>
-              <button class="jury__link" type="button" data-btn-jury="17">Узнать подробнее</button>
-            </div>
-          </li>
-          <li class="swiper-slide">
-            <div class="jury__item">
-              <img class="jury__avatar top" src="images/centers/5.png" width="192" height="192"
-                   alt="ProSound Music">
-              <h3 class="jury__name">ProSound Music</h3>
-              <p class="jury__description">
-                Уже 20 лет профессионально превращаем музыкальные идеи в востребованные продукты...
-              </p>
-              <button class="jury__link" type="button" data-btn-jury="18">Узнать подробнее</button>
-            </div>
+          <li class="prizes__subitem">
+            Передача портфолио
           </li>
         </ul>
-        <div class="swiper-scrollbar swiper-scrollbar--competition"></div>
+      </li>
+      <li class="prizes__item">
+        <img class="prizes__img" src="images/prizes/2.png" width="390" height="267" alt="2 место">
+        <h3 class="prizes__name">2 место</h3>
+        <ul class="prizes__list">
+          <li class="prizes__subitem">
+            Брендовые наушники
+          </li>
+          <li class="prizes__subitem">
+            15 000₽
+          </li>
+          <li class="prizes__subitem">
+            Передача портфолио
+          </li>
+        </ul>
+      </li>
+      <li class="prizes__item">
+        <img class="prizes__img" src="images/prizes/3.png" width="390" height="267" alt="3 место">
+        <h3 class="prizes__name">3 место</h3>
+        <ul class="prizes__list">
+          <li class="prizes__subitem">
+            Вокальный держатель для телефона
+          </li>
+          <li class="prizes__subitem">
+            10 000₽
+          </li>
+          <li class="prizes__subitem">
+            Передача портфолио
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+  <section class="lose indent">
+  <div class="container">
+    <h2 class="lose__title title-section center">
+      Что я получу если <span>не выиграю?</span>
+    </h2>
+    <p class="lose__text">
+      Даже если вы не прошли в финал - это не повод расстраиваться. Каждый участник гарантированно получает пакет призов
+      от наших спонсоров (в том числе, подарочные и скидочные сертификаты на услуги студий звукозаписи, фотографов,
+      операторов иклипмейкеров, аранжировщиков и т.д.).
+    </p>
+    <div class="lose__content">
+      <img class="lose__img" width="964" height="612" src="images/lose.png" alt="сертификаты Северный мир">
+      <div class="lose__inner">
+        <p class="lose__subtext">
+          <span>5000</span> рублей
+        </p>
       </div>
-      <p class="prizes__text" style="margin-bottom: -15px">
-        Каждому <span class="prizes__bar-level">призёру</span> создается портфолио, которое передается
-        в <span class="prizes__bar-artist">продюсерские</span> центры с рекомендациями по запуску
-        программы продвижения артиста на рынке.
-      </p>
     </div>
   </div>
 </section>
-
-<div class="modal-jury" data-modal-jury="14">
-  <button class="modal-jury__close" type="button">
-    <span class="sr-only">закрыть модальное окно</span>
-  </button>
-  <div class="modal-jury__inner comp">
-    <span class="modal-jury__line"></span>
-    <div class="modal-jury__content">
-      <h3 class="modal-jury__name">YOCH</h3>
-      <a class="modal-jury__position link" href="https://yoch.agency/" target="_blank">Перейти на сайт</a>
-      <p class="modal-jury__description">
-        YOCH - это идея, общество, объединенное страстью создания уникальных, творческих проектов. Мы люди, для которых
-        креатив больше, чем просто работа.
-        <br> <br>
-        В каждый проект мы вкладываем все силы, умения и возможности, чтобы получить по-настоящему качественный,
-        стильный продукт.
-      </p>
-    </div>
-    <img class="modal-jury__img small" width="220" height="220" src="images/centers/1.svg" alt="YOCH Agency">
+  <section class="reviews indent">
+  <div class="container">
+    <h2 class="reviews__title title-section center">
+      Видео-отзывы наших <span>участников</span>
+    </h2>
+    <ul class="reviews__list">
+      <li class="reviews__item">
+        <div class="reviews__head">
+          <img class="reviews__img" src="images/reviews/1.jpg" width="410" height="300" alt="видео отзыв">
+          <a class="reviews__btn" data-fancybox data-type="iframe" href="https://vk.com/video_ext.php?oid=-144775776&id=456239305&hash=examplehash">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+              <g filter="url(#filter0_b_1_93)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM44.5034 64.8826L64.6387 51.6722C65.8425 50.8824 65.8425 49.1176 64.6387 48.3278L44.5034 35.1174C43.1733 34.2448 41.4063 35.1989 41.4063 36.7896V63.2104C41.4063 64.8011 43.1733 65.7552 44.5034 64.8826Z" fill="white" fill-opacity="0.5"></path>
+              </g>
+              <defs>
+                <filter id="filter0_b_1_93" x="-14" y="-14" width="128" height="128" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="7"></feGaussianBlur>
+                  <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_93"></feComposite>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_93" result="shape"></feBlend>
+                </filter>
+              </defs>
+            </svg>
+          </a>
+        </div>
+        <h3 class="reviews__name">Отзыв о сотрудничестве</h3>
+        <p class="reviews__text">
+          Отзыв самый крутой на свете о Северном Мире!
+        </p>
+      </li>
+      <li class="reviews__item">
+        <div class="reviews__head">
+          <img class="reviews__img" src="images/reviews/1.jpg" width="410" height="300" alt="видео отзыв">
+          <a class="reviews__btn" data-fancybox data-type="iframe" href="https://vk.com/video_ext.php?oid=-144775776&id=456239305&hash=examplehash">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+              <g filter="url(#filter0_b_1_93)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM44.5034 64.8826L64.6387 51.6722C65.8425 50.8824 65.8425 49.1176 64.6387 48.3278L44.5034 35.1174C43.1733 34.2448 41.4063 35.1989 41.4063 36.7896V63.2104C41.4063 64.8011 43.1733 65.7552 44.5034 64.8826Z" fill="white" fill-opacity="0.5"></path>
+              </g>
+              <defs>
+                <filter id="filter0_b_1_93" x="-14" y="-14" width="128" height="128" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="7"></feGaussianBlur>
+                  <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_93"></feComposite>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_93" result="shape"></feBlend>
+                </filter>
+              </defs>
+            </svg>
+          </a>
+        </div>
+        <h3 class="reviews__name">Отзыв о сотрудничестве</h3>
+        <p class="reviews__text">
+          Отзыв самый крутой на свете о Северном Мире!
+        </p>
+      </li>
+      <li class="reviews__item">
+        <div class="reviews__head">
+          <img class="reviews__img" src="images/reviews/1.jpg" width="410" height="300" alt="видео отзыв">
+          <a class="reviews__btn" data-fancybox data-type="iframe" href="https://vk.com/video_ext.php?oid=-144775776&id=456239305&hash=examplehash">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+              <g filter="url(#filter0_b_1_93)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM44.5034 64.8826L64.6387 51.6722C65.8425 50.8824 65.8425 49.1176 64.6387 48.3278L44.5034 35.1174C43.1733 34.2448 41.4063 35.1989 41.4063 36.7896V63.2104C41.4063 64.8011 43.1733 65.7552 44.5034 64.8826Z" fill="white" fill-opacity="0.5"></path>
+              </g>
+              <defs>
+                <filter id="filter0_b_1_93" x="-14" y="-14" width="128" height="128" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="7"></feGaussianBlur>
+                  <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_93"></feComposite>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_93" result="shape"></feBlend>
+                </filter>
+              </defs>
+            </svg>
+          </a>
+        </div>
+        <h3 class="reviews__name">Отзыв о сотрудничестве</h3>
+        <p class="reviews__text">
+          Отзыв самый крутой на свете о Северном Мире!
+        </p>
+      </li>
+    </ul>
   </div>
-</div>
-
-<div class="modal-jury" data-modal-jury="15">
-  <button class="modal-jury__close" type="button">
-    <span class="sr-only">закрыть модальное окно</span>
-  </button>
-  <div class="modal-jury__inner comp">
-    <span class="modal-jury__line"></span>
-    <div class="modal-jury__content left">
-      <h3 class="modal-jury__name">ANNUM</h3>
-      <a class="modal-jury__position link" href="https://annum-firm.ru" target="_blank">Перейти на сайт</a>
-      <p class="modal-jury__description non">
-        Мы — команда опытных профессионалов, собранных в комфортнейшей и стильной студии в центре Москвы для того, чтобы
-        сделать твой творческий путь максимально эффективным.
-        <br> <br>
-        У нас ты сможешь полностью раскрыть свой потенциал, ведь
-        мы предлагаем широкий спектр услуг, с индивидуальным подходом к каждому клиенту.
-      </p>
-    </div>
-    <img class="modal-jury__img small" width="220" height="220" src="images/centers/2.png" alt="ANNUM">
-  </div>
-</div>
-
-<div class="modal-jury" data-modal-jury="16">
-  <button class="modal-jury__close" type="button">
-    <span class="sr-only">закрыть модальное окно</span>
-  </button>
-  <div class="modal-jury__inner comp">
-    <span class="modal-jury__line"></span>
-    <div class="modal-jury__content left">
-      <h3 class="modal-jury__name">EM School</h3>
-      <a class="modal-jury__position link" href="https://em-school.ru" target="_blank">Перейти на сайт</a>
-      <p class="modal-jury__description">
-        Вокальная школа Елены Масловой - это учебное заведение, специализирующееся на обучении вокалу и развитии
-        музыкальных навыков у своих учеников.
-        <br> <br>
-        Школа была основана Еленой Масловой, известной российской певицей и педагогом.
-      </p>
-    </div>
-    <img class="modal-jury__img small" width="220" height="220" src="images/centers/3.png" alt="EM School">
-  </div>
-</div>
-
-<div class="modal-jury" data-modal-jury="17">
-  <button class="modal-jury__close" type="button">
-    <span class="sr-only">закрыть модальное окно</span>
-  </button>
-  <div class="modal-jury__inner comp">
-    <span class="modal-jury__line"></span>
-    <div class="modal-jury__content left">
-      <h3 class="modal-jury__name">PRIME</h3>
-      <a class="modal-jury__position link" href="https://primerec.ru/" target="_blank">Перейти на сайт</a>
-      <p class="modal-jury__description">
-        Это современный центр, который предлагает широкий спектр услуг в области звукозаписи, производства и обработки
-        аудио.
-        <br> <br>
-        Мы стремимся предоставить нашим клиентам высокий уровень качества и профессионализма, чтобы каждый проект
-        звучал наилучшим образом.
-      </p>
-    </div>
-    <img class="modal-jury__img small" width="220" height="220" src="images/centers/4.png" alt="Prime">
-  </div>
-</div>
-
-<div class="modal-jury" data-modal-jury="18">
-  <button class="modal-jury__close" type="button">
-    <span class="sr-only">закрыть модальное окно</span>
-  </button>
-  <div class="modal-jury__inner comp">
-    <span class="modal-jury__line"></span>
-    <div class="modal-jury__content left">
-      <h3 class="modal-jury__name">ProSound Music</h3>
-      <a class="modal-jury__position link" href="http://pro-sound.ru" target="_blank">Перейти на сайт</a>
-      <p class="modal-jury__description">
-        Компания ProSound music на протяжении 20 лет профессионально занимается реализацией
-        музыкальных идей в успешные и востребованные продукты.
-      </p>
-    </div>
-    <img class="modal-jury__img small" width="220" height="220" src="images/centers/5.png" alt="ProSound Music">
-  </div>
-</div>
+</section>
   <section class="price indent" id="price">
   <div class="container">
     <div class="price__inner">
@@ -686,6 +592,7 @@
     <a class="footer__konkurs" href="files/polozenie_o_konkurse.pdf" target="_blank">Положение о конкурсе</a>
   </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4/dist/fancybox.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer></script>
 <script src="js/main.min.js" type="module"></script>
