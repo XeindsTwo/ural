@@ -1,0 +1,27 @@
+.benefits {
+  &__title {
+    margin-bottom: 56px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+  }
+
+  &__item {
+    @include flex-align-center(20);
+    border-radius: 52px;
+    background-color: $light-gray;
+    padding: 30px 35px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 0.78;
+    font-family: $garamond;
+    letter-spacing: -0.96px;
+
+    img {
+      @include objectCoverBg;
+    }
+  }
+}

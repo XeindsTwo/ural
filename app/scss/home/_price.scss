@@ -326,6 +326,13 @@
         @include flex-column(0);
         align-items: center;
       }
+
+      &.center {
+        grid-column: span 3;
+        @media (max-width: 580px) {
+          grid-column: span 2;
+        }
+      }
     }
   }
 
