@@ -2,6 +2,12 @@
   &__title {
     max-width: 530px;
     margin: 0 auto 32px;
+    @include r($tablet) {
+      margin-bottom: 38px;
+    }
+    @include r($sm) {
+      max-width: 450px;
+    }
   }
 
   &__subtext {
@@ -10,18 +16,56 @@
     color: #858585;
     font-weight: 400;
     margin-bottom: 56px;
+    @include r($desktop) {
+      margin-bottom: 40px;
+    }
+    @include r($tablet) {
+      font-size: 18px;
+      margin-bottom: 36px;
+    }
+    @include r($sm) {
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
   }
 
   &__items {
     display: grid;
     grid-gap: 16px;
     grid-template-columns: repeat(3, 1fr);
+    @include r($lg) {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    @include r($sm) {
+      grid-template-columns: repeat(1, 1fr);
+      max-width: 360px;
+    }
   }
 
   &__item {
     border-radius: 52px;
     background-color: #F5F6F5;
     padding: 12px 12px 30px;
+    @media (max-width: 1100px) {
+      border-radius: 42px;
+    }
+
+    &:last-child {
+      @include r($lg) {
+        grid-column: span 2;
+        max-width: 340px;
+        margin: 0 auto;
+      }
+      @media (max-width: 680px) {
+        max-width: 320px;
+      }
+      @include r($sm) {
+        grid-column: span 1;
+        max-width: 100%;
+      }
+    }
   }
 
   &__img {
@@ -29,6 +73,15 @@
     width: 100%;
     border-radius: 40px 40px 12px 12px;
     margin-bottom: 25px;
+    @include r($desktop) {
+      height: 240px;
+    }
+    @media (max-width: 1040px) {
+      height: 230px;
+    }
+    @media (max-width: 680px) {
+      height: 215px;
+    }
   }
 
   &__name {
@@ -38,13 +91,22 @@
     line-height: 0.78;
     font-family: $garamond;
     letter-spacing: -0.96px;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
+    @media (max-width: 1120px) {
+      font-size: 30px;
+    }
+    @media (max-width: 680px) {
+      font-size: 28px;
+    }
   }
 
   &__list {
     @include flex-column(10);
     max-width: 345px;
     margin: 0 auto;
+    @include r($desktop) {
+      margin-left: 10px;
+    }
   }
 
   &__subitem {

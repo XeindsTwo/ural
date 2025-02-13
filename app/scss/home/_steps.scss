@@ -1,0 +1,101 @@
+.steps {
+  &__title {
+    margin: 0 auto 32px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 20px;
+    max-width: 980px;
+    text-align: center;
+    color: #858585;
+    margin: 0 auto 56px;
+    letter-spacing: -0.2px;
+  }
+
+  &__list {
+    @include flex-column(32);
+  }
+
+  &__item {
+    @include flex-align-center(0);
+    position: relative;
+
+    &.one {
+      .steps__line {
+        max-width: 60px;
+      }
+    }
+
+    &.two {
+      .steps__line {
+        max-width: 135px;
+      }
+    }
+
+    &.three {
+      .steps__line {
+        max-width: 225px;
+      }
+    }
+
+    &.four {
+      .steps__line {
+        max-width: 300px;
+      }
+    }
+
+    &::before {
+      @include pseudo;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      border-radius: 50%;
+      background-color: $teal-green;
+      width: 16px;
+      height: 16px;
+    }
+
+    &-inner {
+      @include flex-align-center(12);
+      padding: 16px 43px;
+      border-radius: 40px;
+      color: $white;
+      position: relative;
+      max-width: max-content;
+      background: radial-gradient(96.63% 65.62% at 49.27% 59.17%, #01342B 0%, #02110F 85.8%);
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $teal-green;
+  }
+
+  &__num {
+    padding-right: 12px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: $garamond;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+    position: relative;
+
+    &::after {
+      @include pseudo;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 70%;
+      width: 1px;
+      background-color: #8D8D8D;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+}

@@ -1,12 +1,26 @@
 .benefits {
   &__title {
     margin-bottom: 56px;
+    @include r($tablet) {
+      margin-bottom: 48px;
+    }
+    @include r($phone) {
+      margin-bottom: 40px;
+    }
   }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
+    @include r($desktop) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 690px) {
+      grid-template-columns: repeat(1, 1fr);
+      max-width: 390px;
+      margin: 0 auto;
+    }
   }
 
   &__item {
@@ -19,9 +33,92 @@
     line-height: 0.78;
     font-family: $garamond;
     letter-spacing: -0.96px;
+    @media (max-width: 1300px) {
+      font-size: 30px;
+    }
+    @media (max-width: 1240px) {
+      font-size: 28px;
+    }
+    @include r($desktop) {
+      border-radius: 46px;
+    }
+    @include r($lg) {
+      font-size: 26px;
+      padding: 25px 30px;
+    }
+    @include r($tablet) {
+      font-size: 24px;
+      border-radius: 40px;
+    }
+    @include r($phone) {
+      font-size: 22px;
+    }
+  }
 
-    img {
-      @include objectCoverBg;
+  &__icon {
+    @include objectCoverBg;
+    @include r($lg) {
+      height: auto;
+    }
+
+    &--one {
+      @include r($tablet) {
+        width: 45px;
+      }
+      @include r($phone) {
+        width: 42px;
+      }
+    }
+
+    &--two {
+      @include r($lg) {
+        width: 49px;
+      }
+      @include r($tablet) {
+        width: 46px;
+      }
+    }
+
+    &--three {
+      @media (max-width: 690px) {
+        margin-left: 8px;
+      }
+      @include r($phone) {
+        width: 32px;
+      }
+    }
+
+    &--four {
+      @include r($lg) {
+        width: 56px;
+      }
+      @include r($tablet) {
+        width: 51px;
+      }
+      @include r($phone) {
+        width: 48px;
+      }
+    }
+
+    &--five {
+      @include r($lg) {
+        width: 51px;
+      }
+      @include r($phone) {
+        width: 47px;
+      }
+    }
+
+    &--six {
+      @include r($lg) {
+        width: 50px;
+      }
+      @include r($tablet) {
+        width: 46px;
+      }
+      @include r($phone) {
+        width: 43px;
+      }
     }
   }
 }

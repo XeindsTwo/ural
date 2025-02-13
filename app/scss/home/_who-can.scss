@@ -3,6 +3,18 @@
     max-width: 530px;
     margin: 0 auto 32px;
     text-align: center;
+    @include r($desktop) {
+      max-width: 460px;
+    }
+    @include r($lg) {
+      max-width: 380px;
+    }
+    @include r($phone) {
+      max-width: 340px;
+    }
+    @media (max-width: 410px) {
+      max-width: 310px;
+    }
   }
 
   &__text {
@@ -13,6 +25,17 @@
     color: #858585;
     font-size: 20px;
     letter-spacing: -0.2px;
+    @media (max-width: 1060px) {
+      font-size: 18px;
+      max-width: 880px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 910px) {
+      max-width: 760px;
+    }
+    @media (max-width: 860px) {
+      max-width: 700px;
+    }
 
     span {
       color: $midnight-blue;
@@ -23,6 +46,19 @@
     display: grid;
     grid-gap: 16px;
     grid-template-columns: repeat(4, 1fr);
+    @include r($desktop) {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    @include r($sm) {
+      margin: 0 -6px;
+    }
+    @media (max-width: 590px) {
+      grid-template-columns: repeat(1, 1fr);
+      max-width: 410px;
+      margin: 0 auto;
+    }
   }
 
   &__item {
@@ -30,12 +66,33 @@
     border-radius: 52px;
     text-align: center;
     background-color: $light-gray;
+    @media (max-width: 1270px) {
+      border-radius: 42px;
+    }
+    @media (max-width: 840px) {
+      border-radius: 34px;
+    }
+    @include r($sm) {
+      border-radius: 30px;
+    }
   }
 
   &__img {
     @include objectCoverBg;
+    border-radius: 40px 40px 12px 12px;
     margin-bottom: 25px;
     width: 100%;
+    @media (max-width: 1270px) {
+      height: 240px;
+      border-radius: 34px 34px 12px 12px;
+    }
+    @include r($sm) {
+      height: 220px;
+      border-radius: 28px 28px 12px 12px;
+    }
+    @media (max-width: 590px) {
+      height: 250px;
+    }
   }
 
   &__subtitle {
@@ -45,9 +102,31 @@
     font-family: $garamond;
     letter-spacing: -0.96px;
     margin: 0 auto 16px;
+    @media (max-width: 1270px) {
+      font-size: 28px;
+    }
+    @include r($desktop) {
+      font-size: 32px;
+    }
+    @include r($tablet) {
+      font-size: 30px;
+    }
+    @include r($sm) {
+      font-size: 28px;
+    }
+    @media (max-width: 590px) {
+      font-size: 30px;
+      margin-bottom: 22px;
+    }
+    @include r($phone) {
+      font-size: 28px;
+    }
 
     &.short {
       max-width: 250px;
+      @media (max-width: 1270px) {
+        max-width: 220px;
+      }
     }
   }
 
@@ -56,5 +135,8 @@
     color: #9A9A9A;
     font-weight: 400;
     letter-spacing: -0.18px;
+    @include r($phone) {
+      font-size: 17px;
+    }
   }
 }
