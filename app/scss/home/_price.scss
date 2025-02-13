@@ -1,6 +1,7 @@
 .price {
   border-radius: 56px;
   padding: 48px 0;
+  color: $white;
   background: radial-gradient(96.63% 65.62% at 49.27% 59.17%, #01342B 0%, #02110F 85.8%);
   max-width: 100%;
   width: 100%;
@@ -55,7 +56,8 @@
 
   &__description {
     font-size: 15px;
-    max-width: 570px;
+    max-width: 550px;
+    font-weight: 400;
     text-align: center;
     letter-spacing: -0.14px;
     margin: 0 auto 56px;
@@ -65,176 +67,149 @@
     }
   }
 
-  &__cost {
-    @include flex-align-center(14);
-    align-items: flex-end;
-    padding: 24px 32px;
-    max-width: max-content;
-    margin: 0 auto 24px;
-    border-radius: 42px;
-    background-color: rgba($deep-purple, .04);
-    @include r($tablet) {
-      border-radius: 36px;
-    }
-    @include r($sm) {
-      border-radius: 30px;
-    }
-    @media (max-width: 520px) {
-      border-radius: 26px;
-    }
-    @include r($phone) {
-      flex-direction: column;
-      align-items: center;
-      max-width: 100%;
-      padding: 20px 22px;
-    }
-    @media (max-width: 390px) {
-      padding: 18px 20px;
-    }
-  }
-
-  &__value {
-    font-family: $garamond;
-    color: $deep-purple;
-    font-size: 208px;
-    font-weight: 400;
-    display: flex;
-    line-height: 78%;
-    letter-spacing: -10.48px;
-    font-style: italic;
-    @include r($desktop) {
-      font-size: 200px;
-      letter-spacing: -9px;
+  &__form {
+    max-width: 625px;
+    margin: 0 auto 56px;
+    border-radius: 56px;
+    background-color: #01342B;
+    padding: 48px 28px 38px;
+    @media (max-width: 1100px) {
+      border-radius: 48px;
+      padding: 42px 26px 32px;
     }
     @include r($lg) {
-      font-size: 180px;
-    }
-    @media (max-width: 880px) {
-      font-size: 170px;
-      letter-spacing: -8px;
-    }
-    @include r($tablet) {
-      font-size: 160px;
+      border-radius: 42px;
     }
     @media (max-width: 660px) {
-      font-size: 148px;
-    }
-    @include r($sm) {
-      font-size: 130px;
-    }
-    @media (max-width: 570px) {
-      font-size: 120px;
-    }
-    @media (max-width: 510px) {
-      font-size: 114px;
+      border-radius: 32px;
+      margin: 0 -6px 50px;
     }
     @include r($phone) {
-      letter-spacing: -5px;
-    }
-    @media (max-width: 390px) {
-      font-size: 108px;
-      letter-spacing: -4px;
-    }
-    @media (max-width: 360px) {
-      font-size: 100px;
+      padding: 36px 22px 28px;
     }
 
-    &.old {
-      font-size: 120px;
-      margin-right: 25px;
-      position: relative;
-      color: rgba($deep-purple, .6);
-      @include r($lg) {
-        font-size: 114px;
-      }
-      @media (max-width: 860px) {
-        font-size: 110px;
-      }
-      @include r($tablet) {
-        font-size: 104px;
-      }
-      @media (max-width: 660px) {
-        font-size: 98px;
-      }
-      @include r($sm) {
-        font-size: 92px;
-      }
-      @media (max-width: 570px) {
-        font-size: 86px;
-        letter-spacing: -5px;
-        margin-right: 17px;
-      }
-      @media (max-width: 510px) {
-        font-size: 82px;
-      }
-      @media (max-width: 500px) {
-        margin-right: 5px;
-        font-size: 76px;
-      }
+    &-inner {
+      max-width: 475px;
+      margin: 0 auto;
+    }
+
+    &-title {
+      display: block;
+      margin-bottom: 16px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  &__fields {
+    @include flex-align-center(10);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    margin-bottom: 36px;
+    @include r($tablet) {
+      margin-bottom: 24px;
+    }
+    @include r($phone) {
+      gap: 12px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &.long {
+      grid-column: span 2;
       @include r($phone) {
-        font-size: 70px;
-        margin-right: 0;
-      }
-      @media (max-width: 390px) {
-        font-size: 66px;
-        letter-spacing: -2px;
-      }
-      @media (max-width: 360px) {
-
+        grid-column: span 1;
       }
 
-      &::before {
-        @include pseudo;
-        top: 30%;
-        left: 54%;
-        transform: rotate(-16deg) translate(-50%, -50%);
-        width: 120%;
-        height: 2px;
-        background-color: $light-gray;
+      .input {
+        grid-column: span 2;
+        @include r($phone) {
+          grid-column: span 1;
+        }
       }
     }
   }
 
-  &__currency {
+  &__subtitle {
+    text-align: center;
+    max-width: 530px;
+    margin: 0 auto 36px;
     font-family: $garamond;
-    line-height: 78%;
-    display: flex;
-    letter-spacing: -1.92px;
     font-size: 64px;
-    margin-bottom: 10px;
-    color: rgba($deep-purple, .5);
-    @include r($desktop) {
-      font-size: 60px;
+    font-weight: 700;
+    line-height: 78%;
+    letter-spacing: -1.92px;
+    @media (max-width: 1100px) {
+      font-size: 58px;
+      max-width: 480px;
     }
-    @media (max-width: 715px) {
+    @include r($lg) {
       font-size: 54px;
+      max-width: 420px;
+      letter-spacing: -1.4px;
     }
-    @include r($sm) {
-      font-size: 50px;
-    }
-    @media (max-width: 515px) {
-      font-size: 44px;
-    }
-    @include r($sm) {
-      font-size: 40px;
+    @include r($tablet) {
+      font-size: 48px;
+      max-width: 390px;
+      line-height: 0.9;
       letter-spacing: -1px;
     }
-    @media (max-width: 560px) {
-      font-size: 36px;
-      letter-spacing: 0;
+    @include r($sm) {
+      font-size: 44px;
+      max-width: 330px;
+    }
+    @media (max-width: 530px) {
+      font-size: 42px;
+    }
+    @include r($phone) {
+      font-size: 40px;
     }
     @media (max-width: 390px) {
-      font-size: 37px;
-      margin-bottom: 8px;
+      font-size: 38px;
     }
-    @media (max-width: 380px) {
-      font-size: 34px;
+
+    span {
+      font-weight: 400;
+      font-style: italic;
+    }
+  }
+
+  &__subtext, &__discount {
+    font-size: 20px;
+    font-weight: 400;
+    max-width: 550px;
+    color: #67807C;
+    margin: 0 auto 56px;
+    letter-spacing: -0.2px;
+    text-align: center;
+    @include r($tablet) {
+      font-size: 18px;
+      max-width: 500px;
+    }
+    @include r($sm) {
+      margin-bottom: 42px;
+    }
+    @include r($phone) {
+      font-size: 17px;
+    }
+  }
+
+  &__discount {
+    margin-bottom: 0;
+    @media (max-width: 1100px) {
+      font-size: 18px;
+    }
+    @media (max-width: 530px) {
+      font-size: 17px;
+    }
+    @include r($phone) {
+      max-width: 270px;
     }
   }
 
   &__btn {
-    display: flex;
-    max-width: max-content;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto 60px;
     padding: 24px 40px;
     color: $deep-forest-green;
@@ -244,8 +219,11 @@
     transition: background-color .4s, color .4s, border .4s, box-shadow .5s;
     position: relative;
     box-shadow: 0 0 24px 0 rgba(25, 247, 207, 0.25);
+    @include r($tablet) {
+      margin-bottom: 45px;
+    }
     @include r($phone) {
-      font-size: 14px;
+      font-size: 15px;
     }
 
     &:hover {
@@ -266,12 +244,17 @@
     &::before {
       @include pseudo;
       @include topLeft50;
-      width: 105%;
-      height: 114%;
+      width: 103%;
+      height: 117%;
       background-color: rgba($deep-purple, .15);
       border: 1px solid $teal-green;
       border-radius: 64px;
       transition: background-color .4s, opacity .4s;
+    }
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.6;
     }
   }
 

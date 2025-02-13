@@ -6,12 +6,30 @@
         Конкурсы Продюсерского центра «Northern World» отличаются призовым фондом без аналогов, прозрачным выбором
         победителей, награждением ценными призами участников всех этапов и высоким уровнем организации.
       </p>
-      <div class="price__cost">
-        <span class="price__value old">999</span>
-        <span class="price__value new">699</span>
-        <span class="price__currency">Рублей</span>
-      </div>
-      <a class="price__btn desktop" href="#participation">Принять участие</a>
+      <form class="price__form" action="">
+        <h3 class="price__subtitle">
+          Участвуй и забирай <span>свой приз!</span>
+        </h3>
+        <p class="price__subtext">
+          Прими участие в вокальном конкурсе и поборись за денежные награды, гаджеты и другие ценные призы!
+        </p>
+        <div class="price__form-inner">
+          <span class="price__form-title">Заполните контактные данные</span>
+          <span class="error" id="errorFields">Пожалуйста, заполните поля</span>
+          <div class="price__fields">
+            <label>
+              <input class="input" type="text" name="phone" id="phone" data-tel-input placeholder="Номер телефона" maxlength="30">
+            </label>
+            <label>
+              <input class="input" type="text" name="fullName" id="fullName" placeholder="Имя" maxlength="255">
+            </label>
+          </div>
+          <button class="price__btn" type="submit">Принять участие</button>
+        </div>
+        <p class="price__discount">
+          Оформите заявку сейчас, и получите скидку на 15%!
+        </p>
+      </form>
       <p class="price__info">
         Центр предлагает перспективное сотрудничество и поддержку карьерного продвижения участников.
       </p>

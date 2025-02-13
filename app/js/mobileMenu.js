@@ -19,7 +19,7 @@ export function setupMobileMenu() {
       menuBtn.classList.remove('active');
       setTimeout(() => {
         const targetOffset = targetSection.offsetTop - 25;
-        window.scrollTo({ top: targetOffset, behavior: 'smooth' });
+        window.scrollTo({top: targetOffset, behavior: 'smooth'});
       }, 700);
     }
   }
@@ -36,6 +36,6 @@ export function setupMobileMenu() {
 
   for (const anchor of anchors) {
     anchor.addEventListener('click', handleAnchorClick);
-    anchor.addEventListener('touchstart', handleAnchorClick, { passive: true });
+    anchor.addEventListener('touchstart', handleAnchorClick, {passive: true});
   }
 }

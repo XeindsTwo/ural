@@ -182,7 +182,7 @@
     </p>
     <ul class="who-can__list">
       <li class="who-can__item">
-        <img class="who-can__img" width="280" height="267" src="images/who_can/1.png" alt="Новички без опыта в вокале">
+        <img class="who-can__img" width="280" height="267" src="images/who_can/1.webp" alt="Новички без опыта в вокале">
         <h3 class="who-can__subtitle short">
           Новички без опыта в вокале
         </h3>
@@ -192,7 +192,7 @@
         </p>
       </li>
       <li class="who-can__item">
-        <img class="who-can__img" width="280" height="267" src="images/who_can/2.png" alt="Любители с опытом">
+        <img class="who-can__img" width="280" height="267" src="images/who_can/2.webp" alt="Любители с опытом">
         <h3 class="who-can__subtitle">
           Любители <br> с опытом
         </h3>
@@ -202,7 +202,7 @@
         </p>
       </li>
       <li class="who-can__item">
-        <img class="who-can__img" width="280" height="267" src="images/who_can/3.png" alt="Любители с опытом">
+        <img class="who-can__img" width="280" height="267" src="images/who_can/3.webp" alt="Любители с опытом">
         <h3 class="who-can__subtitle">
           Профессиональные вокалисты
         </h3>
@@ -212,7 +212,7 @@
         </p>
       </li>
       <li class="who-can__item">
-        <img class="who-can__img" width="280" height="267" src="images/who_can/4.png" alt="Любители с опытом">
+        <img class="who-can__img" width="280" height="267" src="images/who_can/4.webp" alt="Любители с опытом">
         <h3 class="who-can__subtitle short">
           Авторам-исполнителям
         </h3>
@@ -234,7 +234,7 @@
     </p>
     <ul class="prizes__items">
       <li class="prizes__item">
-        <img class="prizes__img" src="images/prizes/1.png" width="390" height="267" alt="1 место">
+        <img class="prizes__img" src="images/prizes/1.webp" width="390" height="267" alt="1 место">
         <h3 class="prizes__name">1 место</h3>
         <ul class="prizes__list">
           <li class="prizes__subitem">
@@ -249,7 +249,7 @@
         </ul>
       </li>
       <li class="prizes__item">
-        <img class="prizes__img" src="images/prizes/2.png" width="390" height="267" alt="2 место">
+        <img class="prizes__img" src="images/prizes/2.webp" width="390" height="267" alt="2 место">
         <h3 class="prizes__name">2 место</h3>
         <ul class="prizes__list">
           <li class="prizes__subitem">
@@ -264,7 +264,7 @@
         </ul>
       </li>
       <li class="prizes__item">
-        <img class="prizes__img" src="images/prizes/3.png" width="390" height="267" alt="3 место">
+        <img class="prizes__img" src="images/prizes/3.webp" width="390" height="267" alt="3 место">
         <h3 class="prizes__name">3 место</h3>
         <ul class="prizes__list">
           <li class="prizes__subitem">
@@ -292,7 +292,7 @@
       операторов иклипмейкеров, аранжировщиков и т.д.).
     </p>
     <div class="lose__content">
-      <img class="lose__img" width="964" height="612" src="images/lose.png" alt="сертификаты Северный мир">
+      <img class="lose__img" width="964" height="612" src="images/lose.webp" alt="сертификаты Северный мир">
       <div class="lose__inner">
         <p class="lose__subtext">
           <span>5000</span> рублей
@@ -440,12 +440,30 @@
         Конкурсы Продюсерского центра «Northern World» отличаются призовым фондом без аналогов, прозрачным выбором
         победителей, награждением ценными призами участников всех этапов и высоким уровнем организации.
       </p>
-      <div class="price__cost">
-        <span class="price__value old">999</span>
-        <span class="price__value new">699</span>
-        <span class="price__currency">Рублей</span>
-      </div>
-      <a class="price__btn desktop" href="#participation">Принять участие</a>
+      <form class="price__form" action="">
+        <h3 class="price__subtitle">
+          Участвуй и забирай <span>свой приз!</span>
+        </h3>
+        <p class="price__subtext">
+          Прими участие в вокальном конкурсе и поборись за денежные награды, гаджеты и другие ценные призы!
+        </p>
+        <div class="price__form-inner">
+          <span class="price__form-title">Заполните контактные данные</span>
+          <span class="error" id="errorFields">Пожалуйста, заполните поля</span>
+          <div class="price__fields">
+            <label>
+              <input class="input" type="text" name="phone" id="phone" data-tel-input placeholder="Номер телефона" maxlength="30">
+            </label>
+            <label>
+              <input class="input" type="text" name="fullName" id="fullName" placeholder="Имя" maxlength="255">
+            </label>
+          </div>
+          <button class="price__btn" type="submit">Принять участие</button>
+        </div>
+        <p class="price__discount">
+          Оформите заявку сейчас, и получите скидку на 15%!
+        </p>
+      </form>
       <p class="price__info">
         Центр предлагает перспективное сотрудничество и поддержку карьерного продвижения участников.
       </p>
@@ -491,95 +509,6 @@
     </li>
   </ul>
 </div>
-  <section class="participation indent" id="participation">
-  <div class="container">
-    <h2 class="participation__title title-section">
-      Принять <span>участие</span> <br> в конкурсе
-    </h2>
-    <div id="app">
-      <form id="participationForm" class="participation__form" action="">
-        <div class="participation__block">
-          <span class="participation__label">Заполните контактные данные</span>
-          <span class="error" id="errorRegion">Пожалуйста, выберите регион</span>
-          <span class="error" id="errorContact">Пожалуйста, заполните все поля</span>
-          <span class="error" id="errorEmailInvalid">Пожалуйста, введите корректный адрес электронной почты</span>
-          <div class="participation__fields">
-            <label class="participation__fields long">
-              <input class="input" type="text" name="phone" id="phone" placeholder="Свой номер телефона" maxlength="30">
-            </label>
-            <label class="participation__fields long">
-              <input class="input" type="text" name="fullName" id="fullName" placeholder="Ваше имя" maxlength="255">
-            </label>
-          </div>
-        </div>
-        <span class="error" id="errorFormSubmit">Произошла ошибка при отправке заявки, попробуйте ещё раз позже</span>
-        <label class="checkbox" id="agreementLabel">
-          <input type="checkbox" id="agreement" checked/>
-          <div class="checkbox__checkmark"></div>
-          <div class="checkbox__body">
-            Я согласен с обработкой персональных данных и ознакомлен с
-            <a href="files/polozenie_o_konkurse.pdf" target="_blank">положением</a> конкурса
-          </div>
-        </label>
-        <button class="participation__btn" type="submit" id="submitBtn">
-          <svg class="circular-loader" viewBox="25 25 50 50">
-            <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke="#031F03" stroke-width="3"/>
-          </svg>
-          <span>Принять участие</span>
-          <span>Отправка данных</span>
-        </button>
-        <div class="participation__contact">
-          <span>По всем вопросам звоните и пишите следующим контактам:</span>
-          <div>
-            Почта: <a href="mailto:support@northernworld.ru">support@northernworld.ru</a>
-          </div>
-          <div>
-            Телефон: <a href="tel:+79221555883">8 (922) 155-58-83</a> (Анна Аветисян)
-          </div>
-          <div class="participation__contact-socials">
-            <a class="whatsapp" href="https://wa.me/79935234862" target="_blank">
-              <span class="sr-only">Мессенджер WhatsApp</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                <path
-                    d="M0 30L2.11881 22.2962C0.811354 20.0412 0.124341 17.485 0.125597 14.8637C0.129364 6.66875 6.82994 0 15.0628 0C19.058 0.00125 22.8083 1.55 25.6292 4.36C28.4489 7.17 30.0013 10.905 30 14.8775C29.9962 23.0738 23.2957 29.7425 15.0628 29.7425C12.5634 29.7413 10.1005 29.1175 7.91886 27.9325L0 30ZM8.28561 25.2413C10.3906 26.485 12.4001 27.23 15.0578 27.2312C21.9003 27.2312 27.4743 21.6887 27.478 14.875C27.4805 8.0475 21.9329 2.5125 15.0678 2.51C8.2203 2.51 2.65009 8.0525 2.64758 14.865C2.64632 17.6463 3.46521 19.7287 4.84049 21.9075L3.58578 26.4675L8.28561 25.2413ZM22.5873 18.4113C22.4943 18.2563 22.2457 18.1637 21.8714 17.9775C21.4984 17.7912 19.6634 16.8925 19.3205 16.7687C18.9789 16.645 18.7302 16.5825 18.4803 16.955C18.2316 17.3263 17.5157 18.1638 17.2984 18.4113C17.0811 18.6588 16.8626 18.69 16.4896 18.5038C16.1166 18.3175 14.9133 17.9263 13.4878 16.66C12.3788 15.675 11.629 14.4588 11.4117 14.0863C11.1944 13.715 11.3891 13.5138 11.575 13.3288C11.7433 13.1625 11.948 12.895 12.1351 12.6775C12.3248 12.4625 12.3863 12.3075 12.5119 12.0588C12.6363 11.8113 12.5747 11.5938 12.4805 11.4075C12.3863 11.2225 11.6403 9.39375 11.3301 8.65C11.0261 7.92625 10.7184 8.02375 10.4898 8.0125L9.77393 8C9.52524 8 9.12082 8.0925 8.7792 8.465C8.43758 8.8375 7.473 9.735 7.473 11.5638C7.473 13.3925 8.8106 15.1587 8.99648 15.4062C9.18362 15.6537 11.6277 19.4063 15.3718 21.015C16.2622 21.3975 16.958 21.6262 17.4994 21.7975C18.3936 22.08 19.2075 22.04 19.8505 21.945C20.5677 21.8387 22.0585 21.0462 22.37 20.1787C22.6815 19.31 22.6815 18.5663 22.5873 18.4113Z"
-                    fill="#fff"/>
-              </svg>
-            </a>
-            <a class="telegram" href="https://t.me/northernworld" target="_blank">
-              <span class="sr-only">Мессенджер Telegram</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" viewBox="0 0 21 18" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M1.44364 7.74888C7.08077 5.20867 10.8397 3.534 12.7206 2.72489C18.0907 0.414697 19.2065 0.0133926 19.9338 0.000141289C20.0938 -0.00277319 20.4514 0.0382296 20.6831 0.232668C20.8788 0.396848 20.9326 0.618632 20.9583 0.774293C20.9841 0.929954 21.0162 1.28455 20.9907 1.56163C20.6997 4.7241 19.4405 12.3986 18.7999 15.9406C18.5288 17.4394 17.9951 17.9419 17.4784 17.9911C16.3554 18.098 15.5027 17.2235 14.4151 16.4861C12.7132 15.3323 11.7517 14.614 10.0997 13.488C8.19056 12.1868 9.42819 11.4716 10.5162 10.3027C10.801 9.99686 15.7486 5.34226 15.8444 4.92001C15.8564 4.86721 15.8675 4.67036 15.7544 4.56642C15.6414 4.46248 15.4745 4.49802 15.3541 4.52629C15.1834 4.56636 12.4646 6.42501 7.19761 10.1022C6.42588 10.6503 5.72687 10.9174 5.10058 10.9034C4.41015 10.888 3.08204 10.4996 2.09473 10.1677C0.883743 9.76056 -0.0787216 9.5453 0.00508745 8.85385C0.0487404 8.4937 0.528258 8.12538 1.44364 7.74888Z"
-                      fill="white"/>
-              </svg>
-            </a>
-            <a class="pdf__link" href="files/polozenie_o_konkurse.pdf" target="_blank">
-              <span class="pdf__icon">
-                <span class="sr-only">Положение о конкурсе</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="38" viewBox="0 0 27 38" fill="none">
-                <path
-                    d="M26.0086 7.27202L20.1094 1.04628C19.4766 0.378442 18.6188 0 17.7258 0H3.375C1.51172 0.00742043 0 1.60281 0 3.56922V34.4382C0 36.4046 1.51172 38 3.375 38H23.625C25.4883 38 27 36.4046 27 34.4382V9.79496C27 8.85257 26.6414 7.93986 26.0086 7.27202ZM23.3508 9.50557H18V3.85862L23.3508 9.50557ZM3.375 34.4382V3.56922H14.625V11.2865C14.625 12.2734 15.3773 13.0674 16.3125 13.0674H23.625V34.4382H3.375ZM20.9672 23.775C20.1094 22.8846 17.6625 23.1295 16.4391 23.2927C15.2297 22.5136 14.4211 21.4376 13.8516 19.8571C14.1258 18.6624 14.5617 16.8444 14.2312 15.7016C13.9359 13.7575 11.5734 13.9504 11.2359 15.2638C10.9266 16.4585 11.2078 18.1207 11.7281 20.2429C11.025 22.0164 9.97734 24.3984 9.23906 25.7637C7.83281 26.528 5.93438 27.7079 5.65313 29.192C5.42109 30.3644 7.48125 33.288 11.0039 26.8768C12.5789 26.3277 14.2945 25.6524 15.8133 25.3853C17.1422 26.1422 18.6961 26.6467 19.7367 26.6467C21.5297 26.6467 21.7055 24.5542 20.9672 23.775ZM7.03828 29.5481C7.39687 28.5315 8.76094 27.3591 9.17578 26.951C7.83984 29.1994 7.03828 29.6001 7.03828 29.5481ZM12.7758 15.4048C13.2961 15.4048 13.2469 17.7868 12.9023 18.4323C12.593 17.4009 12.6 15.4048 12.7758 15.4048ZM11.0602 25.5411C11.7422 24.2871 12.3258 22.7955 12.7969 21.4821C13.3805 22.6026 14.1258 23.5005 14.9133 24.1164C13.4508 24.4355 12.1781 25.0885 11.0602 25.5411ZM20.3133 25.1701C20.3133 25.1701 19.9617 25.6153 17.6906 24.5913C20.1586 24.3984 20.5664 24.992 20.3133 25.1701Z"
-                    fill="#FB3449"/>
-                </svg>
-              </span>
-              Положение о конкурсе
-            </a>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div class="modal-payment modal-payment--success" id="payment-modal-success">
-      <h3 class="modal-payment__title">Успешное создание заявки!</h3>
-      <p class="modal-payment__text">
-        Поздравляем, ваша заявка была успешно оплачена и принята. Ожидайте дальнейшего оценивания жюри и подведения
-        итогов.
-      </p>
-      <button class="modal-payment__close success" type="button">
-        <span class="sr-only">закрыть модальное окно</span>
-      </button>
-    </div>
-  </div>
-</section>
 </main>
 <div class="offer">
   <div class="container">
