@@ -8,32 +8,6 @@ setupMobileMenu();
 
 Fancybox.bind("[data-fancybox]", {});
 
-gsap.registerPlugin(ScrollTrigger);
-
-ScrollTrigger.create({
-  trigger: ".price",
-  start: "top center",
-  once: true,
-  onEnter: () => {
-    gsap.to(".price", {
-      maxWidth: "100%",
-      duration: 1.3,
-      onComplete: () => {
-        ScrollTrigger.update();
-      }
-    });
-  },
-  onLeave: () => {
-    gsap.to(".price", {
-      maxWidth: "100%",
-      duration: 0.1,
-      onComplete: () => {
-        ScrollTrigger.update();
-      }
-    });
-  }
-});
-
 document.addEventListener('DOMContentLoaded', function () {
   const offer = document.querySelector('.offer');
   const closeButton = document.querySelector('.offer__close');

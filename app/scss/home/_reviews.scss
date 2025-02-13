@@ -2,6 +2,17 @@
   &__title {
     max-width: 540px;
     margin: 0 auto 56px;
+    @include r($lg) {
+      max-width: 440px;
+      margin-bottom: 46px;
+    }
+    @include r($sm) {
+      max-width: 400px;
+      margin-bottom: 42px;
+    }
+    @include r($sm) {
+      max-width: 350px;
+    }
   }
 
   &__list {
@@ -9,6 +20,36 @@
     grid-gap: 16px;
     margin: 0 10px;
     grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 1100px) {
+      grid-gap: 45px 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include r($tablet) {
+      grid-gap: 35px 20px;
+      margin: 0 -6px;
+    }
+    @include r($sm) {
+      grid-template-columns: repeat(1, 1fr);
+      max-width: 450px;
+      margin: 0 auto;
+    }
+  }
+
+  &__item {
+    &:last-child {
+      @media (max-width: 1100px) {
+        grid-column: span 2;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      @include r($tablet) {
+        max-width: 400px;
+      }
+      @include r($sm) {
+        grid-column: span 1;
+        max-width: 100%;
+      }
+    }
   }
 
   &__head {
@@ -29,6 +70,19 @@
 
   &__img {
     @include objectCoverBg;
+    width: 100%;
+    @media (max-width: 1100px) {
+      height: 290px;
+    }
+    @include r($lg) {
+      height: 275px;
+    }
+    @media (max-width: 540px) {
+      height: 255px;
+    }
+    @media (max-width: 400px) {
+      height: 245px;
+    }
   }
 
   &__btn {
@@ -41,10 +95,10 @@
     transition: border .4s;
 
     &:hover {
-      border-color: $teal-green;
+      border-color: $white;
 
       svg path {
-        fill: $teal-green;
+        fill: $white;
         fill-opacity: 1;
       }
     }
@@ -61,22 +115,43 @@
     svg {
       width: 80px;
       height: 80px;
+      @include r($desktop) {
+        width: 70px;
+        height: 70px;
+      }
+      @include r($lg) {
+        width: 66px;
+        height: 66px;
+      }
+      @include r($phone) {
+        width: 63px;
+        height: 63px;
+      }
     }
   }
 
   &__name {
     font-size: 32px;
     font-weight: 700;
-    line-height: 0.78;
+    line-height: 0.9;
     font-family: $garamond;
     letter-spacing: -0.96px;
     margin-bottom: 13px;
+    @media (max-width: 1250px) {
+      font-size: 30px;
+    }
+    @include r($tablet) {
+      font-size: 28px;
+    }
   }
 
   &__text {
     font-weight: 400;
     color: #9A9A9A;
     font-size: 20px;
+    @media (max-width: 1250px) {
+      font-size: 18px;
+    }
   }
 }
 

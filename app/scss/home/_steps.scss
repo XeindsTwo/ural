@@ -1,6 +1,9 @@
 .steps {
   &__title {
     margin: 0 auto 32px;
+    @include r($sm) {
+      margin-bottom: 24px;
+    }
   }
 
   &__text {
@@ -11,37 +14,83 @@
     color: #858585;
     margin: 0 auto 56px;
     letter-spacing: -0.2px;
+    @media (max-width: 900px) {
+      font-size: 18px;
+      margin-bottom: 42px;
+    }
+    @media (max-width: 560px) {
+      margin-bottom: 32px;
+    }
+    @media (max-width: 530px) {
+      max-width: 320px;
+    }
   }
 
   &__list {
     @include flex-column(32);
+    @media (max-width: 720px) {
+      gap: 24px;
+    }
+    @include r($phone) {
+      gap: 20px;
+    }
   }
 
   &__item {
     @include flex-align-center(0);
     position: relative;
+    @media (max-width: 680px) {
+      padding-left: 30px;
+    }
+    @include r($phone) {
+      padding-left: 0;
+    }
 
     &.one {
       .steps__line {
         max-width: 60px;
+        @include r($lg) {
+          max-width: 50px;
+        }
+        @include r($tablet) {
+          max-width: 35px;
+        }
       }
     }
 
     &.two {
       .steps__line {
         max-width: 135px;
+        @include r($lg) {
+          max-width: 100px;
+        }
+        @include r($tablet) {
+          max-width: 80px;
+        }
       }
     }
 
     &.three {
       .steps__line {
         max-width: 225px;
+        @include r($lg) {
+          max-width: 180px;
+        }
+        @include r($tablet) {
+          max-width: 145px;
+        }
       }
     }
 
     &.four {
       .steps__line {
         max-width: 300px;
+        @include r($lg) {
+          max-width: 260px;
+        }
+        @include r($tablet) {
+          max-width: 210px;
+        }
       }
     }
 
@@ -54,6 +103,13 @@
       background-color: $teal-green;
       width: 16px;
       height: 16px;
+      @media (max-width: 680px) {
+        width: 13px;
+        height: 13px;
+      }
+      @include r($phone) {
+        display: none;
+      }
     }
 
     &-inner {
@@ -64,6 +120,27 @@
       position: relative;
       max-width: max-content;
       background: radial-gradient(96.63% 65.62% at 49.27% 59.17%, #01342B 0%, #02110F 85.8%);
+      @include r($lg) {
+        padding: 16px 35px;
+      }
+      @include r($tablet) {
+        padding: 16px 30px;
+      }
+      @media (max-width: 680px) {
+        max-width: 100%;
+        width: 100%;
+      }
+      @include r($sm) {
+        padding: 15px 24px;
+      }
+      @include r($phone) {
+        border-radius: 30px;
+      }
+      @media (max-width: 420px) {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
     }
   }
 
@@ -71,6 +148,9 @@
     width: 100%;
     height: 1px;
     background-color: $teal-green;
+    @media (max-width: 680px) {
+      display: none;
+    }
   }
 
   &__num {
@@ -81,6 +161,15 @@
     line-height: 1.2;
     letter-spacing: -0.4px;
     position: relative;
+    @include r($lg) {
+      font-size: 28px;
+    }
+    @media (max-width: 420px) {
+      @include flex-column(13);
+      align-items: center;
+      padding-right: 0;
+      font-size: 30px;
+    }
 
     &::after {
       @include pseudo;
@@ -90,12 +179,21 @@
       height: 70%;
       width: 1px;
       background-color: #8D8D8D;
+      @include r($lg) {
+        height: 90%;
+      }
+      @media (max-width: 420px) {
+        height: 1px;
+        width: 100px;
+        position: static;
+        transform: none;
+      }
     }
   }
 
   &__description {
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.35;
+    line-height: 1.4;
   }
 }
