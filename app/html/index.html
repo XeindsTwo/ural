@@ -12,7 +12,17 @@ title: 'Вокальный конкурс на Урале'
   @include('home/_reviews.html')
   @include('home/_steps.html')
   @include('home/_price.html')
+  @include('home/_faq.html')
 </main>
+<div class="modal-payment modal-payment--success" id="payment-modal-success">
+  <h3 class="modal-payment__title">Успешная регистрация заявки!</h3>
+  <p class="modal-payment__text">
+    Ожидайте письмо с инструкцией на указанную почту (проверяйте папку «Спам»), для дальнейшего участия в конкурсе.
+  </p>
+  <button class="modal-payment__close success" id="payment-modal-success-close" type="button">
+    <span class="sr-only">закрыть модальное окно</span>
+  </button>
+</div>
 <div class="offer">
   <div class="container">
     <div class="offer__inner">

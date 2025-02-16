@@ -1,9 +1,11 @@
 import {bindScrollToLinks} from './scroll.js';
 import {bindShareLinks} from './copy.js';
+import {setupFAQ} from "./faq.js";
 import {setupMobileMenu} from "./mobileMenu.js";
 
 bindScrollToLinks();
 bindShareLinks();
+setupFAQ();
 setupMobileMenu();
 
 Fancybox.bind("[data-fancybox]", {});

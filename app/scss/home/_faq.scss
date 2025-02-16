@@ -1,99 +1,144 @@
 .faq {
+  &__inner {
+    @include flex-between-center-gap(60);
+    align-items: flex-start;
+    @media (max-width: 860px) {
+      gap: 50px;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__left {
+    max-width: 700px;
+  }
+
   &__title {
     max-width: 650px;
-    margin: 0 auto 65px;
-    @media (max-width: 1130px) {
-      margin: 0 auto 60px;
+    margin-bottom: 60px;
+    @media (max-width: 1300px) {
+      font-size: 60px;
     }
-    @media (max-width: 550px) {
-      margin-bottom: 50px;
+    @include r($desktop) {
+      font-size: 56px;
+      max-width: 550px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 52px;
+    }
+    @include r($lg) {
+      font-size: 48px;
+    }
+    @media (max-width: 920px) {
+      font-size: 46px;
+    }
+    @media (max-width: 860px) {
+      text-align: center;
+      max-width: 100%;
+    }
+    @include r($tablet) {
+      font-size: 42px;
+    }
+    @include r($phone) {
+      font-size: 40px;
     }
     @media (max-width: 395px) {
-      font-size: 36px;
+      font-size: 38px;
+    }
+    @media (max-width: 360px) {
+      font-size: 37px;
     }
   }
 
   &__list {
-    @include flex-column(16);
-    max-width: 620px;
-    margin: 0 auto 40px;
-    @include r($phone) {
-      margin-bottom: 30px;
-    }
+    @include flex-column(32);
+    max-width: 700px;
+    margin: 0 auto;
   }
 
   &__item {
-    background-color: $light-gray;
-    padding: 25px;
-    border-radius: 25px;
-    @include r($tablet) {
-      border-radius: 17px;
+    position: relative;
+    padding: 0 0 30px;
+    border-bottom: 1px solid #EAECF0;
+    @include r($lg) {
+      padding-bottom: 24px;
     }
     @include r($sm) {
-      padding: 22px 20px;
+      padding-bottom: 18px;
     }
-    @include r($phone) {
-      padding: 20px 15px;
+  }
+
+  &__body {
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    transition: max-height 0.4s ease-out, opacity 0.6s ease-out, margin .4s;
+    opacity: 0;
+
+    &--active {
+      max-height: 1000px;
+      margin-top: 14px;
+      opacity: 1;
+      user-select: auto;
+      pointer-events: auto;
     }
   }
 
   &__head {
-    @include flex-between(20);
-    align-items: center;
-    transition: color .4s;
+    @include flex-align-center(20);
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    @include r($sm) {
+      gap: 14px;
+    }
 
     &:hover {
-      color: $teal-green;
+      color: #0c8c74;
     }
   }
 
   &__name {
-    font-family: $sfpro;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 1.3;
-    letter-spacing: -0.6px;
-    max-width: 622px;
-    @include r($lg) {
-      font-size: 24px;
-      max-width: 550px;
-    }
-    @include r($tablet) {
-      font-size: 22px;
-      max-width: 500px;
-    }
+    font-family: $garamond;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    max-width: 87%;
+    transition: color .4s;
     @include r($sm) {
-      font-size: 20px;
-      max-width: 365px;
-    }
-    @include r($phone) {
-      max-width: 320px;
-      font-size: 18px;
-      letter-spacing: -.4px;
+      font-size: 22px;
+      max-width: 85%;
     }
   }
 
   &__text {
-    opacity: .7;
     font-size: 18px;
-    max-width: 550px;
+    font-weight: 400;
+    max-width: 90%;
+    color: #8c8c8c;
+
+    @media (max-width: 800px) {
+      max-width: 100%;
+      padding-right: 50px;
+    }
+    @include r($sm) {
+      font-size: 16px;
+    }
+    @media (max-width: 540px) {
+      padding-right: 40px;
+    }
     @include r($phone) {
       font-size: 14px;
-    }
-
-    &.open {
-      margin-top: 24px;
-      @include r($tablet) {
-        margin-top: 18px;
-      }
     }
   }
 
   &__btn {
-    width: 30px;
-    height: 30px;
-    border: 1px solid transparent;
-    border-radius: 5px;
+    flex: 0 1 auto;
+    width: 33px;
+    height: 33px;
+    border: 1px solid #298574;
+    border-radius: 50%;
     position: relative;
     transition: border .4s;
 
@@ -114,7 +159,7 @@
       left: 50%;
       width: 16px;
       height: 2px;
-      background: $midnight-blue;
+      background: #298574;
       opacity: 1;
       box-shadow: none;
       transition: opacity .4s, background-color .4s;
@@ -129,59 +174,158 @@
     }
   }
 
-  &__action {
-    display: flex;
-    max-width: max-content;
-    margin: 0 auto 30px;
-    padding: 24px 40px;
-    color: $deep-forest-green;
-    background-color: $deep-purple;
-    border-radius: 72px;
-    border: 1px solid transparent;
-    transition: background-color .4s, color .4s, border .4s, box-shadow .5s;
-    position: relative;
-    box-shadow: 0 0 24px 0 rgba(25, 247, 207, 0.25);
-    @include r($desktop) {
-      margin-bottom: 0;
-      margin-top: auto;
+  &__markers {
+    @include flex-column(10);
+
+    li {
+      @include flex-align-center(10);
+
+      &::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        background-color: #0c8c74;
+        border-radius: 50%;
+      }
     }
-    @media (max-height: 740px) {
-      margin-bottom: 0;
+  }
+
+  &__contacts {
+    text-align: right;
+    max-width: 400px;
+    width: 100%;
+    @include r($lg) {
+      max-width: 350px;
+    }
+
+    &-items {
+      @include flex-column(14);
+    }
+
+    &-item {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      border-radius: 19px;
+      background-color: rgba(#00241F, .07);
+
+      a.pdf {
+        border: 1px solid transparent;
+        border-radius: 4px;
+        padding: 2px 3px;
+        transition: border .4s;
+
+        &:hover {
+          .faq__label {
+            color: #FB3449;
+          }
+        }
+
+        &:focus {
+          border-color: #FB3449;
+
+          .faq__label {
+            color: $midnight-blue;
+          }
+        }
+      }
+    }
+  }
+
+  &__label {
+    @include flex-align-center(10);
+    color: rgba($midnight-blue, .6);
+    font-size: 20px;
+    font-weight: 500;
+    transition: color .4s;
+    @include r($lg) {
+      font-size: 18px;
     }
     @include r($phone) {
-      font-size: 14px;
+      font-size: 17px;
+    }
+
+    svg {
+      width: 22px;
+    }
+  }
+
+  &__link {
+    font-family: $garamond;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 1px 2px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: color .4s, border .4s;
+    @include r($phone) {
+      font-size: 24px;
+    }
+    @media (max-width: 370px) {
+      font-size: 23px;
     }
 
     &:hover {
-      background-color: $midnight-blue;
-      color: $white;
-      box-shadow: 0 0 24px 0 rgba($midnight-blue, 0.25);
-
-      &::before {
-        border-color: $midnight-blue;
-      }
+      color: #0c8c74;
     }
 
     &:focus {
-      background-color: transparent;
-      box-shadow: 0 0 24px 0 rgba(25, 247, 207, 0);
-      border-color: $deep-forest-green;
-      color: $deep-forest-green;
-
-      &::before {
-        opacity: 0;
-      }
+      border-color: #0c8c74;
     }
+  }
 
-    &::before {
-      @include pseudo;
-      @include topLeft50;
-      width: 105%;
-      height: 114%;
-      background-color: rgba($deep-purple, .15);
-      border: 1px solid $teal-green;
-      border-radius: 64px;
-      transition: background-color .4s, opacity .4s;
+  &__socials {
+    @include flex-align-center(10);
+
+    a {
+      border: 1px solid transparent;
+      opacity: 1;
+      width: 48px;
+      height: 48px;
+      padding: 7px;
+      border-radius: 50%;
+      background-color: #0c8c74;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: color .4s, opacity .4s, border .4s, background-color .4s;
+
+      &:hover {
+        background-color: #0eb293;
+      }
+
+      &:focus {
+        background-color: transparent;
+        border-color: #0c8c74;
+
+        svg path {
+          fill: #0c8c74;
+        }
+      }
+
+      &.telegram {
+        background-color: #2aabee;
+
+        svg {
+          transform: translateX(-2px);
+        }
+
+        &:hover {
+          background-color: #2082b4;
+        }
+
+        &:focus {
+          border-color: #2aabee;
+          background-color: transparent;
+
+          svg path {
+            fill: #2aabee;
+          }
+        }
+      }
     }
   }
 }
